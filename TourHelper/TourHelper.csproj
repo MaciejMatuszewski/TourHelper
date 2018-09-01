@@ -13,14 +13,12 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.2.0f3</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -214,17 +212,17 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/750_001357/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/750_001357/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+    <Reference Include="I18N.CJK">
+      <HintPath>Assets/DLL/External/I18N.CJK.dll</HintPath>
     </Reference>
     <Reference Include="I18N">
       <HintPath>Assets/DLL/External/I18N.dll</HintPath>
     </Reference>
-    <Reference Include="I18N.CJK">
-      <HintPath>Assets/DLL/External/I18N.CJK.dll</HintPath>
+    <Reference Include="I18N.MidEast">
+      <HintPath>Assets/DLL/External/I18N.MidEast.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.Other">
+      <HintPath>Assets/DLL/External/I18N.Other.dll</HintPath>
     </Reference>
     <Reference Include="I18N.Rare">
       <HintPath>Assets/DLL/External/I18N.Rare.dll</HintPath>
@@ -232,12 +230,30 @@
     <Reference Include="I18N.West">
       <HintPath>Assets/DLL/External/I18N.West.dll</HintPath>
     </Reference>
-    <Reference Include="I18N.Other">
-      <HintPath>Assets/DLL/External/I18N.Other.dll</HintPath>
+    <Reference Include="UnityEngine.Analytics">
+      <HintPath>C:/Users/750_001357/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="I18N.MidEast">
-      <HintPath>Assets/DLL/External/I18N.MidEast.dll</HintPath>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>C:/Users/750_001357/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
+    <Reference Include="TourHelper.Configuration">
+      <HintPath>Assets/DLL/TourHelper.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="TourHelper.Repository">
+      <HintPath>Assets/DLL/TourHelper.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="TourHelper.Base">
+      <HintPath>Assets/DLL/TourHelper.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="TourHelper.Manager">
+      <HintPath>Assets/DLL/TourHelper.Manager.dll</HintPath>
+    </Reference>
+    <Reference Include="TourHelper.Logic">
+      <HintPath>Assets/DLL/TourHelper.Logic.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\DbTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -41,5 +41,27 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TourHelper.Base\TourHelper.Base.csproj">
+      <Project>{5b05cde0-650e-4453-983e-228c8b35eaa3}</Project>
+      <Name>TourHelper.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Logic\TourHelper.Logic.csproj">
+      <Project>{396939f8-cb68-43f0-bf8f-28b88c4dbd40}</Project>
+      <Name>TourHelper.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Manager\TourHelper.Manager.csproj">
+      <Project>{f1d331df-8e91-4aa5-a902-7a6f54951893}</Project>
+      <Name>TourHelper.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Repository\TourHelper.Repository.csproj">
+      <Project>{ad547fb4-88ca-4698-b0f6-0f385f797526}</Project>
+      <Name>TourHelper.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.TestApp\TourHelper.TestApp.csproj">
+      <Project>{eff19a3b-e81f-4d65-b589-5f8a9ff6cf63}</Project>
+      <Name>TourHelper.TestApp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

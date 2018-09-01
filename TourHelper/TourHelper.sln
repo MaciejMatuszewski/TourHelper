@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28010.2003
-MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper", "TourHelper.csproj", "{0339C499-1C37-4DD7-C4E0-B9E94029A762}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper.Base", "..\TourHelper.Base\TourHelper.Base.csproj", "{5B05CDE0-650E-4453-983E-228C8B35EAA3}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper.Configuration", "..\TourHelper.Configuration\TourHelper.Configuration.csproj", "{8AC6C4B3-E885-443E-936E-1C40B56BCFD6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper.Logic", "..\TourHelper.Logic\TourHelper.Logic.csproj", "{396939F8-CB68-43F0-BF8F-28B88C4DBD40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper.TestApp", "..\TourHelper.TestApp\TourHelper.TestApp.csproj", "{EFF19A3B-E81F-4D65-B589-5F8A9FF6CF63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,11 +45,12 @@ Global
 		{396939F8-CB68-43F0-BF8F-28B88C4DBD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{396939F8-CB68-43F0-BF8F-28B88C4DBD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{396939F8-CB68-43F0-BF8F-28B88C4DBD40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF19A3B-E81F-4D65-B589-5F8A9FF6CF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF19A3B-E81F-4D65-B589-5F8A9FF6CF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF19A3B-E81F-4D65-B589-5F8A9FF6CF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF19A3B-E81F-4D65-B589-5F8A9FF6CF63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {876EEB02-D2D2-4C84-B525-FC4C287A9FEA}
 	EndGlobalSection
 EndGlobal
