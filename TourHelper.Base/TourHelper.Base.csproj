@@ -39,19 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\ServiceStatus.cs" />
     <Compile Include="Exception\RepositoryException.cs" />
+    <Compile Include="Manager\IBaseDeviceManager.cs" />
+    <Compile Include="Manager\ICameraManager.cs" />
+    <Compile Include="Manager\IGpsManager.cs" />
+    <Compile Include="Manager\ICompassMaganger.cs" />
     <Compile Include="Model\Entity\BaseModel.cs" />
+    <Compile Include="Model\Entity\Coordinates.cs" />
     <Compile Include="Model\Entity\UserProfile.cs" />
     <Compile Include="Model\Entity\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IBaseRepository.cs" />
+    <Compile Include="Repository\ICoordinateRepository.cs" />
     <Compile Include="Repository\IUserProfileRepository.cs" />
     <Compile Include="Repository\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Enum\" />
     <Folder Include="Logic\" />
-    <Folder Include="Manager\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
