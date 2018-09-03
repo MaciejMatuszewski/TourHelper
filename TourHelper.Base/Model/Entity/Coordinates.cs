@@ -7,7 +7,7 @@ namespace TourHelper.Base.Model.Entity
 {
     public class Coordinates:BaseModel
     {
-        public float Laditude { get; set; }
+        public float Latitude { get; set; }
         public float Longitude { get; set; }
         public float Altitude { get; set; }
         public float VerticalAccuracy { get; set; }

@@ -11,6 +11,8 @@ namespace TourHelper.Base.Manager
         
         ServiceStatus Status();
 
+        bool IsEnabled();
+
         bool IsReady();
     }
 }
