@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using TourHelper.Base.Enum;
 using TourHelper.Base.Manager;
 using TourHelper.Base.Model.Entity;
@@ -56,7 +55,7 @@ namespace TourHelper.Manager
             return true;
         }
 
-        public IEnumerable StartService(int timeOut)
+        public IEnumerator StartService(int timeOut)
         {
             //nalezy zastosowac corutine
             if (!IsEnabled())

@@ -7,7 +7,7 @@ namespace TourHelper.Base.Manager
     {
 
 
-        IEnumerable StartService(int timeOut);
+        IEnumerator StartService(int timeOut);
         
         ServiceStatus Status();
 
