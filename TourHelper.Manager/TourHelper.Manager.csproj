@@ -42,7 +42,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Devices\CompassManager.cs" />
     <Compile Include="Devices\GpsManager.cs" />
+    <Compile Include="Devices\BaseLocationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

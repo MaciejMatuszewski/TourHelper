@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using TourHelper.Base.Enum;
-using TourHelper.Base.Manager;
+﻿using TourHelper.Base.Manager;
 using TourHelper.Base.Model.Entity;
 using UnityEngine;
 
 namespace TourHelper.Manager
 {
-    public class GpsManager : IGpsManager
+    public class GpsManager : BaseLocationManager,IGpsManager
     {
         private static GpsManager instance=null;
         private static readonly object key=new object();
@@ -40,52 +38,5 @@ namespace TourHelper.Manager
 
             return output;
         }
-
-        public bool IsEnabled()
-        {
-            return Input.location.isEnabledByUser;
-        }
-
-        public bool IsReady()
-        {
-            if (Input.location.status != LocationServiceStatus.Running)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public IEnumerator StartService(int timeOut)
-        {
-            //nalezy zastosowac corutine
-            if (!IsEnabled())
-            {
-                Debug.Log("Location disabled by user");
-                yield break;
-            }
-            
-            Input.location.Start();
-
-            while (Status() == ServiceStatus.Initializing && timeOut > 0)
-            {
-                yield return new WaitForSeconds(1);
-                timeOut--;
-            }
-            if (timeOut <= 0)
-            {
-                Debug.Log("Time out");
-                yield break;
-            }
-            if (Status() == ServiceStatus.Failed)
-            {
-                Debug.Log("Unable to get location");
-                yield break;
-            }
-        }
-
-        public ServiceStatus Status()
-        {
-            return (ServiceStatus)Input.location.status;
-        }
-    }
+      }
 }

@@ -5,9 +5,10 @@ using System.Text;
 
 namespace TourHelper.Base.Manager
 {
-    public interface ICompassMaganger:IBaseDeviceManager
+    public interface ICompassManager:IBaseDeviceManager
     {
-
+        void CompassOn();
+        void CompassOff();
         double GetAngleToNorth();
     }
 }

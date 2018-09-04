@@ -9,11 +9,14 @@ public class TextUpdate : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         text.text = "";
-        gps=GpsManager.Instance;
+        Debug.Log(Input.compass.enabled.ToString());
+        Input.compass.enabled = true;
+        Debug.Log(Input.compass.enabled.ToString());
+        gps =GpsManager.Instance;
         StartCoroutine(gps.StartService(20));
-        
+        Debug.Log(Input.compass.enabled.ToString());
 
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
