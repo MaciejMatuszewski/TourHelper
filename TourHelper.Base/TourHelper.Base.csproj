@@ -37,10 +37,14 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\TourHelper\Library\UnityAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enum\ServiceStatus.cs" />
     <Compile Include="Exception\RepositoryException.cs" />
+    <Compile Include="Logic\IGeolocationTool.cs" />
     <Compile Include="Manager\IBaseDeviceManager.cs" />
     <Compile Include="Manager\ICameraManager.cs" />
     <Compile Include="Manager\IGpsManager.cs" />
@@ -55,8 +59,6 @@
     <Compile Include="Repository\IUserProfileRepository.cs" />
     <Compile Include="Repository\IUserRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
