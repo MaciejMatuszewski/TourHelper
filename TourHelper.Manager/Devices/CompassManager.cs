@@ -41,7 +41,7 @@ namespace TourHelper.Manager
 
         public double GetAngleToNorth()
         {
-            throw new NotImplementedException();
+            return Input.compass.trueHeading;
         }
 
         public void CompassOn()

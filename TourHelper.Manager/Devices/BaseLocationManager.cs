@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using TourHelper.Base.Enum;
 using TourHelper.Base.Manager;
-using TourHelper.Base.Model.Entity;
 using UnityEngine;
 
 namespace TourHelper.Manager

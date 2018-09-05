@@ -1,5 +1,7 @@
 ﻿using TourHelper.Base.Model.Entity;
 using TourHelper.Repository;
+using TourHelper.Manager.Devices.Mock;
+using TourHelper.Logic.Geolocation;
 
 namespace TourHelper.TestApp
 {
@@ -7,22 +9,18 @@ namespace TourHelper.TestApp
     {
         static void Main(string[] args)
         {
-            var x = new UserRepository();
-            var y = new UserProfileRepository();
-            var z = y.Insert(new UserProfile
-            {
-                Age = 33,
-                Email = "kixar@wp.pl",
-                FirstName = "H",
-                LastName = "D"
-            });
-            x.Insert(new User
-            {
-                Login = "cycu",
-                Password = "123",
-                UserProfileId = z.Id
-            });
-            var a = x.GetByLogin("cycu");
+            MockCompassManager compass=new MockCompassManager();
+            MockGpsManager gps = new MockGpsManager();
+            BasicRotationCalculator rot=new BasicRotationCalculator(compass,gps);
+            Coordinates coor = new Coordinates();
+            compass.Heading = 100;
+
+            coor.Latitude = 16.92f;
+            coor.Longitude = 52.46f;
+
+            System.Console.WriteLine(rot.Bearing(coor));
+            System.Console.WriteLine(rot.RotationAngle(coor));
+            System.Console.ReadKey();
         }
     }
 }
