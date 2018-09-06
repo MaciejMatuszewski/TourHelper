@@ -19,17 +19,17 @@ namespace TourHelper.Logic.Geolocation
 
         public double Bearing(Coordinates coor)
         {
-            //latitude (lambda)
-            //longitude (phi)
-            double x, y,dLat, bearing;
+            //longitude (lambda)
+            //latitude (phi)
+            double x, y,dLon, bearing;
             Coordinates lastLocation=GpsManager.GetCoordinates();
 
-            dLat = coor.Latitude - lastLocation.Latitude;
+            dLon = coor.Longitude - lastLocation.Longitude;
             
-            y = Math.Sin(MathTools.rad(dLat)) *Math.Cos(MathTools.rad(coor.Longitude));
-            x = Math.Cos(MathTools.rad(lastLocation.Longitude)) * Math.Sin(MathTools.rad(coor.Longitude)) 
-                - Math.Sin(MathTools.rad(lastLocation.Longitude)) * Math.Cos(MathTools.rad(coor.Longitude)) 
-                *Math.Cos(MathTools.rad(dLat));
+            y = Math.Sin(MathTools.rad(dLon)) *Math.Cos(MathTools.rad(coor.Latitude));
+            x = Math.Cos(MathTools.rad(lastLocation.Latitude)) * Math.Sin(MathTools.rad(coor.Latitude)) 
+                - Math.Sin(MathTools.rad(lastLocation.Latitude)) * Math.Cos(MathTools.rad(coor.Latitude)) 
+                *Math.Cos(MathTools.rad(dLon));
             
             bearing =Math.Atan2(y,x);
             
@@ -38,12 +38,13 @@ namespace TourHelper.Logic.Geolocation
 
         public double RotationAngle(Coordinates coor)
         {
-            return CompassManager.GetAngleToNorth()-Bearing(coor);
+            return Bearing(coor)- CompassManager.GetAngleToNorth();
         }
-
-        public void Transform(Transform obj)
+         
+        public void Transform(Transform obj,Coordinates coor)
         {
-            throw new NotImplementedException();
+
+            obj.transform.rotation = Quaternion.AngleAxis((float)RotationAngle(coor), new Vector3(0, 1, 0));
         }
     }
 }

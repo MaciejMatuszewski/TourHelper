@@ -8,21 +8,29 @@ namespace TourHelper.Logic.Geolocation
 {
     public class HaversineDistanceCalculator : IDistanceCalculator
     {
+        public IEarthRadiusCalculator EarthRadius { get; set; }
         public IGpsManager GpsManager { get; set; }
-        HaversineDistanceCalculator(IGpsManager gps)
+         
+        public HaversineDistanceCalculator(IGpsManager gps,IEarthRadiusCalculator radius)
         {
             GpsManager = gps;
+            EarthRadius = radius;
 
         }
         public double Distance(Coordinates coor)
         {
-            double dLat,dLon;
+            double dLat,dLon,a,c;
             Coordinates lastLocation = GpsManager.GetCoordinates();
 
-            dLat = coor.Latitude - lastLocation.Latitude;
-            dLon = coor.Longitude - lastLocation.Longitude;
+            dLat = MathTools.rad(coor.Latitude - lastLocation.Latitude);
+            dLon = MathTools.rad(coor.Longitude - lastLocation.Longitude);
 
-            return dLon;
+            a = Math.Pow(Math.Sin(dLon / 2),2) + Math.Cos(MathTools.rad(lastLocation.Longitude)) 
+                * Math.Cos(MathTools.rad(coor.Longitude)) *Math.Pow(Math.Sin(dLat / 2),2);
+            c = 2*Math.Atan2(Math.Sqrt(a),Math.Sqrt(1-a));
+
+
+            return c*EarthRadius.GetEarthRadius(coor);
         } 
     }
 }
