@@ -13,5 +13,6 @@ namespace TourHelper.Logic
         {
             return rad * 180 / Math.PI;
         }
+        
     }
 }

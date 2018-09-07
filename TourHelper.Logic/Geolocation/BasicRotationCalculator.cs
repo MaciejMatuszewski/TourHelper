@@ -9,13 +9,18 @@ namespace TourHelper.Logic.Geolocation
 {
     public class BasicRotationCalculator : IRotationCalculator
     {
+        
         public ICompassManager CompassManager { get; set; }
-        public IGpsManager GpsManager { get; set; }
+        public IGpsManager GpsManager { get; set ; }
+
+        
         public BasicRotationCalculator(ICompassManager compass,IGpsManager gps)
         {
             CompassManager = compass;
             GpsManager = gps;
+
         }
+
 
         public double Bearing(Coordinates coor)
         {
@@ -38,7 +43,7 @@ namespace TourHelper.Logic.Geolocation
 
         public double RotationAngle(Coordinates coor)
         {
-            return Bearing(coor)- CompassManager.GetAngleToNorth();
+            return Bearing(coor) - CompassManager.GetAngleToNorth();
         }
          
         public void Transform(Transform obj,Coordinates coor)
@@ -46,5 +51,7 @@ namespace TourHelper.Logic.Geolocation
 
             obj.transform.rotation = Quaternion.AngleAxis((float)RotationAngle(coor), new Vector3(0, 1, 0));
         }
+
+
     }
 }

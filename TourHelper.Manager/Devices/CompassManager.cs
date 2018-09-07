@@ -9,7 +9,10 @@ namespace TourHelper.Manager
     {
         private static CompassManager instance =null;
         private static readonly object key=new object();
-
+        private DateTime timeStamp;
+        private double  lastReading;
+        public int Delay { get; set; }
+        public double Precision { get; set; }
         public static CompassManager Instance {
             get
             {
@@ -19,6 +22,9 @@ namespace TourHelper.Manager
                     {
                         Input.compass.enabled = true;
                         instance = new CompassManager();
+                        //instance.timeStamp = DateTime.Now;
+                        instance.Delay = 200;
+                        instance.Precision = 2d;
                     }
                     return instance;
                 }
@@ -41,7 +47,19 @@ namespace TourHelper.Manager
 
         public double GetAngleToNorth()
         {
-            return Input.compass.trueHeading;
+
+            TimeSpan diff = DateTime.Now.Subtract(timeStamp);
+
+           if (((diff.Milliseconds+diff.Seconds*1000) >= Delay)&&(Math.Abs(Input.compass.trueHeading - lastReading)>=Precision))
+            {
+                //Debug.Log("TimeStampDiff:" + (diff.Milliseconds + diff.Seconds * 1000).ToString());
+                timeStamp = DateTime.Now;
+                lastReading = (Input.compass.trueHeading +lastReading)*0.5;
+                
+            }
+
+
+            return lastReading;
         }
 
         public void CompassOn()

@@ -7,6 +7,6 @@ namespace TourHelper.Base.Logic
     {
         double Bearing(Coordinates coor);
         double RotationAngle(Coordinates coor);
-        void Transform(Transform obj);
+        void Transform(Transform obj, Coordinates coor);
     }
 }

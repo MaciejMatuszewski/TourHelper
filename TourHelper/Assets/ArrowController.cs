@@ -8,6 +8,7 @@ public class ArrowController : MonoBehaviour {
 
     public Text text;
     public Transform arrow;
+
     private GpsManager gps;
     private CompassManager compass;
     private Coordinates target;
@@ -20,14 +21,14 @@ public class ArrowController : MonoBehaviour {
         
         gps = GpsManager.Instance;
         compass = CompassManager.Instance;
-
+        
         StartCoroutine(gps.StartService(30));
         target = new Coordinates();
         target.Latitude = 52.46f;
         target.Longitude = 16.92f;
 
         rot = new BasicRotationCalculator(compass, gps);
-
+        compass.Delay = 300;
         distance = new HaversineDistanceCalculator(gps, new MeanEarthRadius());
     }
     void Update () {

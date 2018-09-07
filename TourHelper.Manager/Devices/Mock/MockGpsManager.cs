@@ -13,8 +13,8 @@ namespace TourHelper.Manager.Devices.Mock
         public MockGpsManager()
         {
             position = new Coordinates();
-            position.Latitude = 16.921937f;
-            position.Longitude = 52.463563f;
+            position.Latitude = 52.46374f;
+            position.Longitude = 16.92118f;
         }
         public Coordinates GetCoordinates()
         {
