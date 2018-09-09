@@ -2,6 +2,7 @@
 using UnityEngine;
 using TourHelper.Base.Manager;
 using System;
+using TourHelper.Logic;
 
 namespace TourHelper.Manager
 {
@@ -9,10 +10,13 @@ namespace TourHelper.Manager
     {
         private static CompassManager instance =null;
         private static readonly object key=new object();
-        private DateTime timeStamp;
-        private double  lastReading;
-        public int Delay { get; set; }
+        private DateTime TimeStamp { get; set; }
+        private double  LastReading { get; set; }
+        private double BufforReading { get; set; }
+        public int Delay { get; set; } //max delay 60 sek
         public double Precision { get; set; }
+        public double MaxChange { get; set; }
+        public MeanFilter Filter { get; set; }
         public static CompassManager Instance {
             get
             {
@@ -22,9 +26,13 @@ namespace TourHelper.Manager
                     {
                         Input.compass.enabled = true;
                         instance = new CompassManager();
-                        //instance.timeStamp = DateTime.Now;
+                        instance.MaxChange = 15d;
                         instance.Delay = 200;
                         instance.Precision = 2d;
+                        instance.Filter = new MeanFilter(10);
+                        instance.TimeStamp = DateTime.Now;
+                        instance.BufforReading = Input.compass.trueHeading;
+                        instance.LastReading = Input.compass.trueHeading;
                     }
                     return instance;
                 }
@@ -44,22 +52,53 @@ namespace TourHelper.Manager
             return true;
         }
 
+        private bool IsPrecise()
+        {
+            //Debug.Log("Precision:" + (Math.Abs(Input.compass.trueHeading - lastReading) >= Precision).ToString());
+            if ((Math.Abs(Input.compass.trueHeading - LastReading) >= Precision))
+            {
+                return true;
+            }
+            return false;
+        }
+        private bool IsOverDelay()
+        {
+            //Debug.Log("TimeStamp:"+ timeStamp.ToString());
+            TimeSpan diff = DateTime.Now.Subtract(TimeStamp);
+            if ((diff.Milliseconds + diff.Seconds * 1000) >= Delay)
+            {
+                return true;
+            }
+            return false;
+        }
+        private bool IsChangeValid()
+        {
+            if ((Math.Abs((Input.compass.trueHeading - BufforReading))) <= MaxChange)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private double GetFilteredReading()
+        {
+            return Filter.GetValue(Input.compass.trueHeading);
+        }
 
         public double GetAngleToNorth()
         {
-
-            TimeSpan diff = DateTime.Now.Subtract(timeStamp);
-
-           if (((diff.Milliseconds+diff.Seconds*1000) >= Delay)&&(Math.Abs(Input.compass.trueHeading - lastReading)>=Precision))
+           if (IsOverDelay() && IsPrecise())
             {
+                BufforReading = GetFilteredReading();
                 //Debug.Log("TimeStampDiff:" + (diff.Milliseconds + diff.Seconds * 1000).ToString());
-                timeStamp = DateTime.Now;
-                lastReading = (Input.compass.trueHeading +lastReading)*0.5;
-                
+                if (IsChangeValid())
+                {
+                    TimeStamp = DateTime.Now;
+                    LastReading = GetFilteredReading();
+                }
+
             }
-
-
-            return lastReading;
+            return LastReading;
         }
 
         public void CompassOn()

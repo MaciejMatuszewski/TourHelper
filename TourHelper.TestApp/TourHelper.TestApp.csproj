@@ -38,6 +38,10 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TourHelper\Library\UnityAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -47,6 +51,14 @@
     <ProjectReference Include="..\TourHelper.Base\TourHelper.Base.csproj">
       <Project>{5B05CDE0-650E-4453-983E-228C8B35EAA3}</Project>
       <Name>TourHelper.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Logic\TourHelper.Logic.csproj">
+      <Project>{396939f8-cb68-43f0-bf8f-28b88c4dbd40}</Project>
+      <Name>TourHelper.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Manager\TourHelper.Manager.csproj">
+      <Project>{f1d331df-8e91-4aa5-a902-7a6f54951893}</Project>
+      <Name>TourHelper.Manager</Name>
     </ProjectReference>
     <ProjectReference Include="..\TourHelper.Repository\TourHelper.Repository.csproj">
       <Project>{AD547FB4-88CA-4698-B0F6-0F385F797526}</Project>

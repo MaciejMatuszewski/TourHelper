@@ -44,7 +44,9 @@
   <ItemGroup>
     <Compile Include="Enum\ServiceStatus.cs" />
     <Compile Include="Exception\RepositoryException.cs" />
-    <Compile Include="Logic\IGeolocationTool.cs" />
+    <Compile Include="Logic\IDistanceCalculator.cs" />
+    <Compile Include="Logic\IEarthRadiusCalculator.cs" />
+    <Compile Include="Logic\IRotationCalculator.cs" />
     <Compile Include="Manager\IBaseDeviceManager.cs" />
     <Compile Include="Manager\ICameraManager.cs" />
     <Compile Include="Manager\IGpsManager.cs" />

@@ -37,9 +37,28 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TourHelper\Library\UnityAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Geolocation\BasicRotationCalculator.cs" />
+    <Compile Include="Geolocation\GeolocationTool.cs" />
+    <Compile Include="Geolocation\HaversineDistanceCalculator.cs" />
+    <Compile Include="Geolocation\MeanEarthRadius.cs" />
+    <Compile Include="MathTools.cs" />
+    <Compile Include="MeanFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TourHelper.Base\TourHelper.Base.csproj">
+      <Project>{5b05cde0-650e-4453-983e-228c8b35eaa3}</Project>
+      <Name>TourHelper.Base</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

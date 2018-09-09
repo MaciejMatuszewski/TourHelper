@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class ArrowController : MonoBehaviour {
 
     public Text text;
-    public Transform arrow;
+    public Transform targetArrow;
+    public Transform compassArrow;
+    public int scale=1;
+
 
     private GpsManager gps;
     private CompassManager compass;
@@ -20,24 +23,41 @@ public class ArrowController : MonoBehaviour {
     {
         
         gps = GpsManager.Instance;
+
         compass = CompassManager.Instance;
-        
+        compass.Delay = 1000;
+        compass.Precision = 2;
+        compass.MaxChange = 5d;
+
+
         StartCoroutine(gps.StartService(30));
         target = new Coordinates();
         target.Latitude = 52.46f;
         target.Longitude = 16.92f;
 
         rot = new BasicRotationCalculator(compass, gps);
-        compass.Delay = 300;
+        rot.Scale = scale;
+
         distance = new HaversineDistanceCalculator(gps, new MeanEarthRadius());
     }
     void Update () {
+        
+        rot.Transform(targetArrow, target);
 
-        rot.Transform(arrow, target);
-        //arrow.transform.rotation = Quaternion.AngleAxis((float)rot.RotationAngle(target), new Vector3(0, 1 , 0));
+        NorthTransformation();
+
+        
         text.text = compass.GetAngleToNorth().ToString()+ "\nBearing:"+ rot.Bearing(target).ToString()
             + "\nRotation:"+ rot.RotationAngle(target).ToString() + "\nBase:"+ gps.GetCoordinates().Latitude.ToString()+","
             +  gps.GetCoordinates().Longitude.ToString()+ "\ntarget:" +target.Latitude.ToString()+','+target.Longitude.ToString()+"\n---end---";
 
+    }
+
+    private void NorthTransformation()
+    {
+        Quaternion start = compassArrow.transform.localRotation;
+        Quaternion end = Quaternion.AngleAxis(-(float)compass.GetAngleToNorth(), new Vector3(0, 1, 0));
+
+        compassArrow.transform.localRotation = Quaternion.Slerp(start, end, Time.deltaTime * scale);
     }
 }
