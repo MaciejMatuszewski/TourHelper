@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2017.2.0f3</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -229,9 +231,6 @@
     <Reference Include="TourHelper.Logic">
       <HintPath>Assets\DLL\TourHelper.Logic.dll</HintPath>
     </Reference>
-    <Reference Include="TourHelper.Manager">
-      <HintPath>Assets\DLL\TourHelper.Manager.dll</HintPath>
-    </Reference>
     <Reference Include="TourHelper.Repository">
       <HintPath>Assets\DLL\TourHelper.Repository.dll</HintPath>
     </Reference>
@@ -257,8 +256,14 @@
   <ItemGroup>
     <Compile Include="Assets\ArrowController.cs" />
     <Compile Include="Assets\DbTest.cs" />
-    <Compile Include="Assets\GpsService.cs" />
+    <Compile Include="Assets\PhoneCamera.cs" />
     <Compile Include="Assets\TextUpdate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TourHelper.Manager\TourHelper.Manager.csproj">
+      <Project>{f1d331df-8e91-4aa5-a902-7a6f54951893}</Project>
+      <Name>TourHelper.Manager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using UnityEngine;
 
 namespace TourHelper.Base.Manager
 {
     public interface ICameraManager:IBaseDeviceManager
     {
-
+        WebCamTexture GetScreen();
     }
 }
