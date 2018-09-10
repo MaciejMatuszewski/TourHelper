@@ -13,10 +13,11 @@ namespace TourHelper.Manager.Devices
         private WebCamTexture BackCam { get; set; }
 
         private bool CamAvailable { get; set; }
-        private static CameraManager instance=null;
+        private static CameraManager instance = null;
         private static readonly object key = new object();
 
-        public static CameraManager Instance {
+        public static CameraManager Instance
+        {
 
             get
             {
@@ -25,6 +26,7 @@ namespace TourHelper.Manager.Devices
                     if (instance == null)
                     {
                         instance = new CameraManager();
+                        instance.CamAvailable = false;
                     }
                     return instance;
                 }
@@ -33,12 +35,12 @@ namespace TourHelper.Manager.Devices
 
         public bool IsEnabled()
         {
-            return CamAvailable;
+            return instance.CamAvailable;
         }
 
         public bool IsReady()
         {
-            return CamAvailable&&BackCam.isPlaying;
+            return instance.CamAvailable && instance.BackCam.isPlaying;
         }
 
         public ServiceStatus Status()
@@ -60,42 +62,58 @@ namespace TourHelper.Manager.Devices
 
             if (IsReady())
             {
+                Debug.Log(" Camera is ready ");
                 yield break;
             }
 
-            while (timeOut > 0)
+            while ((BackCam == null) && timeOut > 0 && WebCamTexture.devices.Length == 0)
             {
-                devices = WebCamTexture.devices;
+                Debug.Log("Camera unavailable");
+                CamAvailable = false;
+                yield return new WaitForSeconds(1);
+                timeOut--;
+            }
 
-                if (devices.Length == 0)
+ 
+            if (timeOut <= 0)
+            {
+                yield break;
+            }
+            
+            devices = WebCamTexture.devices;
+            for (int i = 0; i < devices.Length; i++)
+            {
+                if (!devices[i].isFrontFacing)
                 {
-                    Debug.Log("Camera unavailable");
-                    CamAvailable = false;
-                    yield return new WaitForSeconds(1);
-                    timeOut--;
-                }
-                for (int i = 0; i < devices.Length; i++)
-                {
-                    if (!devices[i].isFrontFacing)
-                    {
-                        BackCam = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
-
-                    }
-                }
-                if (BackCam == null)
-                {
-                    Debug.Log("Back camera unavailable");
-                    yield return new WaitForSeconds(1);
-                    timeOut--;
+                    BackCam = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
                 }
             }
-            BackCam.Play();
-            CamAvailable = true;
+            //Debug.Log(BackCam.ToString());
+            while ((BackCam == null) && timeOut > 0)
+            {
+                
+                Debug.Log(timeOut.ToString());
+                yield return new WaitForSeconds(1);
+                timeOut--;
+            }
+            if (timeOut <= 0)
+            {
+                Debug.Log("Back camera unavailable");
+                yield break;
+            }
+            
+            instance.BackCam.Play();
+            instance.CamAvailable = true;
+            Debug.Log(" Camera is ready to use ");
         }
 
         public WebCamTexture GetScreen()
         {
-            return BackCam;
+            if (instance.IsReady())
+                return instance.BackCam;
+
+            return new WebCamTexture(); //uzupelnic o default bacground
+
         }
     }
 }

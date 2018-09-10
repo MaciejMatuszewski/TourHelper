@@ -4,7 +4,7 @@
   <settings dpi="96">
     <identity>
       <id>72fde845-97bb-47d8-8431-aceff8d08495</id>
-      <revision>22</revision>
+      <revision>24</revision>
     </identity>
     <calculation>
       <precision>4</precision>
@@ -28,581 +28,9 @@
       <assembly name="Text Region" version="1.10.6671.38794" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
     </dependencies>
   </settings>
-  <region id="0" left="9" top="36" width="463" height="34" color="#000000" bgColor="#ffffff" fontSize="16">
-    <text lang="pol">
-      <p>Określenie odległości oraz azymutu</p>
-    </text>
-  </region>
-  <region id="1" left="18" top="90" width="73" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>1. Dane </p>
-    </text>
-  </region>
-  <region id="2" left="45" top="117" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Promień na równiku..............</p>
-    </text>
-  </region>
-  <region id="3" left="342" top="117" width="166" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">r.equator</e>
-        <e type="operand">6378.137</e>
-        <e type="operand" style="unit">km</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="4" left="45" top="153" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Promień na biegunie.............</p>
-    </text>
-  </region>
-  <region id="5" left="342" top="153" width="147" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">r.pole</e>
-        <e type="operand">6356.752</e>
-        <e type="operand" style="unit">km</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="6" left="45" top="189" width="276" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Promień średni..................</p>
-    </text>
-  </region>
-  <region id="7" left="342" top="189" width="147" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math optimize="2">
-      <input>
-        <e type="operand">r.mean</e>
-        <e type="operand">6371.001</e>
-        <e type="operand" style="unit">km</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="8" left="45" top="225" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Wysokość nad poziomem morza.....</p>
-    </text>
-  </region>
-  <region id="9" left="342" top="225" width="86" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">h.t1</e>
-        <e type="operand">100</e>
-        <e type="operand" style="unit">m</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="10" left="45" top="261" width="276" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Wysokość geograficzna...........</p>
-    </text>
-  </region>
-  <region id="11" left="342" top="261" width="96" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">φ.1</e>
-        <e type="operand">52.45</e>
-        <e type="operand" style="unit">°</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="12" left="45" top="297" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Szerokość geograficzna..........</p>
-    </text>
-  </region>
-  <region id="13" left="342" top="297" width="104" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">λ.1</e>
-        <e type="operand">16.921</e>
-        <e type="operand" style="unit">°</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="14" left="45" top="333" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Wysokość nad poziomem morza.....</p>
-    </text>
-  </region>
-  <region id="15" left="342" top="333" width="86" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">h.t2</e>
-        <e type="operand">100</e>
-        <e type="operand" style="unit">m</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="16" left="45" top="369" width="276" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Wysokość geograficzna...........</p>
-    </text>
-  </region>
-  <region id="17" left="342" top="369" width="96" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">φ.2</e>
-        <e type="operand">52.46</e>
-        <e type="operand" style="unit">°</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="18" left="45" top="405" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>Szerokość geograficzna..........</p>
-    </text>
-  </region>
-  <region id="19" left="342" top="405" width="96" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">λ.2</e>
-        <e type="operand">16.92</e>
-        <e type="operand" style="unit">°</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="20" left="18" top="468" width="523" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>2. Określenie promienia ziemi na danej wysokości geograficznej </p>
-    </text>
-  </region>
-  <region id="21" left="45" top="504" width="382" height="87" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">φ</e>
-        <e type="function" args="1">R.earth</e>
-        <e type="operand">r.equator</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operand">φ</e>
-        <e type="function" args="1">cos</e>
-        <e type="operator" args="2">*</e>
-        <e type="bracket">(</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operand">r.pole</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operand">φ</e>
-        <e type="function" args="1">sin</e>
-        <e type="operator" args="2">*</e>
-        <e type="bracket">(</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">+</e>
-        <e type="operand">r.equator</e>
-        <e type="operand">φ</e>
-        <e type="function" args="1">cos</e>
-        <e type="operator" args="2">*</e>
-        <e type="bracket">(</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operand">r.pole</e>
-        <e type="operand">φ</e>
-        <e type="function" args="1">sin</e>
-        <e type="operator" args="2">*</e>
-        <e type="bracket">(</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">+</e>
-        <e type="operator" args="2">/</e>
-        <e type="function" args="1">sqrt</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="22" left="45" top="594" width="171" height="31" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math optimize="2">
-      <input>
-        <e type="operand">φ</e>
-        <e type="function" args="1">R..h</e>
-        <e type="operand">φ</e>
-        <e type="function" args="1">R.earth</e>
-        <e type="operand">h.t</e>
-        <e type="operator" args="2">+</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="23" left="45" top="630" width="189" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">φ.1</e>
-        <e type="function" args="1">R.earth</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">km</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">6364.7371</e>
-      </result>
-    </math>
-  </region>
-  <region id="24" left="45" top="666" width="189" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">φ.2</e>
-        <e type="function" args="1">R.earth</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">km</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">6364.7335</e>
-      </result>
-    </math>
-  </region>
-  <region id="25" left="45" top="711" width="471" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">R.mean.lat</e>
-        <e type="operand">0.5</e>
-        <e type="operand">φ.1</e>
-        <e type="function" args="1">R.earth</e>
-        <e type="operand">φ.2</e>
-        <e type="function" args="1">R.earth</e>
-        <e type="operator" args="2">+</e>
-        <e type="operand">h.t1</e>
-        <e type="operator" args="2">+</e>
-        <e type="operand">h.t2</e>
-        <e type="operator" args="2">+</e>
-        <e type="bracket">(</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">km</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">6364.8353</e>
-      </result>
-    </math>
-  </region>
-  <region id="26" left="27" top="765" width="298" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>3. Określenie odległości - hevesine</p>
-    </text>
-  </region>
-  <region id="27" left="45" top="801" width="226" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">Δλ</e>
-        <e type="operand">λ.2</e>
-        <e type="operand">λ.1</e>
-        <e type="operator" args="2">-</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <result action="numeric">
-        <e type="operand">1.7453</e>
-        <e type="operand">10</e>
-        <e type="operand">5</e>
-        <e type="operator" args="1">-</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="1">-</e>
-      </result>
-    </math>
-  </region>
-  <region id="28" left="45" top="837" width="168" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">Δφ</e>
-        <e type="operand">φ.2</e>
-        <e type="operand">φ.1</e>
-        <e type="operator" args="2">-</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <result action="numeric">
-        <e type="operand">0.0002</e>
-      </result>
-    </math>
-  </region>
-  <region id="29" left="45" top="873" width="436" height="52" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">a</e>
-        <e type="operand">Δφ</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">/</e>
-        <e type="function" args="1">sin</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operand">φ.1</e>
-        <e type="function" args="1">cos</e>
-        <e type="operand">φ.2</e>
-        <e type="function" args="1">cos</e>
-        <e type="operator" args="2">*</e>
-        <e type="operand">Δλ</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">/</e>
-        <e type="function" args="1">sin</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">+</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <result action="numeric">
-        <e type="operand">7.6437</e>
-        <e type="operand">10</e>
-        <e type="operand">9</e>
-        <e type="operator" args="1">-</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">*</e>
-      </result>
-    </math>
-  </region>
-  <region id="30" left="45" top="936" width="241" height="47" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">c</e>
-        <e type="operand">2</e>
-        <e type="operand">1</e>
-        <e type="operand">a</e>
-        <e type="operator" args="2">-</e>
-        <e type="function" args="1">sqrt</e>
-        <e type="operand">a</e>
-        <e type="function" args="1">sqrt</e>
-        <e type="operator" args="2">/</e>
-        <e type="function" args="1">acot</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <result action="numeric">
-        <e type="operand">0.0002</e>
-      </result>
-    </math>
-  </region>
-  <region id="31" left="45" top="999" width="253" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">distance.h</e>
-        <e type="operand">c</e>
-        <e type="operand">r.mean</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">m</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">1114.0121</e>
-      </result>
-    </math>
-  </region>
-  <region id="32" left="45" top="1044" width="297" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">distance.h.lat</e>
-        <e type="operand">c</e>
-        <e type="operand">R.mean.lat</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">m</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">1112.934</e>
-      </result>
-    </math>
-  </region>
-  <region id="33" left="27" top="1116" width="298" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>4. Określenie odległości - cosinusy</p>
-    </text>
-  </region>
-  <region id="34" left="45" top="1152" width="611" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">distance.c</e>
-        <e type="operand">φ.1</e>
-        <e type="function" args="1">sin</e>
-        <e type="operand">φ.2</e>
-        <e type="function" args="1">sin</e>
-        <e type="operator" args="2">*</e>
-        <e type="operand">φ.1</e>
-        <e type="function" args="1">cos</e>
-        <e type="operand">φ.2</e>
-        <e type="function" args="1">cos</e>
-        <e type="operator" args="2">*</e>
-        <e type="operand">Δλ</e>
-        <e type="function" args="1">cos</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">+</e>
-        <e type="function" args="1">acos</e>
-        <e type="operand">r.mean</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">m</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">1114.0121</e>
-      </result>
-    </math>
-  </region>
-  <region id="35" left="45" top="1197" width="655" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">distance.c.lat</e>
-        <e type="operand">φ.1</e>
-        <e type="function" args="1">sin</e>
-        <e type="operand">φ.2</e>
-        <e type="function" args="1">sin</e>
-        <e type="operator" args="2">*</e>
-        <e type="operand">φ.1</e>
-        <e type="function" args="1">cos</e>
-        <e type="operand">φ.2</e>
-        <e type="function" args="1">cos</e>
-        <e type="operator" args="2">*</e>
-        <e type="operand">Δλ</e>
-        <e type="function" args="1">cos</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">+</e>
-        <e type="function" args="1">acos</e>
-        <e type="operand">R.mean.lat</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">m</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">1112.934</e>
-      </result>
-    </math>
-  </region>
-  <region id="36" left="27" top="1251" width="463" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>5. Określenie odległości - Equirectangular aproximation</p>
-    </text>
-  </region>
-  <region id="37" left="63" top="1287" width="208" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">φ.m</e>
-        <e type="operand">0.5</e>
-        <e type="operand">φ.1</e>
-        <e type="operand">φ.2</e>
-        <e type="operator" args="2">+</e>
-        <e type="bracket">(</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">°</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">52.455</e>
-      </result>
-    </math>
-  </region>
-  <region id="38" left="63" top="1323" width="117" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">x</e>
-        <e type="operand">Δλ</e>
-        <e type="operand">φ.m</e>
-        <e type="function" args="1">cos</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-    </math>
-  </region>
-  <region id="39" left="63" top="1359" width="116" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">y</e>
-        <e type="operand">Δφ</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">°</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">0.01</e>
-      </result>
-    </math>
-  </region>
-  <region id="40" left="63" top="1395" width="313" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">distance.e</e>
-        <e type="operand">x</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operand">y</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">+</e>
-        <e type="function" args="1">sqrt</e>
-        <e type="operand">r.mean</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">m</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">1114.0121</e>
-      </result>
-    </math>
-  </region>
-  <region id="41" left="63" top="1440" width="357" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
-    <math>
-      <input>
-        <e type="operand">distance.e.lat</e>
-        <e type="operand">x</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operand">y</e>
-        <e type="operand">2</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">+</e>
-        <e type="function" args="1">sqrt</e>
-        <e type="operand">R.mean.lat</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="2">:</e>
-      </input>
-      <contract>
-        <e type="operand" style="unit">m</e>
-      </contract>
-      <result action="numeric">
-        <e type="operand">1112.934</e>
-      </result>
-    </math>
-  </region>
-  <region id="42" left="27" top="1503" width="143" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
-    <text lang="pol">
-      <p>6. Kąt - bearing</p>
-    </text>
-  </region>
-  <region id="43" top="1530" color="#000000" bgColor="#ffffff">
+  <region id="0" top="18" color="#000000" bgColor="#ffffff">
     <area collapsed="true" />
-    <region id="44" left="36" top="1548" width="325" height="430" color="#000000" bgColor="#ffffff" fontSize="10">
+    <region id="1" left="63" top="36" width="325" height="430" color="#000000" bgColor="#ffffff" fontSize="10">
       <math optimize="2">
         <input>
           <e type="operand">y.t</e>
@@ -680,9 +108,592 @@
         </input>
       </math>
     </region>
-    <region id="45" top="1998" color="#000000" bgColor="#ffffff">
+    <region id="2" top="486" color="#000000" bgColor="#ffffff">
       <area terminator="true" />
     </region>
+  </region>
+  <region id="3" left="9" top="504" width="463" height="34" color="#000000" bgColor="#ffffff" fontSize="16">
+    <text lang="pol">
+      <p>Określenie odległości oraz azymutu</p>
+    </text>
+  </region>
+  <region id="4" left="18" top="558" width="73" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>1. Dane </p>
+    </text>
+  </region>
+  <region id="5" left="45" top="585" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Promień na równiku..............</p>
+    </text>
+  </region>
+  <region id="6" left="342" top="585" width="166" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">r.equator</e>
+        <e type="operand">6378.137</e>
+        <e type="operand" style="unit">km</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="7" left="45" top="621" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Promień na biegunie.............</p>
+    </text>
+  </region>
+  <region id="8" left="342" top="621" width="147" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">r.pole</e>
+        <e type="operand">6356.752</e>
+        <e type="operand" style="unit">km</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="9" left="45" top="657" width="276" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Promień średni..................</p>
+    </text>
+  </region>
+  <region id="10" left="342" top="657" width="147" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math optimize="2">
+      <input>
+        <e type="operand">r.mean</e>
+        <e type="operand">6371.001</e>
+        <e type="operand" style="unit">km</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="11" left="45" top="693" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Wysokość nad poziomem morza.....</p>
+    </text>
+  </region>
+  <region id="12" left="342" top="693" width="86" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">h.t1</e>
+        <e type="operand">100</e>
+        <e type="operand" style="unit">m</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="13" left="45" top="729" width="276" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Wysokość geograficzna...........</p>
+    </text>
+  </region>
+  <region id="14" left="342" top="729" width="128" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">φ.1</e>
+        <e type="operand">52.463563</e>
+        <e type="operand" style="unit">°</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="15" left="45" top="765" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Szerokość geograficzna..........</p>
+    </text>
+  </region>
+  <region id="16" left="342" top="765" width="128" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">λ.1</e>
+        <e type="operand">16.921937</e>
+        <e type="operand" style="unit">°</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="17" left="45" top="801" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Wysokość nad poziomem morza.....</p>
+    </text>
+  </region>
+  <region id="18" left="342" top="801" width="86" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">h.t2</e>
+        <e type="operand">100</e>
+        <e type="operand" style="unit">m</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="19" left="45" top="837" width="276" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Wysokość geograficzna...........</p>
+    </text>
+  </region>
+  <region id="20" left="342" top="837" width="96" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">φ.2</e>
+        <e type="operand">52.46</e>
+        <e type="operand" style="unit">°</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="21" left="45" top="873" width="275" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>Szerokość geograficzna..........</p>
+    </text>
+  </region>
+  <region id="22" left="342" top="873" width="96" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">λ.2</e>
+        <e type="operand">16.92</e>
+        <e type="operand" style="unit">°</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="23" left="18" top="936" width="523" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>2. Określenie promienia ziemi na danej wysokości geograficznej </p>
+    </text>
+  </region>
+  <region id="24" left="45" top="972" width="382" height="87" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">φ</e>
+        <e type="function" args="1">R.earth</e>
+        <e type="operand">r.equator</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">φ</e>
+        <e type="function" args="1">cos</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">r.pole</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">φ</e>
+        <e type="function" args="1">sin</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">+</e>
+        <e type="operand">r.equator</e>
+        <e type="operand">φ</e>
+        <e type="function" args="1">cos</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">r.pole</e>
+        <e type="operand">φ</e>
+        <e type="function" args="1">sin</e>
+        <e type="operator" args="2">*</e>
+        <e type="bracket">(</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">/</e>
+        <e type="function" args="1">sqrt</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="25" left="45" top="1062" width="171" height="31" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math optimize="2">
+      <input>
+        <e type="operand">φ</e>
+        <e type="function" args="1">R..h</e>
+        <e type="operand">φ</e>
+        <e type="function" args="1">R.earth</e>
+        <e type="operand">h.t</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="26" left="45" top="1098" width="189" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">φ.1</e>
+        <e type="function" args="1">R.earth</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">km</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">6364.7322</e>
+      </result>
+    </math>
+  </region>
+  <region id="27" left="45" top="1134" width="189" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">φ.2</e>
+        <e type="function" args="1">R.earth</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">km</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">6364.7335</e>
+      </result>
+    </math>
+  </region>
+  <region id="28" left="45" top="1179" width="471" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">R.mean.lat</e>
+        <e type="operand">0.5</e>
+        <e type="operand">φ.1</e>
+        <e type="function" args="1">R.earth</e>
+        <e type="operand">φ.2</e>
+        <e type="function" args="1">R.earth</e>
+        <e type="operator" args="2">+</e>
+        <e type="operand">h.t1</e>
+        <e type="operator" args="2">+</e>
+        <e type="operand">h.t2</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">km</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">6364.8328</e>
+      </result>
+    </math>
+  </region>
+  <region id="29" left="27" top="1233" width="298" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>3. Określenie odległości - hevesine</p>
+    </text>
+  </region>
+  <region id="30" left="45" top="1269" width="226" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Δλ</e>
+        <e type="operand">λ.2</e>
+        <e type="operand">λ.1</e>
+        <e type="operator" args="2">-</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">3.3807</e>
+        <e type="operand">10</e>
+        <e type="operand">5</e>
+        <e type="operator" args="1">-</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="1">-</e>
+      </result>
+    </math>
+  </region>
+  <region id="31" left="45" top="1305" width="226" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">Δφ</e>
+        <e type="operand">φ.2</e>
+        <e type="operand">φ.1</e>
+        <e type="operator" args="2">-</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">6.2186</e>
+        <e type="operand">10</e>
+        <e type="operand">5</e>
+        <e type="operator" args="1">-</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="1">-</e>
+      </result>
+    </math>
+  </region>
+  <region id="32" left="45" top="1341" width="436" height="52" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">a</e>
+        <e type="operand">Δφ</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">/</e>
+        <e type="function" args="1">sin</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">φ.1</e>
+        <e type="function" args="1">cos</e>
+        <e type="operand">φ.2</e>
+        <e type="function" args="1">cos</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">Δλ</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">/</e>
+        <e type="function" args="1">sin</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">+</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">1.0728</e>
+        <e type="operand">10</e>
+        <e type="operand">9</e>
+        <e type="operator" args="1">-</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="33" left="45" top="1404" width="313" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">c</e>
+        <e type="operand">2</e>
+        <e type="operand">a</e>
+        <e type="function" args="1">sqrt</e>
+        <e type="operand">1</e>
+        <e type="operand">a</e>
+        <e type="operator" args="2">-</e>
+        <e type="function" args="1">sqrt</e>
+        <e type="function" args="2">atan2</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <result action="numeric">
+        <e type="operand">6.5509</e>
+        <e type="operand">10</e>
+        <e type="operand">5</e>
+        <e type="operator" args="1">-</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">*</e>
+      </result>
+    </math>
+  </region>
+  <region id="34" left="45" top="1467" width="245" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">distance.h</e>
+        <e type="operand">c</e>
+        <e type="operand">r.mean</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">m</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">417.3565</e>
+      </result>
+    </math>
+  </region>
+  <region id="35" left="45" top="1512" width="297" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">distance.h.lat</e>
+        <e type="operand">c</e>
+        <e type="operand">R.mean.lat</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">m</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">416.9524</e>
+      </result>
+    </math>
+  </region>
+  <region id="36" left="27" top="1584" width="298" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>4. Określenie odległości - cosinusy</p>
+    </text>
+  </region>
+  <region id="37" left="45" top="1620" width="595" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">distance.c</e>
+        <e type="operand">φ.1</e>
+        <e type="function" args="1">sin</e>
+        <e type="operand">φ.2</e>
+        <e type="function" args="1">sin</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">φ.1</e>
+        <e type="function" args="1">cos</e>
+        <e type="operand">φ.2</e>
+        <e type="function" args="1">cos</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">Δλ</e>
+        <e type="function" args="1">cos</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">+</e>
+        <e type="function" args="1">acos</e>
+        <e type="operand">r.mean</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">km</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.4174</e>
+      </result>
+    </math>
+  </region>
+  <region id="38" left="45" top="1665" width="639" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">distance.c.lat</e>
+        <e type="operand">φ.1</e>
+        <e type="function" args="1">sin</e>
+        <e type="operand">φ.2</e>
+        <e type="function" args="1">sin</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">φ.1</e>
+        <e type="function" args="1">cos</e>
+        <e type="operand">φ.2</e>
+        <e type="function" args="1">cos</e>
+        <e type="operator" args="2">*</e>
+        <e type="operand">Δλ</e>
+        <e type="function" args="1">cos</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">+</e>
+        <e type="function" args="1">acos</e>
+        <e type="operand">R.mean.lat</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">km</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.417</e>
+      </result>
+    </math>
+  </region>
+  <region id="39" left="27" top="1719" width="463" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>5. Określenie odległości - Equirectangular aproximation</p>
+    </text>
+  </region>
+  <region id="40" left="63" top="1755" width="216" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">φ.m</e>
+        <e type="operand">0.5</e>
+        <e type="operand">φ.1</e>
+        <e type="operand">φ.2</e>
+        <e type="operator" args="2">+</e>
+        <e type="bracket">(</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">°</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">52.4618</e>
+      </result>
+    </math>
+  </region>
+  <region id="41" left="63" top="1791" width="117" height="32" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">x</e>
+        <e type="operand">Δλ</e>
+        <e type="operand">φ.m</e>
+        <e type="function" args="1">cos</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+    </math>
+  </region>
+  <region id="42" left="63" top="1827" width="144" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">y</e>
+        <e type="operand">Δφ</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">°</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.0036</e>
+        <e type="operator" args="1">-</e>
+      </result>
+    </math>
+  </region>
+  <region id="43" left="63" top="1863" width="297" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">distance.e</e>
+        <e type="operand">x</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">y</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">+</e>
+        <e type="function" args="1">sqrt</e>
+        <e type="operand">r.mean</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">km</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.4174</e>
+      </result>
+    </math>
+  </region>
+  <region id="44" left="63" top="1908" width="341" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+    <math>
+      <input>
+        <e type="operand">distance.e.lat</e>
+        <e type="operand">x</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operand">y</e>
+        <e type="operand">2</e>
+        <e type="operator" args="2">^</e>
+        <e type="operator" args="2">+</e>
+        <e type="function" args="1">sqrt</e>
+        <e type="operand">R.mean.lat</e>
+        <e type="operator" args="2">*</e>
+        <e type="operator" args="2">:</e>
+      </input>
+      <contract>
+        <e type="operand" style="unit">km</e>
+      </contract>
+      <result action="numeric">
+        <e type="operand">0.417</e>
+      </result>
+    </math>
+  </region>
+  <region id="45" left="27" top="1971" width="143" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+    <text lang="pol">
+      <p>6. Kąt - bearing</p>
+    </text>
   </region>
   <region id="46" left="18" top="2025" width="574" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
     <math optimize="2">
@@ -712,7 +723,7 @@
       </input>
     </math>
   </region>
-  <region id="47" left="18" top="2061" width="156" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="47" left="18" top="2061" width="172" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">bearing</e>
@@ -721,7 +732,7 @@
         <e type="operand" style="unit">°</e>
       </contract>
       <result action="numeric">
-        <e type="operand">3.4868</e>
+        <e type="operand">161.6725</e>
         <e type="operator" args="1">-</e>
       </result>
     </math>
@@ -745,7 +756,7 @@
         <e type="operand" style="unit">°</e>
       </contract>
       <result action="numeric">
-        <e type="operand">356.5132</e>
+        <e type="operand">198.3275</e>
       </result>
     </math>
   </region>

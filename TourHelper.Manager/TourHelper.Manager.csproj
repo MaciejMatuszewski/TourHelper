@@ -37,11 +37,15 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\TourHelper\Library\UnityAssemblies\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Devices\CameraManager.cs" />
     <Compile Include="Devices\CompassManager.cs" />
     <Compile Include="Devices\GpsManager.cs" />
     <Compile Include="Devices\BaseLocationManager.cs" />

@@ -46,11 +46,11 @@ public class ArrowController : MonoBehaviour {
 
         NorthTransformation();
 
-        
+        /*
         text.text = compass.GetAngleToNorth().ToString()+ "\nBearing:"+ rot.Bearing(target).ToString()
             + "\nRotation:"+ rot.RotationAngle(target).ToString() + "\nBase:"+ gps.GetCoordinates().Latitude.ToString()+","
             +  gps.GetCoordinates().Longitude.ToString()+ "\ntarget:" +target.Latitude.ToString()+','+target.Longitude.ToString()+"\n---end---";
-
+            */
     }
 
     private void NorthTransformation()

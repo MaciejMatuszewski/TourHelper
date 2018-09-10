@@ -12,7 +12,8 @@ public class PhoneCamera : MonoBehaviour {
 	private void Start () {
         camera = CameraManager.Instance;
         StartCoroutine(camera.StartService(10));
-        background.texture = camera.GetScreen();
+
+        //background.texture = camera.GetScreen();
     }
 	
 	// Update is called once per frame
@@ -21,6 +22,10 @@ public class PhoneCamera : MonoBehaviour {
         {
             return;
         }
+
         background.texture = camera.GetScreen();
+        float scaleY = camera.GetScreen().videoVerticallyMirrored ? -1f : 1f;
+
+        background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
     }
 }
