@@ -756,7 +756,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: a411f7d76ca3572468e5ff8095bba398, type: 3}
       propertyPath: m_TagString
-      value: MainCamera
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a411f7d76ca3572468e5ff8095bba398, type: 3}
       propertyPath: m_LocalScale.x
