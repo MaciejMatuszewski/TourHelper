@@ -12,14 +12,17 @@ namespace TourHelper.Manager
         public static GpsManager Instance {
             get
             {
-                lock (key)
+                if (instance == null)
                 {
-                    if (instance == null)
+                    lock (key)
                     {
-                        instance = new GpsManager();
+                        if (instance == null)
+                        {
+                            instance = new GpsManager();
+                        }
                     }
-                    return instance;
                 }
+                return instance;
             }
         }
 

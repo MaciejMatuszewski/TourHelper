@@ -2,7 +2,7 @@
 using UnityEngine;
 using TourHelper.Base.Manager;
 using System;
-using TourHelper.Logic;
+using TourHelper.Manager.Calculators;
 
 namespace TourHelper.Manager
 {
@@ -20,22 +20,25 @@ namespace TourHelper.Manager
         public static CompassManager Instance {
             get
             {
-                lock (key)
+                if (instance == null)
                 {
-                    if (instance == null)
+                    lock (key)
                     {
-                        Input.compass.enabled = true;
-                        instance = new CompassManager();
-                        instance.MaxChange = 15d;
-                        instance.Delay = 200;
-                        instance.Precision = 2d;
-                        instance.Filter = new MeanFilter(10);
-                        instance.TimeStamp = DateTime.Now;
-                        instance.BufforReading = Input.compass.trueHeading;
-                        instance.LastReading = Input.compass.trueHeading;
+                        if (instance == null)
+                        {
+                            Input.compass.enabled = true;
+                            instance = new CompassManager();
+                            instance.MaxChange = 15d;
+                            instance.Delay = 200;
+                            instance.Precision = 2d;
+                            instance.Filter = new MeanFilter(10);
+                            instance.TimeStamp = DateTime.Now;
+                            instance.BufforReading = Input.compass.trueHeading;
+                            instance.LastReading = Input.compass.trueHeading;
+                        }
                     }
-                    return instance;
                 }
+                return instance;
             }
         }
         override public bool IsEnabled()

@@ -50,10 +50,14 @@
     <Compile Include="Logic\IDistanceCalculator.cs" />
     <Compile Include="Logic\IEarthRadiusCalculator.cs" />
     <Compile Include="Logic\IRotationCalculator.cs" />
+    <Compile Include="Manager\Calculators\ICoordinatesConverter.cs" />
+    <Compile Include="Manager\Calculators\IElipsoid.cs" />
+    <Compile Include="Manager\Calculators\IProjection.cs" />
     <Compile Include="Manager\IBaseDeviceManager.cs" />
     <Compile Include="Manager\ICameraManager.cs" />
     <Compile Include="Manager\IGpsManager.cs" />
     <Compile Include="Manager\ICompassManager.cs" />
+    <Compile Include="Manager\IGyroManager.cs" />
     <Compile Include="Model\Entity\BaseModel.cs" />
     <Compile Include="Model\Entity\Coordinates.cs" />
     <Compile Include="Model\Entity\UserProfile.cs" />

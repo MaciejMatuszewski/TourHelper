@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-namespace TourHelper.Logic
+namespace TourHelper.Manager.Calculators
 {
     public class MeanFilter
     {

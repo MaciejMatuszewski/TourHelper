@@ -21,15 +21,18 @@ namespace TourHelper.Manager.Devices
 
             get
             {
-                lock (key)
+                if (instance == null)
                 {
-                    if (instance == null)
+                    lock (key)
                     {
-                        instance = new CameraManager();
-                        instance.CamAvailable = false;
+                        if (instance == null)
+                        {
+                            instance = new CameraManager();
+                            instance.CamAvailable = false;
+                        }
                     }
-                    return instance;
                 }
+                return instance;
             }
         }
 

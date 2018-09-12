@@ -31,7 +31,7 @@ namespace TourHelper.Manager
                 yield break;
             }
             
-            Input.location.Start();
+            Input.location.Start(1,1);
 
             while (Status() == ServiceStatus.Initializing && timeOut > 0)
             {

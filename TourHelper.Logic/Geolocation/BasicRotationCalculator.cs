@@ -2,6 +2,7 @@
 using TourHelper.Base.Logic;
 using TourHelper.Base.Manager;
 using TourHelper.Base.Model.Entity;
+using TourHelper.Manager.Calculators;
 using UnityEngine;
 
 

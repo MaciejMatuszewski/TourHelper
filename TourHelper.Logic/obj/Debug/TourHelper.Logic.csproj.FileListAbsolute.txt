@@ -14,3 +14,5 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.d
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\UnityEngine.AudioModule.xml
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Manager.dll
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Manager.pdb

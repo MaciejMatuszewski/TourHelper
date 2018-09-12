@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace TourHelper.Logic
+namespace TourHelper.Manager.Calculators
 {
-    class MathTools
+    public class MathTools
     {
         public static double rad(double deg)
         {

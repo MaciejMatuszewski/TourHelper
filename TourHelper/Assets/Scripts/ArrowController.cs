@@ -32,8 +32,8 @@ public class ArrowController : MonoBehaviour {
 
         StartCoroutine(gps.StartService(30));
         target = new Coordinates();
-        target.Latitude = 52.46f;
-        target.Longitude = 16.92f;
+        target.Latitude = 52.463645f; 
+        target.Longitude = 16.921922f;
 
         rot = new BasicRotationCalculator(compass, gps);
         rot.Scale = scale;
@@ -46,11 +46,12 @@ public class ArrowController : MonoBehaviour {
 
         NorthTransformation();
 
-        /*
+        
         text.text = compass.GetAngleToNorth().ToString()+ "\nBearing:"+ rot.Bearing(target).ToString()
+            + "\nDistance:" + distance.Distance(target).ToString()
             + "\nRotation:"+ rot.RotationAngle(target).ToString() + "\nBase:"+ gps.GetCoordinates().Latitude.ToString()+","
             +  gps.GetCoordinates().Longitude.ToString()+ "\ntarget:" +target.Latitude.ToString()+','+target.Longitude.ToString()+"\n---end---";
-            */
+            
     }
 
     private void NorthTransformation()

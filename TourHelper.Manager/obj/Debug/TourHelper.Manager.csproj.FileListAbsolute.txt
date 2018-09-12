@@ -13,7 +13,5 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.Core
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.csprojResolveAssemblyReference.cache
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.pdb
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Logic.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.AudioModule.dll
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Logic.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.AudioModule.xml

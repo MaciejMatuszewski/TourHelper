@@ -12,7 +12,7 @@ public class PhoneCamera : MonoBehaviour {
 	private void Start () {
         camera = CameraManager.Instance;
         StartCoroutine(camera.StartService(10));
-
+        
         //background.texture = camera.GetScreen();
     }
 	
