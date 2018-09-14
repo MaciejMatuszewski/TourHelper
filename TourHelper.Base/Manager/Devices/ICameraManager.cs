@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TourHelper.Base.Manager
+namespace TourHelper.Base.Manager.Devices
 {
     public interface ICameraManager:IBaseDeviceManager
     {

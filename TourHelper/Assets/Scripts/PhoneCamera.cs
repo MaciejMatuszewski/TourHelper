@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class PhoneCamera : MonoBehaviour {
     private CameraManager camera;
     public RawImage background;
-
+    
+   // public AspectRatioFitter fit;
 
 
 	// Use this for initialization
@@ -24,8 +25,16 @@ public class PhoneCamera : MonoBehaviour {
         }
 
         background.texture = camera.GetScreen();
+       // float ratio = (float)(camera.GetScreen().width / (float)camera.GetScreen().height);
+        //fit.aspectRatio = ratio;
+
         float scaleY = camera.GetScreen().videoVerticallyMirrored ? -1f : 1f;
+               
 
         background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
+
+        int orient = -camera.GetScreen().videoRotationAngle;
+        background.rectTransform.localEulerAngles= new Vector3(0, 0, orient);
+
     }
 }

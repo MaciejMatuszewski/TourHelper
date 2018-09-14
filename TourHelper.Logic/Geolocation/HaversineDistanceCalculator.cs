@@ -1,7 +1,7 @@
 ﻿
 using System;
 using TourHelper.Base.Logic;
-using TourHelper.Base.Manager;
+using TourHelper.Base.Manager.Devices;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Manager.Calculators;
 

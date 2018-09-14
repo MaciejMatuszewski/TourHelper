@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using TourHelper.Base.Enum;
-using TourHelper.Base.Manager;
+using TourHelper.Base.Manager.Devices;
 using UnityEngine;
 
 namespace TourHelper.Manager.Devices
@@ -63,7 +63,7 @@ namespace TourHelper.Manager.Devices
             status = ServiceStatus.Initializing;
             yield return new WaitForSeconds(1);
             timeOut--;
-            Debug.Log(timeOut);
+            //Debug.Log(timeOut);
             if (timeOut < 0)
             {
                 Input.gyro.enabled = false;

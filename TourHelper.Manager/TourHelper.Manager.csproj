@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\UTMLocalCoordinates.cs" />
     <Compile Include="Calculators\MathTools.cs" />
     <Compile Include="Calculators\MeanFilter.cs" />
     <Compile Include="Calculators\TMConverter.cs" />

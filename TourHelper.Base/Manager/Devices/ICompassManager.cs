@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TourHelper.Base.Manager
+namespace TourHelper.Base.Manager.Devices
 {
     public interface ICompassManager:IBaseDeviceManager
     {

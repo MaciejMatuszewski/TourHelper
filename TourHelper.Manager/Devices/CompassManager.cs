@@ -1,8 +1,7 @@
-﻿using TourHelper.Base.Model.Entity;
-using UnityEngine;
-using TourHelper.Base.Manager;
+﻿using UnityEngine;
 using System;
 using TourHelper.Manager.Calculators;
+using TourHelper.Base.Manager.Devices;
 
 namespace TourHelper.Manager
 {
@@ -28,6 +27,9 @@ namespace TourHelper.Manager
                         {
                             Input.compass.enabled = true;
                             instance = new CompassManager();
+                            instance.DesiredAccuracy = 5;
+                            instance.DesiredChange = 5;
+
                             instance.MaxChange = 15d;
                             instance.Delay = 200;
                             instance.Precision = 2d;
@@ -106,13 +108,13 @@ namespace TourHelper.Manager
 
         public void CompassOn()
         {
-            if (!Input.compass.enabled) Debug.Log("Compass ON");
+            //if (!Input.compass.enabled) Debug.Log("Compass ON");
             Input.compass.enabled = true;
         }
 
         public void CompassOff()
         {
-            if (Input.compass.enabled) Debug.Log("Compass OFF");
+            //if (Input.compass.enabled) Debug.Log("Compass OFF");
             Input.compass.enabled=false;
         }
     }

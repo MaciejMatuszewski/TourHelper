@@ -4,7 +4,7 @@
   <settings dpi="96">
     <identity>
       <id>72fde845-97bb-47d8-8431-aceff8d08495</id>
-      <revision>24</revision>
+      <revision>25</revision>
     </identity>
     <calculation>
       <precision>4</precision>
@@ -191,11 +191,11 @@
       <p>Wysokość geograficzna...........</p>
     </text>
   </region>
-  <region id="14" left="342" top="729" width="128" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="14" left="342" top="729" width="184" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">φ.1</e>
-        <e type="operand">52.463563</e>
+        <e type="operand">52.4635833333333</e>
         <e type="operand" style="unit">°</e>
         <e type="operator" args="2">*</e>
         <e type="operator" args="2">:</e>
@@ -207,11 +207,11 @@
       <p>Szerokość geograficzna..........</p>
     </text>
   </region>
-  <region id="16" left="342" top="765" width="128" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="16" left="342" top="765" width="184" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">λ.1</e>
-        <e type="operand">16.921937</e>
+        <e type="operand">16.9220277777777</e>
         <e type="operand" style="unit">°</e>
         <e type="operator" args="2">*</e>
         <e type="operator" args="2">:</e>
@@ -239,11 +239,11 @@
       <p>Wysokość geograficzna...........</p>
     </text>
   </region>
-  <region id="20" left="342" top="837" width="96" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="20" left="342" top="837" width="184" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">φ.2</e>
-        <e type="operand">52.46</e>
+        <e type="operand">52.4816111111111</e>
         <e type="operand" style="unit">°</e>
         <e type="operator" args="2">*</e>
         <e type="operator" args="2">:</e>
@@ -255,11 +255,11 @@
       <p>Szerokość geograficzna..........</p>
     </text>
   </region>
-  <region id="22" left="342" top="873" width="96" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="22" left="342" top="873" width="184" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">λ.2</e>
-        <e type="operand">16.92</e>
+        <e type="operand">16.9202777777777</e>
         <e type="operand" style="unit">°</e>
         <e type="operator" args="2">*</e>
         <e type="operator" args="2">:</e>
@@ -353,7 +353,7 @@
         <e type="operand" style="unit">km</e>
       </contract>
       <result action="numeric">
-        <e type="operand">6364.7335</e>
+        <e type="operand">6364.7257</e>
       </result>
     </math>
   </region>
@@ -379,7 +379,7 @@
         <e type="operand" style="unit">km</e>
       </contract>
       <result action="numeric">
-        <e type="operand">6364.8328</e>
+        <e type="operand">6364.8289</e>
       </result>
     </math>
   </region>
@@ -398,7 +398,7 @@
         <e type="operator" args="2">:</e>
       </input>
       <result action="numeric">
-        <e type="operand">3.3807</e>
+        <e type="operand">3.0543</e>
         <e type="operand">10</e>
         <e type="operand">5</e>
         <e type="operator" args="1">-</e>
@@ -408,7 +408,7 @@
       </result>
     </math>
   </region>
-  <region id="31" left="45" top="1305" width="226" height="39" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="31" left="45" top="1305" width="168" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">Δφ</e>
@@ -418,13 +418,7 @@
         <e type="operator" args="2">:</e>
       </input>
       <result action="numeric">
-        <e type="operand">6.2186</e>
-        <e type="operand">10</e>
-        <e type="operand">5</e>
-        <e type="operator" args="1">-</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">*</e>
-        <e type="operator" args="1">-</e>
+        <e type="operand">0.0003</e>
       </result>
     </math>
   </region>
@@ -454,16 +448,16 @@
         <e type="operator" args="2">:</e>
       </input>
       <result action="numeric">
-        <e type="operand">1.0728</e>
+        <e type="operand">2.4837</e>
         <e type="operand">10</e>
-        <e type="operand">9</e>
+        <e type="operand">8</e>
         <e type="operator" args="1">-</e>
         <e type="operator" args="2">^</e>
         <e type="operator" args="2">*</e>
       </result>
     </math>
   </region>
-  <region id="33" left="45" top="1404" width="313" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="33" left="45" top="1404" width="267" height="28" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">c</e>
@@ -479,16 +473,11 @@
         <e type="operator" args="2">:</e>
       </input>
       <result action="numeric">
-        <e type="operand">6.5509</e>
-        <e type="operand">10</e>
-        <e type="operand">5</e>
-        <e type="operator" args="1">-</e>
-        <e type="operator" args="2">^</e>
-        <e type="operator" args="2">*</e>
+        <e type="operand">0.0003</e>
       </result>
     </math>
   </region>
-  <region id="34" left="45" top="1467" width="245" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="34" left="45" top="1467" width="253" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">distance.h</e>
@@ -501,11 +490,11 @@
         <e type="operand" style="unit">m</e>
       </contract>
       <result action="numeric">
-        <e type="operand">417.3565</e>
+        <e type="operand">2008.0992</e>
       </result>
     </math>
   </region>
-  <region id="35" left="45" top="1512" width="297" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="35" left="45" top="1512" width="305" height="30" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">distance.h.lat</e>
@@ -518,7 +507,7 @@
         <e type="operand" style="unit">m</e>
       </contract>
       <result action="numeric">
-        <e type="operand">416.9524</e>
+        <e type="operand">2006.1538</e>
       </result>
     </math>
   </region>
@@ -554,11 +543,11 @@
         <e type="operand" style="unit">km</e>
       </contract>
       <result action="numeric">
-        <e type="operand">0.4174</e>
+        <e type="operand">2.0081</e>
       </result>
     </math>
   </region>
-  <region id="38" left="45" top="1665" width="639" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="38" left="45" top="1665" width="647" height="34" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">distance.c.lat</e>
@@ -585,7 +574,7 @@
         <e type="operand" style="unit">km</e>
       </contract>
       <result action="numeric">
-        <e type="operand">0.417</e>
+        <e type="operand">2.0062</e>
       </result>
     </math>
   </region>
@@ -610,7 +599,7 @@
         <e type="operand" style="unit">°</e>
       </contract>
       <result action="numeric">
-        <e type="operand">52.4618</e>
+        <e type="operand">52.4726</e>
       </result>
     </math>
   </region>
@@ -626,7 +615,7 @@
       </input>
     </math>
   </region>
-  <region id="42" left="63" top="1827" width="144" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="42" left="63" top="1827" width="124" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">y</e>
@@ -637,8 +626,7 @@
         <e type="operand" style="unit">°</e>
       </contract>
       <result action="numeric">
-        <e type="operand">0.0036</e>
-        <e type="operator" args="1">-</e>
+        <e type="operand">0.018</e>
       </result>
     </math>
   </region>
@@ -662,11 +650,11 @@
         <e type="operand" style="unit">km</e>
       </contract>
       <result action="numeric">
-        <e type="operand">0.4174</e>
+        <e type="operand">2.0081</e>
       </result>
     </math>
   </region>
-  <region id="44" left="63" top="1908" width="341" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="44" left="63" top="1908" width="349" height="41" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">distance.e.lat</e>
@@ -686,7 +674,7 @@
         <e type="operand" style="unit">km</e>
       </contract>
       <result action="numeric">
-        <e type="operand">0.417</e>
+        <e type="operand">2.0062</e>
       </result>
     </math>
   </region>
@@ -723,7 +711,7 @@
       </input>
     </math>
   </region>
-  <region id="47" left="18" top="2061" width="172" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
+  <region id="47" left="18" top="2061" width="156" height="24" color="#000000" bgColor="#ffffff" fontSize="10">
     <math>
       <input>
         <e type="operand">bearing</e>
@@ -732,7 +720,7 @@
         <e type="operand" style="unit">°</e>
       </contract>
       <result action="numeric">
-        <e type="operand">161.6725</e>
+        <e type="operand">3.3833</e>
         <e type="operator" args="1">-</e>
       </result>
     </math>
@@ -756,7 +744,7 @@
         <e type="operand" style="unit">°</e>
       </contract>
       <result action="numeric">
-        <e type="operand">198.3275</e>
+        <e type="operand">356.6167</e>
       </result>
     </math>
   </region>
