@@ -17,7 +17,7 @@ public class ArrowController : MonoBehaviour {
     private Coordinates target;
     private BasicRotationCalculator rot;
 
-    private HaversineDistanceCalculator distance;
+    //private HaversineDistanceCalculator distance;
 
     private void Start()
     {
@@ -38,20 +38,20 @@ public class ArrowController : MonoBehaviour {
         rot = new BasicRotationCalculator(compass, gps);
         rot.Scale = scale;
 
-        distance = new HaversineDistanceCalculator(gps, new MeanEarthRadius());
+        //distance = new HaversineDistanceCalculator(gps, new MeanEarthRadius());
     }
     void Update () {
         
         rot.Transform(targetArrow, target);
 
         NorthTransformation();
-
+        /*
         
         text.text = compass.GetAngleToNorth().ToString()+ "\nBearing:"+ rot.Bearing(target).ToString()
             + "\nDistance:" + distance.Distance(target).ToString()
             + "\nRotation:"+ rot.RotationAngle(target).ToString() + "\nBase:"+ gps.GetCoordinates().Latitude.ToString()+","
             +  gps.GetCoordinates().Longitude.ToString()+ "\ntarget:" +target.Latitude.ToString()+','+target.Longitude.ToString()+"\n---end---";
-            
+            */
     }
 
     private void NorthTransformation()

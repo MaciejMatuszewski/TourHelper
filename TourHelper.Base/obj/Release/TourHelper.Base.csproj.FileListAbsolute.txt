@@ -11,4 +11,3 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Release\UnityEngine.CoreM
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Release\UnityEngine.CoreModule.xml
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Release\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Release\UnityEngine.AudioModule.xml
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Release\TourHelper.Base.csprojResolveAssemblyReference.cache

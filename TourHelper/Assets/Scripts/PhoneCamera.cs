@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class PhoneCamera : MonoBehaviour
 {
-    private CameraManager camera;
+ 
+    private CameraManager Camera { get; set; }
     public RawImage background;
 
     public AspectRatioFitter fit;
@@ -13,8 +14,8 @@ public class PhoneCamera : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        camera = CameraManager.Instance;
-        StartCoroutine(camera.StartService(10));
+        Camera = CameraManager.Instance;
+        StartCoroutine(Camera.StartService(10));
 
         //background.texture = camera.GetScreen();
     }
@@ -22,21 +23,21 @@ public class PhoneCamera : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!camera.IsReady())
+        if (!Camera.IsReady())
         {
             return;
         }
 
-        background.texture = camera.GetScreen();
-        float ratio = (float)(camera.GetScreen().width / (float)camera.GetScreen().height);
+        background.texture = Camera.GetScreen();
+        float ratio = (float)(Camera.GetScreen().width / (float)Camera.GetScreen().height);
         fit.aspectRatio = ratio;
 
-        float scaleY = camera.GetScreen().videoVerticallyMirrored ? -1f : 1f;
+        float scaleY = Camera.GetScreen().videoVerticallyMirrored ? -1f : 1f;
 
 
         background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
 
-        int orient = -camera.GetScreen().videoRotationAngle;
+        int orient = -Camera.GetScreen().videoRotationAngle;
         background.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
 
     }
