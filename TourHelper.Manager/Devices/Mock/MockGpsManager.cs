@@ -8,15 +8,15 @@ namespace TourHelper.Manager.Devices.Mock
 {
     public class MockGpsManager : IGpsManager
     {
-        private Coordinates position;
+        private Coordinate position;
 
         public MockGpsManager()
         {
-            position = new Coordinates();
+            position = new Coordinate();
             position.Latitude = 52.46374f;
             position.Longitude = 16.92118f;
         }
-        public Coordinates GetCoordinates()
+        public Coordinate GetCoordinates()
         {
             return position;
         }

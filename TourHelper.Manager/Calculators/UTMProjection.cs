@@ -7,26 +7,26 @@ namespace TourHelper.Manager.Calculators
     public class UTMProjection:IProjection
     {
 
-        public float ScaleFactor(Coordinates c)
+        public float ScaleFactor(Coordinate c)
         {
               return 0.9996f;
         }
 
-        public float EastingOfTrueOrigin(Coordinates c)
+        public float EastingOfTrueOrigin(Coordinate c)
         {
                 return 500000;
         }
-        public float LatOfTrueOrigin(Coordinates c)
+        public float LatOfTrueOrigin(Coordinate c)
         {
             return 0;
         }
 
-        public float LonOfTrueOrigin(Coordinates c)
+        public float LonOfTrueOrigin(Coordinate c)
         {
             return 3 + (float)Math.Floor(c.Longitude / 6) * 6;
         }
 
-        public float NorthingOfTrueOrigin(Coordinates c)
+        public float NorthingOfTrueOrigin(Coordinate c)
         {
             if (c.Latitude < 0)
             {

@@ -5,8 +5,8 @@ namespace TourHelper.Base.Logic
 {
     public interface IRotationCalculator
     {
-        double Bearing(Coordinates coor);
-        double RotationAngle(Coordinates coor);
-        void Transform(Transform obj, Coordinates coor);
+        double Bearing(Coordinate coor);
+        double RotationAngle(Coordinate coor);
+        void Transform(Transform obj, Coordinate coor);
     }
 }

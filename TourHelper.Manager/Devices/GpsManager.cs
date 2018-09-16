@@ -27,11 +27,11 @@ namespace TourHelper.Manager
         }
 
 
-        public Coordinates GetCoordinates()
+        public Coordinate GetCoordinates()
         {
             //Gdzie obsluzyc blad jesli urzadzenie nie ready ?!
 
-            Coordinates output = new Coordinates();
+            Coordinate output = new Coordinate();
 
             output.Longitude = Input.location.lastData.longitude;
             output.Latitude = Input.location.lastData.latitude;

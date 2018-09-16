@@ -5,6 +5,6 @@ namespace TourHelper.Base.Logic
 {
     public interface IDistanceCalculator
     {
-        double Distance(Coordinates coor);
+        double Distance(Coordinate coor);
     }
 }

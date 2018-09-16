@@ -15,3 +15,8 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manag
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.AudioModule.xml
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Base.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.CoreModule.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Base.pdb
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.CoreModule.xml
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.csproj.CopyComplete

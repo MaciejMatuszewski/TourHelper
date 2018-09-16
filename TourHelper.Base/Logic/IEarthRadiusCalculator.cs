@@ -5,6 +5,6 @@ namespace TourHelper.Base.Logic
 {
     public interface IEarthRadiusCalculator
     {
-        double GetEarthRadius(Coordinates coor);
+        double GetEarthRadius(Coordinate coor);
     }
 }

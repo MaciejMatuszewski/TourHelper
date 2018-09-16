@@ -4,11 +4,11 @@ namespace TourHelper.Base.Manager.Calculators
 {
     public interface IProjection
     {
-        float ScaleFactor(Coordinates c);
-        float EastingOfTrueOrigin(Coordinates c);
-        float LatOfTrueOrigin(Coordinates c);
-        float LonOfTrueOrigin(Coordinates c);
-        float NorthingOfTrueOrigin(Coordinates c);
+        float ScaleFactor(Coordinate c);
+        float EastingOfTrueOrigin(Coordinate c);
+        float LatOfTrueOrigin(Coordinate c);
+        float LonOfTrueOrigin(Coordinate c);
+        float NorthingOfTrueOrigin(Coordinate c);
 
     }
 }

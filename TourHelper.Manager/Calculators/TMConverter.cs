@@ -14,7 +14,7 @@ namespace TourHelper.Manager.Calculators
             Projection = new UTMProjection();
         }
 
-        public double[] ConvertCoordinates(Coordinates c)
+        public double[] ConvertCoordinates(Coordinate c)
         {
 
             double x, y;
@@ -36,7 +36,7 @@ namespace TourHelper.Manager.Calculators
 
         //---------Main Parameters
 
-        private double V(Coordinates c)
+        private double V(Coordinate c)
         {
             double temp,a,b;
 
@@ -48,7 +48,7 @@ namespace TourHelper.Manager.Calculators
                 Math.Pow(Math.Sin(MathTools.rad(c.Latitude)), 2)), (-0.5));
             return temp;
         }
-        private double Ro(Coordinates c)
+        private double Ro(Coordinate c)
         {
             double temp;
             temp = Elipsoide.GetSemiMajor() * Projection.ScaleFactor(c) *
@@ -57,13 +57,13 @@ namespace TourHelper.Manager.Calculators
                 Math.Pow(Math.Sin(MathTools.rad(c.Latitude)), 2)), (-1.5));
             return temp;
         }
-        private double SqEta(Coordinates c)
+        private double SqEta(Coordinate c)
         {
             double temp;
             temp =  V(c)/Ro(c)-1;
             return temp;
         }
-        private double M(Coordinates c)
+        private double M(Coordinate c)
         {
             double n, n2, n3, dLatNeg, dLatPos, temp;
             dLatNeg = MathTools.rad(c.Latitude - Projection.LatOfTrueOrigin(c));
@@ -79,7 +79,7 @@ namespace TourHelper.Manager.Calculators
                 (35 * n3 / 24) * Math.Sin(3 * dLatNeg) * Math.Cos(3 * dLatPos));
             return temp;
         }
-        private double[] EquationCoefficients(Coordinates c)
+        private double[] EquationCoefficients(Coordinate c)
         {
             double[] coef=new double[7];
             double latR = MathTools.rad(c.Latitude);

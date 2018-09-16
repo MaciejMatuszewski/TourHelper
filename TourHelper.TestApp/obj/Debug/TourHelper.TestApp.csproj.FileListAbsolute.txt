@@ -26,3 +26,8 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\obj\Debug\TourHelper.TestA
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\UnityEngine.AudioModule.xml
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.TestApp\bin\Debug\TourHelper.Logic.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.TestApp\bin\Debug\TourHelper.Manager.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.TestApp\bin\Debug\UnityEngine.AudioModule.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.TestApp\bin\Debug\TourHelper.Logic.pdb
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.TestApp\bin\Debug\TourHelper.Manager.pdb

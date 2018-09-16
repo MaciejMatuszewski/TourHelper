@@ -24,12 +24,12 @@ namespace TourHelper.Logic.Geolocation
         }
 
 
-        public double Bearing(Coordinates coor)
+        public double Bearing(Coordinate coor)
         {
             //longitude (lambda)
             //latitude (phi)
             double x, y,dLon, bearing;
-            Coordinates lastLocation=GpsManager.GetCoordinates();
+            Coordinate lastLocation=GpsManager.GetCoordinates();
 
             dLon = coor.Longitude - lastLocation.Longitude;
             
@@ -43,12 +43,12 @@ namespace TourHelper.Logic.Geolocation
             return (MathTools.deg(bearing)+360)%360;
         }
 
-        public double RotationAngle(Coordinates coor)
+        public double RotationAngle(Coordinate coor)
         {
             return Bearing(coor) - CompassManager.GetAngleToNorth();
         }
          
-        public void Transform(Transform obj,Coordinates coor)
+        public void Transform(Transform obj,Coordinate coor)
         {
             Quaternion start = obj.transform.localRotation;
             Quaternion end = Quaternion.AngleAxis((float)RotationAngle(coor), new Vector3(0, 1, 0));

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper", "TourHelper.csproj", "{0339C499-1C37-4DD7-C4E0-B9E94029A762}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper.Base", "..\TourHelper.Base\TourHelper.Base.csproj", "{5B05CDE0-650E-4453-983E-228C8B35EAA3}"

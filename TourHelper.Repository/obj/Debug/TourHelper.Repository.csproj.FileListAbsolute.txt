@@ -18,3 +18,5 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Re
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.xml
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.CoreModule.dll

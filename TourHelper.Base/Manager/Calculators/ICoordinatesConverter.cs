@@ -6,6 +6,6 @@ namespace TourHelper.Base.Manager.Calculators
 {
     public interface ICoordinatesConverter
     {
-        double[] ConvertCoordinates(Coordinates c);
+        double[] ConvertCoordinates(Coordinate c);
     }
 }

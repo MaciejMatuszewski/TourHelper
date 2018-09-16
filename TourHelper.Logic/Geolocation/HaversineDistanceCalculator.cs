@@ -18,10 +18,10 @@ namespace TourHelper.Logic.Geolocation
             EarthRadius = radius;
 
         }
-        public double Distance(Coordinates coor)
+        public double Distance(Coordinate coor)
         {
             double dLat,dLon,a,c;
-            Coordinates lastLocation = GpsManager.GetCoordinates();
+            Coordinate lastLocation = GpsManager.GetCoordinates();
 
             dLat = MathTools.rad(coor.Latitude - lastLocation.Latitude);
             dLon = MathTools.rad(coor.Longitude - lastLocation.Longitude);
