@@ -1,6 +1,7 @@
 ﻿using TourHelper.Base.Model.Entity;
 using TourHelper.Logic.Geolocation;
 using TourHelper.Manager;
+using TourHelper.Manager.Devices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +17,7 @@ public class ArrowController : MonoBehaviour {
     private CompassManager compass;
     private Coordinates target;
     private BasicRotationCalculator rot;
-
+    private GyroManager g;
     //private HaversineDistanceCalculator distance;
 
     private void Start()
@@ -52,6 +53,8 @@ public class ArrowController : MonoBehaviour {
             + "\nRotation:"+ rot.RotationAngle(target).ToString() + "\nBase:"+ gps.GetCoordinates().Latitude.ToString()+","
             +  gps.GetCoordinates().Longitude.ToString()+ "\ntarget:" +target.Latitude.ToString()+','+target.Longitude.ToString()+"\n---end---";
             */
+        text.text = Input.gyro.gravity.x.ToString() + "," + Input.gyro.gravity.y.ToString() + "," +
+            Input.gyro.gravity.z.ToString();
     }
 
     private void NorthTransformation()

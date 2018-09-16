@@ -1,5 +1,6 @@
 ﻿using TourHelper.Base.Model.Entity;
 using TourHelper.Manager.Calculators;
+using TourHelper.Repository;
 using UnityEngine;
 
 namespace TourHelper.TestApp
@@ -8,7 +9,16 @@ namespace TourHelper.TestApp
     {
         static void Main(string[] args)
         {
-            /*int a = 1;
+
+            dbTest();
+
+
+            System.Console.ReadKey();
+        }
+
+        public void vectorTest()
+        {
+            int a = 1;
             double[] output;
             TMConverter conv=new TMConverter();
             Coordinates c = new Coordinates();
@@ -23,8 +33,13 @@ namespace TourHelper.TestApp
 
             Vector3 vec = new Vector3(1, 1);
 
-            Vector3 ddd = vec - offset;*/
+            Vector3 ddd = vec - offset;
 
+        }
+
+
+        public void translationTest()
+        {
             UTMLocalCoordinates translate;
             Coordinates origin;
 
@@ -56,8 +71,26 @@ namespace TourHelper.TestApp
                 Vector3 v = translate.GetCoordinates(i);
 
             }
+        }
 
-            System.Console.ReadKey();
+        public static void dbTest()
+        {
+            var x = new UserRepository();
+            var y = new UserProfileRepository();
+            var z = y.Insert(new UserProfile
+            {
+                Age = 33,
+                Email = "kixar@wp.pl",
+                FirstName = "H",
+                LastName = "D"
+            });
+            x.Insert(new User
+            {
+                Login = "cycu",
+                Password = "123",
+                UserProfileId = z.Id
+            });
+            //var a = x.GetByLogin("cycu");
         }
     }
 }

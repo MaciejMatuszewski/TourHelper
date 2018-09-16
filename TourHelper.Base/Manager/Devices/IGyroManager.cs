@@ -8,5 +8,8 @@ namespace TourHelper.Base.Manager.Devices
     {
         Quaternion GetRotation();
         Vector3 GetRotationRate();
+        Vector3 GetGravity();
+        void SetUpdateInterval(float interval);
+        float GetUpdateInterval();
     }
 }

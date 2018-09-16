@@ -12,7 +12,7 @@ namespace TourHelper.Manager.Devices
 
         private static GyroManager instance = null;
         private static readonly object key = new object();
-
+        
         public static GyroManager Instance
         {
             get
@@ -79,6 +79,23 @@ namespace TourHelper.Manager.Devices
                 return ServiceStatus.Stopped;
             }
             return status;
+        }
+
+        public Vector3 GetGravity()
+        {
+            
+            return Input.gyro.gravity;
+        }
+
+        public void SetUpdateInterval(float interval)
+        {
+            Input.gyro.updateInterval= interval;
+
+        }
+        public float GetUpdateInterval()
+        {
+
+            return Input.gyro.updateInterval;
         }
     }
 }
