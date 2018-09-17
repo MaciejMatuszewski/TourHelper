@@ -45,12 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\SignalIntegral.cs" />
     <Compile Include="Calculators\UTMLocalCoordinates.cs" />
     <Compile Include="Calculators\MathTools.cs" />
     <Compile Include="Calculators\MeanFilter.cs" />
     <Compile Include="Calculators\TMConverter.cs" />
     <Compile Include="Calculators\UTMProjection.cs" />
     <Compile Include="Calculators\WGS84Elipse.cs" />
+    <Compile Include="Devices\AccelerationManager.cs" />
     <Compile Include="Devices\CameraManager.cs" />
     <Compile Include="Devices\CompassManager.cs" />
     <Compile Include="Devices\GpsManager.cs" />

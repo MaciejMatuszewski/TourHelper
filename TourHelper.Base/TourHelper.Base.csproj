@@ -52,8 +52,10 @@
     <Compile Include="Logic\IRotationCalculator.cs" />
     <Compile Include="Manager\Calculators\ICoordinatesConverter.cs" />
     <Compile Include="Manager\Calculators\IElipsoid.cs" />
+    <Compile Include="Manager\Calculators\IIntegralCalculator.cs" />
     <Compile Include="Manager\Calculators\IPositionTranslation.cs" />
     <Compile Include="Manager\Calculators\IProjection.cs" />
+    <Compile Include="Manager\Devices\IAccelometerManager.cs" />
     <Compile Include="Manager\Devices\IBaseDeviceManager.cs" />
     <Compile Include="Manager\Devices\ICameraManager.cs" />
     <Compile Include="Manager\Devices\IGpsManager.cs" />

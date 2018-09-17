@@ -1,4 +1,5 @@
-﻿using TourHelper.Base.Model.Entity;
+﻿using System;
+using TourHelper.Base.Model.Entity;
 using TourHelper.Manager.Calculators;
 using TourHelper.Repository;
 using UnityEngine;
@@ -10,9 +11,15 @@ namespace TourHelper.TestApp
         static void Main(string[] args)
         {
 
-            dbTest();
+            //dbTest();
+            SignalIntegral v = new SignalIntegral();
 
-
+            for (int i=0;i<100;i++)
+            {
+                System.Threading.Thread.Sleep(10);
+                v.UpdateResult(i,DateTime.Now);
+            }
+            System.Console.WriteLine(v.GetResult());
             System.Console.ReadKey();
         }
 
@@ -48,7 +55,7 @@ namespace TourHelper.TestApp
             origin.Longitude = 16.921922f;
 
             Coordinates[] c = new Coordinates[2];
-
+            
             //-----------------
             Coordinates price1 = new Coordinates();
             price1.Latitude = 52.463812f;
