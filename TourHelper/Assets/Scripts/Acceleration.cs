@@ -39,13 +39,14 @@ public class Acceleration : MonoBehaviour
 
         res = (v - grav);
         ttt = DateTime.Now;
-        integ.UpdateResult(res.x, ttt);
-        /*if ((grav.x!=0) && (grav.y!=0) &&(grav.z != 0))
+        
+        if ((grav.x!=0)&& res.x / grav.x * 100>5)
         {
-            res.x = res.x / grav.x * 100;
-            res.y = res.y / grav.y * 100;
-            res.z = res.z / grav.z * 100;
-        }*/
+            //Input.acceleration.
+            integ.UpdateResult(res.x, ttt);
+            // res.y = res.y / grav.y * 100;
+            //res.z = res.z / grav.z * 100;
+        }
         text.text += "\n" + integ.GetResult().ToString();
     }
 }

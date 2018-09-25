@@ -51,6 +51,7 @@
     <Compile Include="Logic\IEarthRadiusCalculator.cs" />
     <Compile Include="Logic\IRotationCalculator.cs" />
     <Compile Include="Manager\Calculators\ICoordinatesConverter.cs" />
+    <Compile Include="Manager\Calculators\IDeviceReadingsFilter.cs" />
     <Compile Include="Manager\Calculators\IElipsoid.cs" />
     <Compile Include="Manager\Calculators\IIntegralCalculator.cs" />
     <Compile Include="Manager\Calculators\IPositionTranslation.cs" />
