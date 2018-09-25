@@ -14,7 +14,7 @@ public class ArrowController : MonoBehaviour {
 
     private GpsManager gps;
     private CompassManager compass;
-    private Coordinates target;
+    private Coordinate target;
     private BasicRotationCalculator rot;
 
     private HaversineDistanceCalculator distance;
@@ -31,7 +31,7 @@ public class ArrowController : MonoBehaviour {
 
 
         StartCoroutine(gps.StartService(30));
-        target = new Coordinates();
+        target = new Coordinate();
         target.Latitude = 52.463645f; 
         target.Longitude = 16.921922f;
 

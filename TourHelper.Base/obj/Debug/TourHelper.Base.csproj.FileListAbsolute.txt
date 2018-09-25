@@ -1,8 +1,3 @@
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.dll
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.pdb
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CoreCompileInputs.cache
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.dll
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\UnityEngine.CoreModule.dll
@@ -12,5 +7,9 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\UnityEngine.AudioModule.xml
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojResolveAssemblyReference.cache
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojAssemblyReference.cache
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.pdb
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CoreCompileInputs.cache
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CopyComplete
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.pdb
