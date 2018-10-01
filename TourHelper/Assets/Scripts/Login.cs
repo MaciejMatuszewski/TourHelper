@@ -13,9 +13,9 @@ public class Login : MonoBehaviour
     {
         var userRepository = new UserRepository();
         var user = userRepository.GetByLogin(UserLoginInput.text);
-        Debug.Log(UserLoginInput.text);
-        Debug.Log(PasswordInput.text);
-        Debug.Log(user.Login);
+        //Debug.Log(UserLoginInput.text);
+        //Debug.Log(PasswordInput.text);
+        //Debug.Log(user.Login);
 
         Debug.Log("BEFORE IF");
         if (user != null && PasswordInput.text == user.Password)

@@ -176,7 +176,10 @@ namespace TourHelper.Repository
             cmd.CommandType = CommandType.Text;
             cmd.Connection = sqlConnection;
 
+            var x = System.Net.Dns.GetHostName();
+
             sqlConnection.Open();
+
 
             reader = cmd.ExecuteReader();
 
