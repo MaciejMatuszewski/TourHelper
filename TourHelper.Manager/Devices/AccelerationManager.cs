@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TourHelper.Manager.Devices
 {
-    public class AccelerationManager : IAccelometerManager
+    public class AccelerationManager : IAccelerometerManager
     {
 
         private ServiceStatus status;

@@ -2,7 +2,7 @@
 using TourHelper.Base.Model.Entity;
 using UnityEngine;
 
-namespace TourHelper.Manager
+namespace TourHelper.Manager.Devices
 {
     public class GpsManager : BaseLocationManager,IGpsManager
     {

@@ -14,32 +14,34 @@ namespace TourHelper.Logic.PositionLogic
         public IGpsManager Gps { get ; set ; }
         public IAccelerometerManager Accelerometer { get ; set; }
         public IKalman Filter { get; set; }
-        private Coordinates _origin { get; set; }
+       // private Coordinates _origin { get; set; }
         public IPositionTranslation Translator { get; set ; }
         public IGyroManager Gyro { get; set; }
 
         public Coordinates Origin { get
             {
-                return _origin;
+                
+                return Translator.Origin;
             }
             set
             {
                 Filter.Origin = new Matrix(2,1);
                 Filter.Origin.SetByIndex(Translator.GetCoordinates(value).x, 0, 0);
                 Filter.Origin.SetByIndex(Translator.GetCoordinates(value).z, 0, 0);
-                _origin = value;
+                Translator.Origin = value;
             }
         }
 
         public LocalPosition(IGpsManager _gps, IAccelerometerManager _accelerometer,
             IKalman _filter, IPositionTranslation _translator, IGyroManager _gyro)
         {
-            Origin = new Coordinates();
+            
             Gps = _gps;
             Accelerometer = _accelerometer;
             Filter = _filter;
             Translator = _translator;
             Gyro = _gyro;
+            Origin = _translator.Origin;
         }
 
         public Vector3 GetPosition()
@@ -55,7 +57,7 @@ namespace TourHelper.Logic.PositionLogic
             accelerationMatrix.SetByIndex(worldAccelerations.x, 0, 0); // nalezy przeprowadzic testy na jakie kierunki rzutowane sa przyspieszenia
             accelerationMatrix.SetByIndex(worldAccelerations.y, 1, 0);
 
-            IMatrix gpsMatrix = new Matrix(2, 1);
+            IMatrix gpsMatrix = new Matrix(4, 1);
 
             gpsMatrix.SetByIndex(gpsPosition.x,0,0);
             gpsMatrix.SetByIndex(gpsPosition.x, 1, 0);

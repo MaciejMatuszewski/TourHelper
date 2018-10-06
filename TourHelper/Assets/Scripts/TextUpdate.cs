@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TourHelper.Manager;
-
+using TourHelper.Manager.Devices;
 
 public class TextUpdate : MonoBehaviour {
     public Text text;

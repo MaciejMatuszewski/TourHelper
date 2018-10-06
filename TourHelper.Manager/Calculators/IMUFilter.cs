@@ -10,7 +10,7 @@ namespace TourHelper.Manager.Calculators
         public float Beta { get; set; }
         public float Sampling { get; set; }
         public IGyroManager Gyroscope { get; set; }
-        public IAccelometerManager Accelometer { get; set; }
+        public IAccelerometerManager Accelometer { get; set; }
 
         private volatile float q0 = 1.0f, q1 = 0.0f, q2 = 0.0f, q3 = 0.0f;
 

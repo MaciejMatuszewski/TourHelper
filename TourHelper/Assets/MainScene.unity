@@ -407,7 +407,6 @@ GameObject:
   m_Component:
   - component: {fileID: 610212041}
   - component: {fileID: 610212043}
-  - component: {fileID: 610212042}
   m_Layer: 5
   m_Name: InfoPoint
   m_TagString: Untagged
@@ -436,19 +435,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &610212042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114058930012471678, guid: 14c48875eb4c2ab41a6d5b7f8f53b118,
-    type: 2}
-  m_PrefabInternal: {fileID: 1209846525}
-  m_GameObject: {fileID: 610212040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dc6ead8bdc730c44bc789a59a509fa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  t: {fileID: 1236282210}
 --- !u!65 &610212043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1230,7 +1216,8 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c9f6b420668a39b4aaa5beafc4f704da, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: 14c48875eb4c2ab41a6d5b7f8f53b118, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1210928919
@@ -1319,7 +1306,7 @@ GameObject:
   - component: {fileID: 1236282211}
   - component: {fileID: 1236282210}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2370,7 +2357,9 @@ Prefab:
       propertyPath: t
       value: 
       objectReference: {fileID: 1236282210}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114288795893669890, guid: 63849c63e5f8ddf4598a6d656bbc3b1a, type: 2}
+    - {fileID: 114359089682511000, guid: 63849c63e5f8ddf4598a6d656bbc3b1a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 63849c63e5f8ddf4598a6d656bbc3b1a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1865166632
@@ -2493,7 +2482,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2044449436}
   - component: {fileID: 2044449437}
-  - component: {fileID: 2044449439}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -2535,19 +2523,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: {fileID: 2044449436}
   speed: 25
---- !u!114 &2044449439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114521761543771374, guid: 14c48875eb4c2ab41a6d5b7f8f53b118,
-    type: 2}
-  m_PrefabInternal: {fileID: 1209846525}
-  m_GameObject: {fileID: 2044449435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dc6ead8bdc730c44bc789a59a509fa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  t: {fileID: 1236282210}
 --- !u!1 &2065976765
 GameObject:
   m_ObjectHideFlags: 0
