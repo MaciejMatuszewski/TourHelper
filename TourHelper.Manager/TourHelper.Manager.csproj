@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculators\IMUFilter.cs" />
+    <Compile Include="Calculators\Kalman\KalmanFilter.cs" />
+    <Compile Include="Calculators\MatrixTools\LUDecomposition.cs" />
+    <Compile Include="Calculators\MatrixTools\LUSolver.cs" />
+    <Compile Include="Calculators\MatrixTools\Matrix.cs" />
+    <Compile Include="Calculators\MatrixTools\MatrixMultiIKJ.cs" />
+    <Compile Include="Calculators\MatrixTools\MatrixNxN.cs" />
     <Compile Include="Calculators\SignalIntegral.cs" />
     <Compile Include="Calculators\UTMLocalCoordinates.cs" />
     <Compile Include="Calculators\MathTools.cs" />

@@ -56,6 +56,12 @@
     <Compile Include="Manager\Calculators\IIntegralCalculator.cs" />
     <Compile Include="Manager\Calculators\IPositionTranslation.cs" />
     <Compile Include="Manager\Calculators\IProjection.cs" />
+    <Compile Include="Manager\Calculators\Kalman\IKalman.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IDecomposition.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IMatixMultiplication.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IMatrix.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IMatrixNxN.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IMatrixSolver.cs" />
     <Compile Include="Manager\Devices\IAccelometerManager.cs" />
     <Compile Include="Manager\Devices\IBaseDeviceManager.cs" />
     <Compile Include="Manager\Devices\ICameraManager.cs" />

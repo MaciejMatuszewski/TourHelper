@@ -5,21 +5,38 @@ using UnityEngine;
 
 namespace TourHelper.Manager.Calculators
 {
-    class IMUFilter : IDeviceReadingsFilter
+    public class IMUFilter : IDeviceReadingsFilter
     {
         public float Beta { get; set; }
         public float Sampling { get; set; }
         public IGyroManager Gyroscope { get; set; }
         public IAccelometerManager Accelometer { get; set; }
 
-
         private volatile float q0 = 1.0f, q1 = 0.0f, q2 = 0.0f, q3 = 0.0f;
 
         public Quaternion GetOrientation()
         {
-            return new Quaternion(q0,q1,q2,q3);
+            
+            return new Quaternion(q1,q2,q3, q0);
         }
+        public double[,] GetRotationMatrix()
+        {
+            double[,] val=new double[3,3];
 
+            val[0, 0] = 1-2*q1*q1-2*q2*q2;
+            val[1, 0] = 2*q0*q1+2*q2*q3;
+            val[2, 0] = 2 * q0 * q2 - 2 * q1 * q3;
+
+            val[0, 1] = 2 * q0 * q1 - 2 * q2 * q3;
+            val[1, 1] = 1-2 * q0 * q0 - 2 * q2 * q2;
+            val[2, 1] = 2 * q1 * q2 + 2 * q0 * q3;
+
+            val[0, 2] = 2 * q0 * q2 + 2 * q1 * q3;
+            val[1, 2] = 2 * q1 * q2 - 2 * q0 * q3;
+            val[2, 2] = 1-2 * q0 * q0 - 2 * q1 * q1;
+
+            return val;
+        }
         public void UpdateFilter()
         {
             float recipNorm;
@@ -29,6 +46,7 @@ namespace TourHelper.Manager.Calculators
 
             Vector3 aR=Accelometer.GetAcceleration().normalized;
             Vector3 gR = Gyroscope.GetRotationRate();
+
 
 
             // Rate of change of quaternion from gyroscope

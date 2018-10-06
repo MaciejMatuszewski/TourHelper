@@ -38,7 +38,7 @@ namespace TourHelper.Manager.Devices
 
         public Vector3 GetRotationRate()
         {
-            return Input.gyro.rotationRate;
+            return Input.gyro.rotationRateUnbiased;
         }
 
         public bool IsEnabled()
