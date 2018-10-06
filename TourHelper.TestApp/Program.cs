@@ -1,6 +1,7 @@
 ﻿using System;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Manager.Calculators;
+using TourHelper.Manager.Calculators.MatrixTools;
 using TourHelper.Repository;
 using UnityEngine;
 
@@ -11,17 +12,58 @@ namespace TourHelper.TestApp
         static void Main(string[] args)
         {
 
-            //dbTest();
-            SignalIntegral v = new SignalIntegral();
+            Quaternion q = new Quaternion(-0.3592106f, 0.8980265f, 0.1796053f, 0.1796053f);
+            double[,] m = GetRotationMatrix(q);
+            printQuaternion(q);
 
-            for (int i=0;i<100;i++)
-            {
-                System.Threading.Thread.Sleep(10);
-                v.UpdateResult(i,DateTime.Now);
-            }
-            System.Console.WriteLine(v.GetResult());
+            printMatrix(m);
+
+
             System.Console.ReadKey();
         }
+
+
+
+        static public double[,] GetRotationMatrix(Quaternion q)
+        {
+            double[,] val = new double[3, 3];
+
+            val[0, 0] = q.w * q.w + q.x * q.x - q.y * q.y - q.z * q.z;
+            val[1, 0] = 2 * q.x * q.y + 2 * q.z * q.w;
+            val[2, 0] = 2 * q.x * q.z - 2 * q.y * q.w;
+
+            val[0, 1] = 2 * q.x * q.y - 2 * q.z * q.w;
+            val[1, 1] = q.w * q.w - q.x * q.x + q.y * q.y - q.z * q.z;
+            val[2, 1] = 2 * q.y * q.z + 2 * q.x * q.w;
+
+            val[0, 2] = 2 * q.x * q.z + 2 * q.y * q.w;
+            val[1, 2] = 2 * q.y * q.z - 2 * q.x * q.w;
+            val[2, 2] = q.w * q.w - q.x * q.x - q.y * q.y + q.z * q.z;
+
+
+
+            return val;
+        }
+
+        static void printMatrix(double[,] m)
+        {
+            for (int i = 0; i < m.GetLength(0); i++)
+            {
+                for (int j = 0; j < m.GetLength(1); j++)
+                {
+                    System.Console.Write(m[i,j].ToString() + ' ');
+                }
+                System.Console.WriteLine('\n');
+            }
+        }
+
+        static void printQuaternion(Quaternion q)
+        {
+            System.Console.WriteLine("-----------------------------------------------------------");
+            System.Console.WriteLine( q.x.ToString()+' ' + q.y.ToString() + ' ' + q.z.ToString() + ' '+ q.w.ToString() );
+            System.Console.WriteLine("-----------------------------------------------------------");
+        }
+
 
         public void vectorTest()
         {

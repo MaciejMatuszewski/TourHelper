@@ -1,4 +1,5 @@
 ﻿
+using TourHelper.Base.Manager.Calculators.MatrixTools;
 using UnityEngine;
 
 namespace TourHelper.Base.Manager.Devices
@@ -11,5 +12,6 @@ namespace TourHelper.Base.Manager.Devices
         Vector3 GetGravity();
         void SetUpdateInterval(float interval);
         float GetUpdateInterval();
+        double[,] GetRotationMatrix();
     }
 }

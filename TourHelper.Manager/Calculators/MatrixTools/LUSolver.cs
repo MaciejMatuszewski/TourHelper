@@ -4,7 +4,7 @@ using TourHelper.Base.Manager.Calculators.MatrixTools;
 
 namespace TourHelper.Manager.Calculators.MatrixTools
 {
-    class LUSolver : IMatrixSolver
+    public class LUSolver : IMatrixSolver
     {
         public double Error { get; set; }
         public LUSolver()

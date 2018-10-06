@@ -1,18 +1,20 @@
 ﻿
 
+using System;
 using TourHelper.Base.Manager.Calculators.Kalman;
 using TourHelper.Base.Manager.Calculators.MatrixTools;
 using TourHelper.Manager.Calculators.MatrixTools;
 
 namespace TourHelper.Manager.Calculators.Kalman
 {
-    class KalmanFilter : IKalman
+    public class KalmanFilter : IKalman
     {
         public IMatrix Prediction { get; private set; }
         public IMatrix ProcessCovariance { get; private set; }
         private double accelerationError;
         private double gPSError;
         private double deltaTime;
+        private IMatrix _origin;
         public double DeltaTime
         {
             get
@@ -45,12 +47,13 @@ namespace TourHelper.Manager.Calculators.Kalman
         }
 
         public IMatrix KalmanGain { get; private set; }
+        public IMatrix Origin { get=> _origin; set=> ResetPosition(value); }
 
         private IMatrix a, b, q, h, r, identity;
 
         public KalmanFilter()
         {
-
+            _origin = new Matrix(4,1);
             DeltaTime = 0.1;
             //----------------Inicializacja macierzy jednostkowej-------------------------
             double[,] iTemp = new double[,] {
@@ -79,10 +82,7 @@ namespace TourHelper.Manager.Calculators.Kalman
             h.SetAll(htemp);
             //---------------Inicializacja predykcji--------------------------
 
-            double[,] pTemp = new double[,] { { 0 }, { 0 }, { 0 }, { 0 } };
-
-            Prediction = new Matrix(pTemp.GetLength(0), pTemp.GetLength(1));
-            Prediction.SetAll(pTemp);
+            SetPrediction();
 
             //---------------Inicializacja szumu procesu--------------------------
 
@@ -93,16 +93,7 @@ namespace TourHelper.Manager.Calculators.Kalman
             UpdateRMatrix();
 
             //---------------Inicializacja macierzy kowariancji--------------------------
-            double[,] p0 = new double[,] {
-                {1,0,0,0 },
-                {0,1,0,0 },
-                {0,0,1,0 },
-                {0,0,0,1 },
-            };
-
-
-            ProcessCovariance = new Matrix(p0.GetLength(0), p0.GetLength(1));
-            ProcessCovariance.SetAll(p0);
+            ResetCovariance();
 
         }
 
@@ -184,6 +175,34 @@ namespace TourHelper.Manager.Calculators.Kalman
 
             b = new Matrix(bTemp.GetLength(0), bTemp.GetLength(1));
             b.SetAll(bTemp);
+        }
+
+        private void ResetCovariance()
+        {
+            double[,] p0 = new double[,] {
+                {1,0,0,0 },
+                {0,1,0,0 },
+                {0,0,1,0 },
+                {0,0,0,1 },
+            };
+
+
+            ProcessCovariance = new Matrix(p0.GetLength(0), p0.GetLength(1));
+            ProcessCovariance.SetAll(p0);
+        }
+
+        private void SetPrediction()
+        {
+            double[,] pTemp = new double[,] { { Origin.GetByIndex(0,0) }, { Origin.GetByIndex(1, 0) }, { 0 }, { 0 } };
+
+            Prediction = new Matrix(pTemp.GetLength(0), pTemp.GetLength(1));
+            Prediction.SetAll(pTemp);
+        }
+        private void ResetPosition(IMatrix o)
+        {
+            _origin = o;
+            Prediction.SetByIndex(Origin.GetByIndex(0, 0), 0,0);
+            Prediction.SetByIndex(Origin.GetByIndex(1, 0), 1, 0);
         }
     }
 }

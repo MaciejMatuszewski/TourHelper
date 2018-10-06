@@ -15,7 +15,6 @@ namespace TourHelper.Manager.Calculators
         {
             originCoor = new double[2];
             Transformation = new TMConverter();
-            //originCoor = Transformation.ConvertCoordinates(origin);
             Origin = origin;
         }
 

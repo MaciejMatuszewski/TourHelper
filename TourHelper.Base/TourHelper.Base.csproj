@@ -50,6 +50,7 @@
     <Compile Include="Logic\IDistanceCalculator.cs" />
     <Compile Include="Logic\IEarthRadiusCalculator.cs" />
     <Compile Include="Logic\IRotationCalculator.cs" />
+    <Compile Include="Logic\PositionLogic\IPositionUpdate.cs" />
     <Compile Include="Manager\Calculators\ICoordinatesConverter.cs" />
     <Compile Include="Manager\Calculators\IDeviceReadingsFilter.cs" />
     <Compile Include="Manager\Calculators\IElipsoid.cs" />
@@ -62,7 +63,7 @@
     <Compile Include="Manager\Calculators\MatrixTools\IMatrix.cs" />
     <Compile Include="Manager\Calculators\MatrixTools\IMatrixNxN.cs" />
     <Compile Include="Manager\Calculators\MatrixTools\IMatrixSolver.cs" />
-    <Compile Include="Manager\Devices\IAccelometerManager.cs" />
+    <Compile Include="Manager\Devices\IAccelerometerManager.cs" />
     <Compile Include="Manager\Devices\IBaseDeviceManager.cs" />
     <Compile Include="Manager\Devices\ICameraManager.cs" />
     <Compile Include="Manager\Devices\IGpsManager.cs" />

@@ -47,6 +47,7 @@
     <Compile Include="Geolocation\GeolocationTool.cs" />
     <Compile Include="Geolocation\HaversineDistanceCalculator.cs" />
     <Compile Include="Geolocation\MeanEarthRadius.cs" />
+    <Compile Include="PositionLogic\LocalPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
