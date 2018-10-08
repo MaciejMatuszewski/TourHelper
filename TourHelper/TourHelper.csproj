@@ -266,6 +266,7 @@
     <Compile Include="Assets\Scripts\Quaterions.cs" />
     <Compile Include="Assets\Scripts\TargetMark.cs" />
     <Compile Include="Assets\Scripts\TextUpdate.cs" />
+    <Compile Include="Assets\Scripts\TrackingTest.cs" />
     <Compile Include="Assets\Scripts\Workspace.cs" />
   </ItemGroup>
   <ItemGroup>
