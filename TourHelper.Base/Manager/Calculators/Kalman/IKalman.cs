@@ -5,7 +5,7 @@ namespace TourHelper.Base.Manager.Calculators.Kalman
 {
     public interface IKalman
     {
-        IMatrix Origin { get; set; }
+        IMatrix InitialPosition { get; set; }
         IMatrix Prediction { get; }
         double DeltaTime { get; set; }
         double AccelerationError { get; set; }

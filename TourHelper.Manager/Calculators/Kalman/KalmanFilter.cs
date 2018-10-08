@@ -47,7 +47,7 @@ namespace TourHelper.Manager.Calculators.Kalman
         }
 
         public IMatrix KalmanGain { get; private set; }
-        public IMatrix Origin { get=> _origin; set=> ResetPosition(value); }
+        public IMatrix InitialPosition { get=> _origin; set=> ResetPosition(value); }
 
         private IMatrix a, b, q, h, r, identity;
 
@@ -193,7 +193,7 @@ namespace TourHelper.Manager.Calculators.Kalman
 
         private void SetPrediction()
         {
-            double[,] pTemp = new double[,] { { Origin.GetByIndex(0,0) }, { Origin.GetByIndex(1, 0) }, { 0 }, { 0 } };
+            double[,] pTemp = new double[,] { { InitialPosition.GetByIndex(0,0) }, { InitialPosition.GetByIndex(1, 0) }, { 0 }, { 0 } };
 
             Prediction = new Matrix(pTemp.GetLength(0), pTemp.GetLength(1));
             Prediction.SetAll(pTemp);
@@ -201,8 +201,8 @@ namespace TourHelper.Manager.Calculators.Kalman
         private void ResetPosition(IMatrix o)
         {
             _origin = o;
-            Prediction.SetByIndex(Origin.GetByIndex(0, 0), 0,0);
-            Prediction.SetByIndex(Origin.GetByIndex(1, 0), 1, 0);
+            Prediction.SetByIndex(InitialPosition.GetByIndex(0, 0), 0,0);
+            Prediction.SetByIndex(InitialPosition.GetByIndex(1, 0), 1, 0);
         }
     }
 }

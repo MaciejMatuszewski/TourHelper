@@ -18,7 +18,8 @@ namespace TourHelper.Manager.Calculators
         {
 
             double x, y;
-            double[] r = this.EquationCoefficients(c),result;
+            double[] r = this.EquationCoefficients(c);
+            double[] result; 
             double dLonR;
  
             dLonR = MathTools.rad(c.Longitude -Projection.LonOfTrueOrigin(c));

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Logic.PositionLogic;
 using TourHelper.Manager.Calculators;
@@ -45,11 +46,12 @@ public class Acceleration : MonoBehaviour
         
         //FILTR
         f = new KalmanFilter();
-        f.GPSError = 10;
-        f.AccelerationError = 1;
+        f.GPSError = 5;
+        f.AccelerationError = 0.5;
 
         p = new LocalPosition(gps, acc, f, t, g);
-        
+        p.LogPath = Application.persistentDataPath +"/PositionLog.txt";
+        Debug.Log(p.LogPath);
 
     }
     // Update is called once per frame
@@ -61,5 +63,8 @@ public class Acceleration : MonoBehaviour
         v=p.GetPosition();
 
         text.text = v.x.ToString() + "," + v.y.ToString() + "," + v.z.ToString();
+        //text.text = p.Filter.InitialPosition.GetByIndex(0,0)+" "+p.Filter.InitialPosition.GetByIndex(1, 0);
+        
+
     }
 }
