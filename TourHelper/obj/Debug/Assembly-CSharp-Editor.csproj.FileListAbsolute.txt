@@ -23,7 +23,6 @@ C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debu
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\TourHelper.Manager.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\TourHelper.Repository.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\Unity.Locator.dll
-C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\UnityEditor.Advertisements.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\UnityEditor.Analytics.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
@@ -220,4 +219,5 @@ C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\obj\Debug\Ass
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\obj\Debug\Assembly-CSharp-Editor.csproj.CopyComplete
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\obj\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper\Temp\bin\Debug\Assembly-CSharp.pdb

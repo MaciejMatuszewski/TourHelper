@@ -36,7 +36,7 @@
             for (int i = 0; i < points.Count; i++)
             {
                 var point = points[i];
-                int coordinateId = point.CoordinateId;               
+                int coordinateId = point.CoordinateId;
                 var pointCoordinate = coordinateRepo.Get(coordinateId);
                 var locationString = pointCoordinate.Latitude.ToString("00.0000000") + "," + pointCoordinate.Longitude.ToString("00.0000000");
                 _locations[i] = Conversions.StringToLatLon(locationString);

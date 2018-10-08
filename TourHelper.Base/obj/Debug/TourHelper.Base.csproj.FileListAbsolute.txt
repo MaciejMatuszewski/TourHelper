@@ -16,8 +16,8 @@ C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\De
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojAssemblyReference.cache
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.pdb
-C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojAssemblyReference.cache
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CoreCompileInputs.cache
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CopyComplete
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.dll
 C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojAssemblyReference.cache
