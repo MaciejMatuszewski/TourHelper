@@ -7,5 +7,10 @@
         public string Password { get; set; }
 
         public int UserProfileId { get; set; }
+
+        void test()
+        {
+            var x = typeof(User).GetProperties();
+        }
     }
 }

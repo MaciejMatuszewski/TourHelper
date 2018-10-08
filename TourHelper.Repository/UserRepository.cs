@@ -8,7 +8,8 @@ namespace TourHelper.Repository
     {
         public User GetByLogin(string login)
         {
-            return ExecuteSelectCommand($"SELECT * FROM [dbo].[{nameof(User)}] WHERE {nameof(User.Login)} = '{login}'").SingleOrDefault();
+            //return ExecuteSelectCommand($"SELECT * FROM [dbo].[{nameof(User)}] WHERE {nameof(User.Login)} = '{login}'").SingleOrDefault();
+            return ExecuteSelectCommand($"SELECT * FROM public.\"{nameof(User)}\" WHERE \"{nameof(User.Login)}\" = '{login}'").SingleOrDefault();
         }
     }
 }

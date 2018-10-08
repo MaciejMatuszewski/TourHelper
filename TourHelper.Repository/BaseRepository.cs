@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -20,6 +21,13 @@ namespace TourHelper.Repository
                 "Initial Catalog=TourHelper;" +
                 "User id=sa;" +
                 "Password=!P@ssw0rd;";
+
+        private string connectionStringPostgreSQL =
+                "Server=85.255.7.165;" +
+                "Port=50050;" +
+                "User Id=tourhelper;" +
+                "Password=!P@ssw0rd;" +
+                "Database=TourHelper;";
 
         public TEntity Get(int id)
         {
@@ -166,34 +174,81 @@ namespace TourHelper.Repository
         }
 
 
+        //protected IEnumerable<TEntity> ExecuteSelectCommand(string statement)
+        //{
+        //    SqlConnection sqlConnection = new SqlConnection(connectionString);
+        //    SqlCommand cmd = new SqlCommand();
+        //    SqlDataReader reader;
+
+        //    cmd.CommandText = statement;
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.Connection = sqlConnection;
+
+        //    var x = System.Net.Dns.GetHostName();
+
+        //    sqlConnection.Open();
+
+
+        //    reader = cmd.ExecuteReader();
+
+        //    List<TEntity> entities = new List<TEntity>();
+
+        //    while (reader.Read())
+        //    {
+        //        TEntity entity = new TEntity();
+        //        Type type = entity.GetType();
+        //        IList<PropertyInfo> properties = new List<PropertyInfo>(type.GetProperties());
+
+        //        foreach (PropertyInfo property in properties)
+        //        {
+        //            var entityValue = reader.GetValue(reader.GetOrdinal(property.Name));
+        //            if (entityValue.GetType().Name == typeof(DBNull).Name)
+        //            {
+        //                if (IsNullable(property.PropertyType) || property.PropertyType.Name == typeof(string).Name)
+        //                {
+        //                    property.SetValue(entity, null, null);
+        //                }
+        //                else
+        //                {
+        //                    throw new RepositoryException($"Could not map null value to not nullable property {entity.GetType().Name}.{property.Name}");
+        //                }
+        //            }
+        //            else
+        //            {
+        //                property.SetValue(entity, entityValue, null);
+        //            }
+        //        }
+
+        //        entities.Add(entity);
+        //    }
+
+        //    sqlConnection.Close();
+
+        //    return entities;
+        //}
+
         protected IEnumerable<TEntity> ExecuteSelectCommand(string statement)
         {
-            SqlConnection sqlConnection = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand();
-            SqlDataReader reader;
+            DataSet dataSet = new DataSet();
 
-            cmd.CommandText = statement;
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = sqlConnection;
+            NpgsqlConnection connection = new NpgsqlConnection(connectionStringPostgreSQL);
+            connection.Open();
+            NpgsqlDataAdapter npgsqlDataAdapter = new NpgsqlDataAdapter(statement, connection);
+            dataSet.Reset();
+            npgsqlDataAdapter.Fill(dataSet);
 
-            var x = System.Net.Dns.GetHostName();
-
-            sqlConnection.Open();
-
-
-            reader = cmd.ExecuteReader();
+            TEntity entity = new TEntity();
+            Type type = entity.GetType();
 
             List<TEntity> entities = new List<TEntity>();
 
-            while (reader.Read())
+            foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-                TEntity entity = new TEntity();
-                Type type = entity.GetType();
-                IList<PropertyInfo> properties = new List<PropertyInfo>(type.GetProperties());
-
-                foreach (PropertyInfo property in properties)
+                foreach (DataColumn column in dataSet.Tables[0].Columns)
                 {
-                    var entityValue = reader.GetValue(reader.GetOrdinal(property.Name));
+                    //var col = column.//dt.Columns["CreatedOn"].Ordinal;
+                    var entityValue = row[column.Ordinal];
+                    var property = type.GetProperty(column.ColumnName);
                     if (entityValue.GetType().Name == typeof(DBNull).Name)
                     {
                         if (IsNullable(property.PropertyType) || property.PropertyType.Name == typeof(string).Name)
@@ -210,11 +265,9 @@ namespace TourHelper.Repository
                         property.SetValue(entity, entityValue, null);
                     }
                 }
-
                 entities.Add(entity);
             }
-
-            sqlConnection.Close();
+            connection.Close();
 
             return entities;
         }
