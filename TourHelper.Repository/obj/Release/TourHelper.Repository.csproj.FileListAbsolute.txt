@@ -18,3 +18,16 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Release\UnityEngine
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Release\UnityEngine.CoreModule.xml
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Release\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Release\UnityEngine.AudioModule.xml
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Release\TourHelper.Repository.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Release\TourHelper.Repository.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Release\TourHelper.Base.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Release\UnityEngine.AudioModule.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Release\UnityEngine.CoreModule.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Release\TourHelper.Base.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Release\UnityEngine.AudioModule.xml
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Release\UnityEngine.CoreModule.xml
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Release\TourHelper.Repository.csprojAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Release\TourHelper.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Release\TourHelper.Repository.csproj.CopyComplete
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Release\TourHelper.Repository.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Release\TourHelper.Repository.pdb

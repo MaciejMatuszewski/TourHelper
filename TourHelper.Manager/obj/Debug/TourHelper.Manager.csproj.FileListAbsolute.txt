@@ -20,3 +20,16 @@ C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\obj
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.csproj.CopyComplete
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.dll
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Manager.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Manager.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Base.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.CoreModule.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.SharedInternalsModule.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Base.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.CoreModule.xml
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\bin\Debug\UnityEngine.SharedInternalsModule.xml
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.csprojAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.csproj.CopyComplete
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.pdb

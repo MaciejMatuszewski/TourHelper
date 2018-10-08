@@ -12,3 +12,12 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Release\UnityEngine.CoreM
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Release\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Release\UnityEngine.AudioModule.xml
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Release\TourHelper.Base.csprojResolveAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\bin\Release\TourHelper.Base.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\bin\Release\TourHelper.Base.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\bin\Release\UnityEngine.AudioModule.xml
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\bin\Release\UnityEngine.CoreModule.xml
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Release\TourHelper.Base.csprojAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Release\TourHelper.Base.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Release\TourHelper.Base.csproj.CopyComplete
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Release\TourHelper.Base.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Base\obj\Release\TourHelper.Base.pdb

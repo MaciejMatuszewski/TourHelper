@@ -20,3 +20,14 @@ C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CopyComplete
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.dll
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Repository.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Repository.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Base.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.CoreModule.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Base.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csprojAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CopyComplete
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka3\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.pdb
