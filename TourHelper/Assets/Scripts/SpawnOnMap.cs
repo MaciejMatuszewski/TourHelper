@@ -27,31 +27,19 @@
        // public void AddPoints(int tourID)
         private void Start()
         {
-            TourRepository tourR = new TourRepository();
-            CoordinateRepository coordinateRepo = new CoordinateRespository();
-            var tour = tourR.Get(1);
-            var pointCoordinate = coordinateRepo.Get(1);
+            int tourID = 1;
             var pointRepo = new TourPointRepository();
-            List<TourPoint> points = pointRepo.GetByTourID(1);
+            List<TourPoint> points = pointRepo.GetByTourID(tourID);
             _locations = new Vector2d[points.Count];
             _spawnedObjects = new List<GameObject>();
-
+            CoordinateRepository coordinateRepo = new CoordinateRepository();
             for (int i = 0; i < points.Count; i++)
             {
                 var point = points[i];
-                
-                int coordinateId = point.CoordinateId;
-                
-                try {
-                     
-                }
-                catch (Exception e)
-                {
-                    System.Console.WriteLine(e.ToString());
-                }
-
-                //var locationString = pointCoordinate.Latitude.ToString("00.0000000") + "," + pointCoordinate.Longitude.ToString("00.0000000");
-               // _locations[i] = Conversions.StringToLatLon(locationString);
+                int coordinateId = point.CoordinateId;               
+                var pointCoordinate = coordinateRepo.Get(coordinateId);
+                var locationString = pointCoordinate.Latitude.ToString("00.0000000") + "," + pointCoordinate.Longitude.ToString("00.0000000");
+                _locations[i] = Conversions.StringToLatLon(locationString);
                 var instance = Instantiate(_markerPrefab);
                 Vector3 position = _map.GeoToWorldPosition(_locations[i], true);
                 position[1] = position[1] + 4;
