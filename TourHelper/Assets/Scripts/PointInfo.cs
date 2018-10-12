@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using TourHelper.Base.Model.Entity;
 
 public class PointInfo : MonoBehaviour {
@@ -17,6 +18,6 @@ public class PointInfo : MonoBehaviour {
 
     public void ShowInfo()
     {
-        
+        EditorUtility.DisplayDialog("Nazwa", point.Name,"Maciej miszcz");  
     }
 }

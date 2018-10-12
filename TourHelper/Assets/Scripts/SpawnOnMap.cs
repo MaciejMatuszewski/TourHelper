@@ -9,6 +9,7 @@
     using TourHelper.Repository;
     using TourHelper.Base.Model.Entity;
     using System;
+    using UnityEngine.UI;
 
     public class SpawnOnMap : MonoBehaviour
 	{
@@ -47,8 +48,12 @@
                 instance.transform.localPosition = position;
 
                 instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+
+                // Button POIButton = instance.GetComponent<Button>();
+                //Button POIButton = instance.GetComponentInChildren<Button>();
                 PointInfo script = instance.GetComponentInChildren<PointInfo>();
                 script.point = point;
+                //POIButton.onClick.AddListener(() => script.ShowInfo());
 
                 _spawnedObjects.Add(instance);
 
