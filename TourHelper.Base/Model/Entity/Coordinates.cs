@@ -3,10 +3,10 @@ namespace TourHelper.Base.Model.Entity
 {
     public class Coordinates:BaseModel
     {
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
-        public float Altitude { get; set; }
-        public float VerticalAccuracy { get; set; }
-        public float HorizontalAccuracy { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double Altitude { get; set; }
+        public double VerticalAccuracy { get; set; }
+        public double HorizontalAccuracy { get; set; }
     }
 }

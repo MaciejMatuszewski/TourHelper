@@ -256,12 +256,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Acceleration.cs" />
+    <Compile Include="Assets\Scripts\Android\CellIdWrapper.cs" />
     <Compile Include="Assets\Scripts\ArrowController.cs" />
     <Compile Include="Assets\Scripts\ButtonClick.cs" />
     <Compile Include="Assets\Scripts\DbTest.cs" />
+    <Compile Include="Assets\Scripts\DeviceData.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\CoinEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\ElementRotation.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\InfoEvents.cs" />
+    <Compile Include="Assets\Scripts\Integral.cs" />
     <Compile Include="Assets\Scripts\PhoneCamera.cs" />
     <Compile Include="Assets\Scripts\Quaterions.cs" />
     <Compile Include="Assets\Scripts\TargetMark.cs" />

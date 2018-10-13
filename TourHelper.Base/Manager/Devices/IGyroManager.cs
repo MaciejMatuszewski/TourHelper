@@ -13,5 +13,6 @@ namespace TourHelper.Base.Manager.Devices
         void SetUpdateInterval(float interval);
         float GetUpdateInterval();
         double[,] GetRotationMatrix();
+        Vector3 GetFusedAccelerations();
     }
 }

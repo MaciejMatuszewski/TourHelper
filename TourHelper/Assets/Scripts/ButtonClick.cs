@@ -6,28 +6,28 @@ using UnityEngine.UI;
 
 public class ButtonClick : MonoBehaviour
 {
-    public Text debugText;
+
 
     public GameObject prefab;
     public GameObject Prices;
     private UTMLocalCoordinates translate;
     private Coordinates origin;
 
-    public void RenderTexture()
+    public void Start()
     {
         origin = new Coordinates();
-        origin.Latitude = 52.463f;
-        origin.Longitude = 16.92f;
+        origin.Latitude = 52.463907f;
+        origin.Longitude = 16.920955f;
 
         Coordinates[] c = new Coordinates[3];
 
 
         //-----------------
         Coordinates price0 = new Coordinates();
-        price0.Latitude = 52.463907f;
-        price0.Longitude = 16.920955f;
+        price0.Latitude = 52.463661f;
+        price0.Longitude = 16.921885f;
         c[0] = price0;
-        //52.463907, 16.920955
+        //52.463661, 16.921885
         //-----------------
         Coordinates price1 = new Coordinates();
         price1.Latitude = 52.463659f;
@@ -51,8 +51,6 @@ public class ButtonClick : MonoBehaviour
             instance.SetParent(Prices.transform);
             instance.position = translate.GetCoordinates(i);
 
-            debugText.text += "\n"+instance.position.x.ToString() + "," +
-            instance.position.y.ToString() + "," +instance.position.z.ToString();
         }
 
 

@@ -12,6 +12,6 @@ namespace TourHelper.Base.Manager.Calculators.Kalman
         double GPSError { get; set; }
         void Predict(IMatrix accelerations);
         void Update(IMatrix gpsMesurements);
-
+        void ResetVelocity();
     }
 }

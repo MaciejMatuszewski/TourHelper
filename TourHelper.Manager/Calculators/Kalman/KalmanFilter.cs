@@ -46,15 +46,19 @@ namespace TourHelper.Manager.Calculators.Kalman
             }
         }
 
+        public double Counter { get; private set; }
+
         public IMatrix KalmanGain { get; private set; }
-        public IMatrix InitialPosition { get=> _origin; set=> ResetPosition(value); }
+        public IMatrix InitialPosition { get => _origin; set => ResetPosition(value); }
 
         private IMatrix a, b, q, h, r, identity;
 
         public KalmanFilter()
         {
-            _origin = new Matrix(4,1);
+            _origin = new Matrix(4, 1);
             DeltaTime = 0.1;
+            accelerationError = 1;
+            gPSError = 1;
             //----------------Inicializacja macierzy jednostkowej-------------------------
             double[,] iTemp = new double[,] {
                 { 1, 0, 0, 0 },
@@ -103,6 +107,8 @@ namespace TourHelper.Manager.Calculators.Kalman
             Prediction = a.Multiply(Prediction).Add(b.Multiply(accelerations));
 
             ProcessCovariance = a.Multiply(ProcessCovariance).Multiply(a.Transpose()).Add(q).Diagonal();
+
+
         }
 
         public void Update(IMatrix gpsMesurements)
@@ -121,14 +127,14 @@ namespace TourHelper.Manager.Calculators.Kalman
 
         private void UpdateQMatrix()
         {
-            double err_s = AccelerationError * DeltaTime;// position error due to accelereation
-            double err_v = 0.5 * AccelerationError * DeltaTime * DeltaTime;//speed error due to acceleration
+            double err_v = AccelerationError * DeltaTime;// position error due to accelereation
+            double err_s = 0.5 * AccelerationError * DeltaTime * DeltaTime;//speed error due to acceleration
 
             double[,] qTemp = new double[,] {
                 {err_s*err_s,err_s*err_v,0,0 },
                 {0,err_s*err_s,0,err_s*err_v },
-                {0,0,err_v*err_v,0 },
-                {0,0,0,err_v*err_v },
+                {err_s*err_v,0,err_v*err_v,0 },
+                {0,err_s*err_v,0,err_v*err_v },
             };
 
             q = new Matrix(qTemp.GetLength(0), qTemp.GetLength(1));
@@ -140,10 +146,10 @@ namespace TourHelper.Manager.Calculators.Kalman
             double err_vGPS = GPSError / DeltaTime;
 
             double[,] rTemp = new double[,] {
-                {GPSError*GPSError,0,0,0 },
-                {0,GPSError*GPSError,0,0 },
-                {0,0,err_vGPS*err_vGPS,0 },
-                {0,0,0,err_vGPS*err_vGPS },
+                {GPSError,0,0,0 },
+                {0,GPSError,0,0 },
+                {0,0,err_vGPS,0 },
+                {0,0,0,err_vGPS },
             };
 
 
@@ -193,7 +199,7 @@ namespace TourHelper.Manager.Calculators.Kalman
 
         private void SetPrediction()
         {
-            double[,] pTemp = new double[,] { { InitialPosition.GetByIndex(0,0) }, { InitialPosition.GetByIndex(1, 0) }, { 0 }, { 0 } };
+            double[,] pTemp = new double[,] { { InitialPosition.GetByIndex(0, 0) }, { InitialPosition.GetByIndex(1, 0) }, { 0 }, { 0 } };
 
             Prediction = new Matrix(pTemp.GetLength(0), pTemp.GetLength(1));
             Prediction.SetAll(pTemp);
@@ -201,8 +207,14 @@ namespace TourHelper.Manager.Calculators.Kalman
         private void ResetPosition(IMatrix o)
         {
             _origin = o;
-            Prediction.SetByIndex(InitialPosition.GetByIndex(0, 0), 0,0);
+            Prediction.SetByIndex(InitialPosition.GetByIndex(0, 0), 0, 0);
             Prediction.SetByIndex(InitialPosition.GetByIndex(1, 0), 1, 0);
+        }
+
+        public void ResetVelocity()
+        {
+            Prediction.SetByIndex(0, 2, 0);
+            Prediction.SetByIndex(0, 3, 0);
         }
     }
 }

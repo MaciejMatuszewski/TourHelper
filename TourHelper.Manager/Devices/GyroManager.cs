@@ -38,6 +38,11 @@ namespace TourHelper.Manager.Devices
             return Input.gyro.attitude;
         }
 
+        public Vector3 GetFusedAccelerations()
+        {
+            return Input.gyro.userAcceleration;
+        }
+
         public Vector3 GetRotationRate()
         {
             return Input.gyro.rotationRateUnbiased;
@@ -72,6 +77,7 @@ namespace TourHelper.Manager.Devices
                 status = ServiceStatus.Failed;
                 yield break;
             }
+            Input.compensateSensors = true;
         }
 
         public ServiceStatus Status()

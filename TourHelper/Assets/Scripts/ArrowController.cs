@@ -29,12 +29,12 @@ public class ArrowController : MonoBehaviour {
         compass.Delay = 1000;
         compass.Precision = 2;
         compass.MaxChange = 5d;
-
+        //52.463661, 16.921885
 
         StartCoroutine(gps.StartService(30));
         target = new Coordinates();
-        target.Latitude = 52.463645f; 
-        target.Longitude = 16.921922f;
+        target.Latitude = 52.463661f; 
+        target.Longitude = 16.921885f;
 
         rot = new BasicRotationCalculator(compass, gps);
         rot.Scale = scale;

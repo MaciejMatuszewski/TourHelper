@@ -15,7 +15,7 @@ public class Acceleration : MonoBehaviour
 {
     public bool isOn;
 
-    private GameObject cameraContainer;
+    //private GameObject cameraContainer;
     public InputField _lat,_lon,_gpsErr,_accErr,_path;
     private AccelerationManager acc;
     private GyroManager g;
@@ -24,6 +24,7 @@ public class Acceleration : MonoBehaviour
     private Vector3 v;
     private GpsManager gps;
     private LocalPosition p;
+    private UTMLocalCoordinates tra;
 
     private void Awake()
     {
@@ -46,21 +47,7 @@ public class Acceleration : MonoBehaviour
         _accErr.text = "1.0";
         _path.text = "Log1.txt";
 
-        //TRANSLATOR WSPOLRZEDNYCH
-        origin = new Coordinates();
-        origin.Latitude = 52.463907f;
-        origin.Longitude = 16.920955f;
 
-        UTMLocalCoordinates t = new UTMLocalCoordinates(origin);
-        
-        //FILTR
-        f = new KalmanFilter();
-        f.GPSError = 5;
-        f.AccelerationError = 0.5;
-
-        p = new LocalPosition(gps, acc, f, t, g);
-        p.LogPath = Application.persistentDataPath +"/PositionLog.txt";
-        Debug.Log(p.LogPath);
 
     }
     // Update is called once per frame
@@ -87,14 +74,21 @@ public class Acceleration : MonoBehaviour
         {
             isOn = true;
             t.text = "STOP";
+
             origin = new Coordinates();
             origin.Latitude = (float)Convert.ToDouble(_lat.text);
-            origin.Longitude =(float)Convert.ToDouble(_lon.text);
-            p.Origin = origin;
-            p.Filter.GPSError = Convert.ToDouble(_gpsErr.text);
-            p.Filter.AccelerationError = Convert.ToDouble(_accErr.text);
+            origin.Longitude = (float)Convert.ToDouble(_lon.text);
 
-            p.LogPath = Application.persistentDataPath + _path.text;
+            tra = new UTMLocalCoordinates(origin);
+
+
+            f = new KalmanFilter();
+            f.GPSError = Convert.ToDouble(_gpsErr.text); 
+            f.AccelerationError = Convert.ToDouble(_accErr.text);
+
+            p = new LocalPosition(gps, acc, f, tra, g);
+            p.LogPath = Application.persistentDataPath +'/' +_path.text;
+
         }
         else
         {
