@@ -17,7 +17,6 @@ public class PhoneCamera : MonoBehaviour
         Camera = CameraManager.Instance;
         StartCoroutine(Camera.StartService(10));
 
-        //background.texture = camera.GetScreen();
     }
 
     // Update is called once per frame

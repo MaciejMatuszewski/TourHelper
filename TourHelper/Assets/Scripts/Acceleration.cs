@@ -86,7 +86,7 @@ public class Acceleration : MonoBehaviour
             f.GPSError = Convert.ToDouble(_gpsErr.text); 
             f.AccelerationError = Convert.ToDouble(_accErr.text);
 
-            p = new LocalPosition(gps, acc, f, tra, g);
+            p = new LocalPosition(gps, g, f, tra);
             p.LogPath = Application.persistentDataPath +'/' +_path.text;
 
         }

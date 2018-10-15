@@ -13,9 +13,14 @@ namespace TourHelper.TestApp
     {
         static void Main(string[] args)
         {
-            TestSetup.FilterTest();
+            //TestSetup.FilterTest();
             //TestSetup.IntegralTest();
             //TestSetup.LocationTest();
+           
+
+            CoordinatesCalculatorTest t = new CoordinatesCalculatorTest();
+
+            t.test();
         }
 
         

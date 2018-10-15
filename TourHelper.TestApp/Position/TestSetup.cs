@@ -11,7 +11,7 @@ namespace TourHelper.TestApp.Position
     {
         public static void LocationTest()
         {
-            string[] inputList = { "e" };
+            string[] inputList = { "a", "b", "c", "d", "e" };//"a", "a1" , "b" , "b1" , "c", "d", "e"
             string script = "LocationExtractor.py";
 
             foreach (string input in inputList)
@@ -26,8 +26,8 @@ namespace TourHelper.TestApp.Position
 
 
                 Coordinates origin = new Coordinates();
-                origin.Latitude = 52.463907f;
-                origin.Longitude = 16.920955f;
+                origin.Latitude = 52.463794708252f;
+                origin.Longitude = 16.9220314025879f;
 
                 UTMLocalCoordinates translator = new UTMLocalCoordinates(origin);
 
@@ -36,12 +36,20 @@ namespace TourHelper.TestApp.Position
                 test.Processor.Filter.GPSError = 5;
                 test.Processor.Filter.AccelerationError = 0.5;
 
-                double c = 0.05;
+
+                test.Processor.StandingLimit = 0.05f;
+
+
+
+                double[] a_h = { 1.0, -2.99981159864, 2.99962321503, -0.999811616388 };
+                double[] b_h = { 0.999905803757, -2.99971741127, 2.99971741127, -0.999905803757 };
+
                 double[] a_l = { 1.0, -2.05583537842, 1.5087573739, -0.382291854655 };
                 double[] b_l = { 0.00882876760229, 0.0264863028069, 0.0264863028069, 0.00882876760229 };
-                test.Processor.AccelerationFilterX = new CutOffFilter(c, new IIRFilter(a_l, b_l));
-                test.Processor.AccelerationFilterY = new CutOffFilter(c, new IIRFilter(a_l, b_l));
-                test.Processor.AccelerationFilterZ = new CutOffFilter(c, new IIRFilter(a_l, b_l));
+
+                test.Processor.AccelerationFilterX = new IIRFilter(a_l, b_l);
+                test.Processor.AccelerationFilterY = new IIRFilter(a_l, b_l);
+                test.Processor.AccelerationFilterZ = new IIRFilter(a_l, b_l);
 
                 test.Test();
 
@@ -51,7 +59,7 @@ namespace TourHelper.TestApp.Position
         }
         public static void FilterTest()
         {
-            string[] inputList = { "e" };
+            string[] inputList = { "x" };
             string script = "InputFilterExtractor.py";
             string script2 = "AccelerationFFT.py";
 
@@ -79,14 +87,17 @@ namespace TourHelper.TestApp.Position
                 /*
                 double[] a_l = { 1, -0.85408069 };
                 double[] b_l = { 0.07295966, 0.07295966 };*/
-                double[] a_l = { 1.0, -2.05583537842, 1.5087573739, -0.382291854655 };
-                double[] b_l = { 0.00882876760229, 0.0264863028069, 0.0264863028069, 0.00882876760229 };
+                double[] a_l = { 1.0, -5.27228221828, 11.6214883223, -13.7053868251, 9.11839568032, -3.24443185302, 0.482248506594 };
+                double[] b_l = { 4.93950362255e-07, 2.96370217353e-06, 7.40925543383e-06, 9.8790072451e-06, 7.40925543383e-06, 2.96370217353e-06, 4.93950362255e-07 };
 
-                double c = 0.05;
+                double[] a_h = { 1.0, -2.99981159864, 2.99962321503, -0.999811616388 };
+                double[] b_h = { 0.999905803757, -2.99971741127, 2.99971741127, -0.999905803757 };
 
-                IFilter<double> fX = new CutOffFilter(c, new IIRFilter(a_l, b_l)); //new IIRFilter(a_h, b_h, null));
-                IFilter<double> fY = new CutOffFilter(c, new IIRFilter(a_l, b_l));//new IIRFilter(a_h, b_h, null));
-                IFilter<double> fZ = new CutOffFilter(c, new IIRFilter(a_l, b_l));//new IIRFilter(a_h, b_h, null));
+                double c = 0.03;
+
+                IFilter<double> fX = new IIRFilter(a_h, b_h); //new IIRFilter(a_h, b_h, null));
+                IFilter<double> fY = new IIRFilter(a_h, b_h);//new IIRFilter(a_h, b_h, null));
+                IFilter<double> fZ = new IIRFilter(a_h, b_h);//new IIRFilter(a_h, b_h, null));
 
                 test.FilterBeforeTransformation = false;
 
@@ -103,7 +114,7 @@ namespace TourHelper.TestApp.Position
 
         public static void IntegralTest()
         {
-            string[] inputList = { "c" };
+            string[] inputList = { "x" };//"2m-1" , "2m-2", "2m-3", "2m-4" };
             string script = "IntegralExtractor.py";
 
 
@@ -115,17 +126,19 @@ namespace TourHelper.TestApp.Position
 
 
                 test.Processor.AccelerationIncluded = false;
-                test.Processor.DriftReduction = true;
-                test.Processor.Eps = 0.05f;
+                test.Processor.DriftReduction = false;
+                test.Processor.Eps = 0.01f;
 
-                double[] a_l = { 1.0, -2.05583537842, 1.5087573739, -0.382291854655 };
-                double[] b_l = { 0.00882876760229, 0.0264863028069, 0.0264863028069, 0.00882876760229 };
+                double[] a_l = { 1.0, -5.27228221828, 11.6214883223, -13.7053868251, 9.11839568032, -3.24443185302, 0.482248506594 };
+                double[] b_l = { 4.93950362255e-07, 2.96370217353e-06, 7.40925543383e-06, 9.8790072451e-06, 7.40925543383e-06, 2.96370217353e-06, 4.93950362255e-07 };
 
-                double c = 0.05;
+                double[] a_h = { 1.0, -2.99981159864, 2.99962321503, -0.999811616388 };
+                double[] b_h = { 0.999905803757, -2.99971741127, 2.99971741127, -0.999905803757 };
 
-                test.Processor.FilterX = new CutOffFilter(c, new IIRFilter(a_l, b_l));
-                test.Processor.FilterY = new CutOffFilter(c, new IIRFilter(a_l, b_l));
-                test.Processor.FilterZ = new CutOffFilter(c, new IIRFilter(a_l, b_l));
+
+                test.Processor.FilterX = new IIRFilter(a_l, b_l);
+                test.Processor.FilterY = new IIRFilter(a_l, b_l);
+                test.Processor.FilterZ = new IIRFilter(a_l, b_l);
 
 
 

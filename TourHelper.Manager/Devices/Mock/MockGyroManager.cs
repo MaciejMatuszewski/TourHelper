@@ -17,6 +17,9 @@ namespace TourHelper.Manager.Devices.Mock
         private Quaternion _stedyStateR;
         private Vector3 _stedyStateA;
 
+        private int countA = 0;
+        private int countR = 0;
+
         public MockGyroManager(IEnumerable<Quaternion> rotation, IEnumerable<Vector3> fusedAcceleration)
         {
             _dataRot = rotation;
@@ -28,8 +31,21 @@ namespace TourHelper.Manager.Devices.Mock
             _stedyStateA = new Vector3();
         }
 
+        public MockGyroManager(DevicesFromFile data)
+        {
+            data.ReadData();
+            _dataRot = data.Rotation;
+            _enumeratorR = _dataRot.GetEnumerator();
+            _stedyStateR = new Quaternion();
+
+            _dataAcc = data.Accelerations;
+            _enumeratorA = _dataAcc.GetEnumerator();
+            _stedyStateA = new Vector3();
+        }
+
         public Vector3 GetFusedAccelerations()
         {
+            //Debug.Log("Acc:" + (countA++));
             if (_enumeratorA.MoveNext())
             {
                 return (Vector3)_enumeratorA.Current;
@@ -44,6 +60,7 @@ namespace TourHelper.Manager.Devices.Mock
 
         public Quaternion GetRotation()
         {
+            //Debug.Log("Rot:" + (countR++));
             if (_enumeratorR.MoveNext())
             {
                 return (Quaternion)_enumeratorR.Current;

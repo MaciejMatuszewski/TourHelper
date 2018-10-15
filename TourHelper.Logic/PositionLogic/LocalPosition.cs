@@ -17,10 +17,11 @@ namespace TourHelper.Logic.PositionLogic
         public const float GRAVITY= 9.8123f;
         public string LogPath { get; set; }
         public bool LogMode { get; set; }
+
         public IGpsManager Gps { get; set; }
         public IGyroManager Gyro { get; set; }
         public IKalman Filter { get; set; }
-        public IPositionTranslation Translator { get; set; }
+        public IPositionTranslation Translator { get;set; }
         public IFilter<double> AccelerationFilterX { get; set; }
         public IFilter<double> AccelerationFilterY { get; set; }
         public IFilter<double> AccelerationFilterZ { get; set; }
@@ -30,14 +31,15 @@ namespace TourHelper.Logic.PositionLogic
 
         private Vector3 _lastAccReading;
         private Quaternion _lastOrientation;
-        private DateTime _timeStamp, _bufforedTimeStamp;
-        private Vector3 _gpsPosition, _worldAccelerations, _bufforedGpsPosition, _gpsVelocity;
-        private TimeSpan _gpsTimeDiff;
-        private MeanFilter _velocityX;
-        private MeanFilter _velocityY;
+        //private DateTime _timeStamp, _bufforedTimeStamp;
+        //private Vector3 _bufforedGpsPosition, _gpsVelocity;
+        private Vector3 _gpsPosition, _worldAccelerations;
+        //private TimeSpan _gpsTimeDiff;
+       // private MeanFilter _velocityX;
+       // private MeanFilter _velocityZ;
 
-        private double _counter = 0, _accXF, _accYF, _accZF;
-
+        private double _accXF, _accYF, _accZF;
+        private double _timeCounter = 0;
         public Coordinates Origin
         {
             get
@@ -53,7 +55,7 @@ namespace TourHelper.Logic.PositionLogic
                 _newPosition.SetByIndex(Translator.GetCoordinates(_lastGpsReading).x, 0, 0);
                 _newPosition.SetByIndex(Translator.GetCoordinates(_lastGpsReading).z, 1, 0);
                 Filter.InitialPosition = _newPosition;
-
+                
 
             }
         }
@@ -62,6 +64,7 @@ namespace TourHelper.Logic.PositionLogic
             IKalman _filter, IPositionTranslation _translator)
         {
 
+            
             Gps = _gps;
             Gyro = _gyro;
 
@@ -69,42 +72,48 @@ namespace TourHelper.Logic.PositionLogic
 
             Filter = _filter;
 
-            _gpsVelocity = new Vector3();
+           // _gpsVelocity = new Vector3();
 
             
             _lastGpsReading = _translator.Origin;//Gps.GetCoordinates();
             Origin = _translator.Origin;
-            _timeStamp = DateTime.Now;
-            
+            //_timeStamp = DateTime.Now;
 
-            _velocityX = new MeanFilter(15);
-            _velocityY = new MeanFilter(15);
-            AccelerationFilterX = new MeanFilter(25);
-            AccelerationFilterY = new MeanFilter(25);
-            AccelerationFilterZ = new MeanFilter(25);
+            double[] a_l = { 1.0, -2.05583537842, 1.5087573739, -0.382291854655 };
+            double[] b_l = { 0.00882876760229, 0.0264863028069, 0.0264863028069, 0.00882876760229 };
+
+            //_velocityX = new MeanFilter(15);
+            //_velocityZ = new MeanFilter(15);
+            AccelerationFilterX = new IIRFilter(a_l,b_l);
+            AccelerationFilterY = new IIRFilter(a_l, b_l);
+            AccelerationFilterZ = new IIRFilter(a_l, b_l);
+
+            StandingLimit = 0.01f;
         }
 
         public Vector3 GetPosition()
         {
-            _bufforedGpsReading = Gps.GetCoordinates();
-            _bufforedTimeStamp = DateTime.Now;
+            Filter.DeltaTime = Time.deltaTime;
+            _lastGpsReading = Gps.GetCoordinates();
+            //_bufforedTimeStamp = DateTime.Now;
 
             _lastAccReading = Gyro.GetFusedAccelerations();
             _lastOrientation = Gyro.GetRotation();
 
-
+            /*
             _bufforedGpsPosition = Translator.GetCoordinates(_bufforedGpsReading);
-            _gpsTimeDiff = _bufforedTimeStamp - _timeStamp;
-
-            if (_gpsTimeDiff.Seconds > 0)
+            _gpsTimeDiff = _bufforedTimeStamp - _timeStamp;*/
+            Filter.GPSError = _bufforedGpsReading.VerticalAccuracy;
+            /*
+            if (_gpsTimeDiff.Milliseconds > 0)
             {
-                _gpsVelocity.x = (float)_velocityX.GetValue((_bufforedGpsPosition.x - _gpsPosition.x) / _gpsTimeDiff.Seconds);
-                _gpsVelocity.z = (float)_velocityX.GetValue((_bufforedGpsPosition.z - _gpsPosition.z) / _gpsTimeDiff.Seconds);
-            }
+                _gpsVelocity.x = (float)_velocityX.GetValue((_bufforedGpsPosition.x - _gpsPosition.x) / Filter.DeltaTime);//((double)_gpsTimeDiff.Milliseconds/1000));
+                _gpsVelocity.z = (float)_velocityZ.GetValue((_bufforedGpsPosition.z - _gpsPosition.z) / Filter.DeltaTime); //((double)_gpsTimeDiff.Milliseconds / 1000));
+            }*/
 
-            _lastGpsReading = _bufforedGpsReading;
+            //_lastGpsReading = _bufforedGpsReading;
             _gpsPosition = Translator.GetCoordinates(_lastGpsReading);//Pozycja x,y,z w ukladzie lokalnym; ruch odbywa się w plaszczyznie xz
-            _timeStamp = _bufforedTimeStamp;
+            //_timeStamp = _bufforedTimeStamp;
 
 
             _worldAccelerations = _lastOrientation * _lastAccReading;//obrot przyspieszen do kierunkow globalnych
@@ -116,8 +125,8 @@ namespace TourHelper.Logic.PositionLogic
             _accYF = AccelerationFilterY.GetValue(_worldAccelerations.y) * GRAVITY;
             _accZF = AccelerationFilterZ.GetValue(_worldAccelerations.z) * GRAVITY;
 
-            accelerationMatrix.SetByIndex(_accXF, 0, 0); // nalezy przeprowadzic testy na jakie kierunki rzutowane sa przyspieszenia
-            accelerationMatrix.SetByIndex(_accYF, 1, 0);
+            accelerationMatrix.SetByIndex(-_accXF, 0, 0); // UWAGA KIERUNKI PRZYSPIESZEN NIE ZGODNE X dodatni wskazuje na zachod a Y dodatni na poludnie!!!!!
+            accelerationMatrix.SetByIndex(-_accYF, 1, 0);
 
             IMatrix gpsMatrix = new Matrix(4, 1);
 
@@ -125,28 +134,29 @@ namespace TourHelper.Logic.PositionLogic
             gpsMatrix.SetByIndex(_gpsPosition.z, 1, 0);
 
 
-            gpsMatrix.SetByIndex(_gpsVelocity.x, 2, 0);
-            gpsMatrix.SetByIndex(_gpsVelocity.z, 3, 0);
+            gpsMatrix.SetByIndex(0, 2, 0);
+            gpsMatrix.SetByIndex(0, 3, 0);
 
 
             if (isStanding())
             {
                 Filter.ResetVelocity();
-                _velocityX.SetZero();
-                _velocityY.SetZero();
+                //_velocityX.SetZero();
+                //_velocityZ.SetZero();
             }
 
             Filter.Predict(accelerationMatrix);
 
             Filter.Update(gpsMatrix);
 
+
             if (LogMode)
             {
                 using (StreamWriter s = File.Exists(LogPath) ? File.AppendText(LogPath) : File.CreateText(LogPath))
                 {
                     //Debug.Log("I am in");
-                    _counter += Filter.DeltaTime;
-                    s.Write(_counter.ToString() + "|");
+                    _timeCounter += Filter.DeltaTime;
+                    s.Write((_timeCounter).ToString() + "|");
                     s.Write(_gpsPosition.x.ToString() + ';' + _gpsPosition.y.ToString() + ';' + _gpsPosition.z.ToString() + "|");
 
                     s.Write(Filter.Prediction.GetByIndex(0, 0).ToString() + ';' + 0.ToString() + ';' + Filter.Prediction.GetByIndex(1, 0).ToString() + "|");
@@ -160,8 +170,8 @@ namespace TourHelper.Logic.PositionLogic
                     double v = Math.Sqrt(Math.Pow(Filter.Prediction.GetByIndex(2, 0), 2) + Math.Pow(Filter.Prediction.GetByIndex(3, 0), 2));
 
 
-                    s.Write(v.ToString() + "\n");
-
+                    s.Write(v.ToString() + "|");
+                    //s.Write(_gpsVelocity.x.ToString() + ';' + _gpsVelocity.y.ToString() + "\n");
 
                 }
             }

@@ -22,6 +22,15 @@ namespace TourHelper.Manager.Devices.Mock
             _stedyState = new Vector3();
         }
 
+        public MockAccelerometrManager(DevicesFromFile data)
+        {
+            data.ReadData();
+
+            _data = data.Accelerations;
+            _enumerator = _data.GetEnumerator();
+            _stedyState = new Vector3();
+        }
+
         public Vector3 GetAcceleration()
         {
             if (_enumerator.MoveNext())

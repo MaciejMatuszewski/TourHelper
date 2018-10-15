@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using TourHelper.Base.Manager.Calculators;
 
 namespace TourHelper.Manager.Calculators
@@ -8,15 +9,14 @@ namespace TourHelper.Manager.Calculators
     public class MeanFilter:IFilter<double>
     {
         
-        private ArrayList tabOfElements;
-        private int counter = 0;
-        public int FilterRange { get; set; }
+        private Queue<double> tabOfElements;
+        public int FilterRange { get; private set; }
         public IFilter<double> _internalFilter;
 
         public MeanFilter(int number)
         {
             FilterRange = number;
-            tabOfElements = new ArrayList();
+            tabOfElements = new Queue<double>(number);
         }
 
         public MeanFilter(int number,IFilter<double> _filter):this(number)
@@ -24,18 +24,11 @@ namespace TourHelper.Manager.Calculators
             _internalFilter = _filter;
         }
 
-        private void IncCounter()
-        {
-            counter++;
-            counter %= FilterRange;
-        }
+
 
         public void SetZero()
         {
-            for (int i = 0; i < tabOfElements.Count; i++)
-            {
-                tabOfElements[i] = 0;
-            }
+            tabOfElements.Clear();
         }
         public double GetValue(double e)
         {
@@ -45,22 +38,14 @@ namespace TourHelper.Manager.Calculators
             }
 
             double sum = 0;
-            if (tabOfElements.Count < FilterRange)
-            {
-                tabOfElements.Add(e);
-            }
-            else
-            {
-                tabOfElements[counter]=e;
-            }
+            tabOfElements.Enqueue(e);
 
-            for (int i = 0; i < Math.Min(tabOfElements.Count, FilterRange); i++)
+            foreach(double el in tabOfElements)
             {
-                sum += (double)tabOfElements[i];
+                sum += el;
             }
            
-            IncCounter();
-            return sum/Math.Min(tabOfElements.Count,FilterRange);
+            return sum/ tabOfElements.Count;
         }
     }
 }

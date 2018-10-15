@@ -19,8 +19,8 @@ namespace TourHelper.Manager.Devices
                         if (instance == null)
                         {
                             instance = new GpsManager();
-                            instance.DesiredAccuracy = 5;
-                            instance.DesiredChange = 5;
+                            instance.DesiredAccuracy = 3;
+                            instance.DesiredChange = 3;
                         }
                     }
                 }

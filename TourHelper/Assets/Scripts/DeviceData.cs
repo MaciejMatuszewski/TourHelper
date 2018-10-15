@@ -35,7 +35,7 @@ public class DeviceData : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isOn)
         {
@@ -84,7 +84,7 @@ public class DeviceData : MonoBehaviour
             s.Write(_acc.x.ToString() + ";" + _acc.y.ToString() +";"+ _acc.z.ToString() +"|");
             s.Write(_rot.x.ToString() + ";" + _rot.y.ToString() + ";" + _rot.z.ToString() + ";" + _rot.w.ToString() + "|");
             s.Write(_coor.Latitude.ToString() + ";" + _coor.Longitude.ToString() + "|");
-
+            s.Write(_coor.VerticalAccuracy+ "|");
             s.Write("\n");
             s.Close();
         }

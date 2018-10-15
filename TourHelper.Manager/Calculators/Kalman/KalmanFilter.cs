@@ -131,10 +131,10 @@ namespace TourHelper.Manager.Calculators.Kalman
             double err_s = 0.5 * AccelerationError * DeltaTime * DeltaTime;//speed error due to acceleration
 
             double[,] qTemp = new double[,] {
-                {err_s*err_s,err_s*err_v,0,0 },
-                {0,err_s*err_s,0,err_s*err_v },
-                {err_s*err_v,0,err_v*err_v,0 },
-                {0,err_s*err_v,0,err_v*err_v },
+                {err_s*err_s,0,0,0 },
+                {0,err_s*err_s,0,0 },
+                {0,0,err_v*err_v,0 },
+                {0,0,0,err_v*err_v },
             };
 
             q = new Matrix(qTemp.GetLength(0), qTemp.GetLength(1));
@@ -151,6 +151,8 @@ namespace TourHelper.Manager.Calculators.Kalman
                 {0,0,err_vGPS,0 },
                 {0,0,0,err_vGPS },
             };
+
+            //ustawic duzy blad na predkosci 
 
 
             r = new Matrix(rTemp.GetLength(0), rTemp.GetLength(1));
@@ -213,6 +215,8 @@ namespace TourHelper.Manager.Calculators.Kalman
 
         public void ResetVelocity()
         {
+            //TODO dodac korekte za pomoca regresji... w celu redukcji dryftu predkosci + wybor czy ma uzywac redukcji.
+
             Prediction.SetByIndex(0, 2, 0);
             Prediction.SetByIndex(0, 3, 0);
         }

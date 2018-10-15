@@ -79,11 +79,15 @@ namespace TourHelper.TestApp.Position
 
 
 
-                Processor.UpdateResult(_acceleration , (float)s);
+                Processor.UpdateResult(_acceleration ,(float) s);
                 counter++;
                 time += s;
             }
+            Console.WriteLine("MaxX:" +Processor.maxX);
+            Console.WriteLine("MaxY:" + Processor.maxY);
+            //Console.ReadKey();
         }
+
 
 
     }

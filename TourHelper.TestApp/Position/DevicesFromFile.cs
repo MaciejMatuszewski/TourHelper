@@ -37,7 +37,7 @@ namespace TourHelper.TestApp.Position
                 string[] accelerations;
                 string[] rotations;
                 string[] positions;
-
+                string[] accuracy;
                 while ((line = s.ReadLine()) != null)
                 {
                     splitedLine = line.Split('|');
@@ -69,16 +69,15 @@ namespace TourHelper.TestApp.Position
 
                     
                     positions = splitedLine[3].Split(';');
-
+                    accuracy = splitedLine[4].Split(';');
 
                     Position.Add(new Coordinates() {
-                        Latitude =Convert.ToDouble(positions[0]),
-                        Longitude = Convert.ToDouble(positions[1])
+                        Latitude = Convert.ToDouble(positions[0]),
+                        Longitude = Convert.ToDouble(positions[1]),
+                        VerticalAccuracy = Convert.ToDouble(accuracy[0]),
+                        HorizontalAccuracy = Convert.ToDouble(accuracy[0])
+
                     });
-
-
-
-
                 }
                
             }

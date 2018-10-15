@@ -37,7 +37,7 @@ public class Integral : MonoBehaviour {
 			_stamp = DateTime.Now;
 			_acceleration= _oriantation* _acceleration;
 			_acceleration.z += 1f;
-			s.UpdateResult(_acceleration* 9.8123f, _stamp);
+			//s.UpdateResult(_acceleration* 9.8123f, _stamp);
 			
 		}
 	}

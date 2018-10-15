@@ -69,6 +69,7 @@
     <Compile Include="Devices\GpsManager.cs" />
     <Compile Include="Devices\BaseLocationManager.cs" />
     <Compile Include="Devices\GyroManager.cs" />
+    <Compile Include="Devices\Mock\DevicesFromFile.cs" />
     <Compile Include="Devices\Mock\MockAccelerometrManager.cs" />
     <Compile Include="Devices\Mock\MockCompassManager.cs" />
     <Compile Include="Devices\Mock\MockGpsManager.cs" />
