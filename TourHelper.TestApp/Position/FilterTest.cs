@@ -1,11 +1,13 @@
 ﻿using System;
 using System.IO;
+using TourHelper.Base.Atrybuty;
 using TourHelper.Base.Manager.Calculators;
 using TourHelper.Manager.Devices.Mock;
 using UnityEngine;
 
 namespace TourHelper.TestApp.Position
 {
+ 
     public class FilterTest
     {
 

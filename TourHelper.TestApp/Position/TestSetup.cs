@@ -1,4 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using TourHelper.Base.Atrybuty;
+using TourHelper.Base.Manager;
 using TourHelper.Base.Manager.Calculators;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Logic.PositionLogic;
@@ -7,11 +11,12 @@ using TourHelper.Manager.Calculators.Kalman;
 
 namespace TourHelper.TestApp.Position
 {
+
     class TestSetup
     {
         public static void LocationTest()
         {
-            string[] inputList = { "a", "b", "c", "d", "e" };//"a", "a1" , "b" , "b1" , "c", "d", "e"
+            string[] inputList = {  "d" };//"a", "a1" , "b" , "b1" , "c", "d", "e"
             string script = "LocationExtractor.py";
 
             foreach (string input in inputList)
@@ -34,18 +39,15 @@ namespace TourHelper.TestApp.Position
                 test.Processor = new LocalPosition(null, null, filter, translator);
 
                 test.Processor.Filter.GPSError = 5;
-                test.Processor.Filter.AccelerationError = 0.5;
+                test.Processor.Filter.AccelerationError = 0.1;
 
 
-                test.Processor.StandingLimit = 0.05f;
+                test.Processor.StandingLimit = 0.1f;
 
 
-
-                double[] a_h = { 1.0, -2.99981159864, 2.99962321503, -0.999811616388 };
-                double[] b_h = { 0.999905803757, -2.99971741127, 2.99971741127, -0.999905803757 };
-
-                double[] a_l = { 1.0, -2.05583537842, 1.5087573739, -0.382291854655 };
-                double[] b_l = { 0.00882876760229, 0.0264863028069, 0.0264863028069, 0.00882876760229 };
+                double[] a_l = { 1, -0.85408069 };
+                double[] b_l = { 0.07295966, 0.07295966 };
+      
 
                 test.Processor.AccelerationFilterX = new IIRFilter(a_l, b_l);
                 test.Processor.AccelerationFilterY = new IIRFilter(a_l, b_l);
@@ -59,7 +61,7 @@ namespace TourHelper.TestApp.Position
         }
         public static void FilterTest()
         {
-            string[] inputList = { "x" };
+            string[] inputList = { "e" };
             string script = "InputFilterExtractor.py";
             string script2 = "AccelerationFFT.py";
 
@@ -87,17 +89,14 @@ namespace TourHelper.TestApp.Position
                 /*
                 double[] a_l = { 1, -0.85408069 };
                 double[] b_l = { 0.07295966, 0.07295966 };*/
-                double[] a_l = { 1.0, -5.27228221828, 11.6214883223, -13.7053868251, 9.11839568032, -3.24443185302, 0.482248506594 };
-                double[] b_l = { 4.93950362255e-07, 2.96370217353e-06, 7.40925543383e-06, 9.8790072451e-06, 7.40925543383e-06, 2.96370217353e-06, 4.93950362255e-07 };
 
-                double[] a_h = { 1.0, -2.99981159864, 2.99962321503, -0.999811616388 };
-                double[] b_h = { 0.999905803757, -2.99971741127, 2.99971741127, -0.999905803757 };
-
+                double[] a_l = { 1, -0.85408069 };
+                double[] b_l = { 0.07295966, 0.07295966 };
                 double c = 0.03;
 
-                IFilter<double> fX = new IIRFilter(a_h, b_h); //new IIRFilter(a_h, b_h, null));
-                IFilter<double> fY = new IIRFilter(a_h, b_h);//new IIRFilter(a_h, b_h, null));
-                IFilter<double> fZ = new IIRFilter(a_h, b_h);//new IIRFilter(a_h, b_h, null));
+                IFilter<double> fX = new IIRFilter(a_l, b_l); //new IIRFilter(a_h, b_h, null));
+                IFilter<double> fY = new IIRFilter(a_l, b_l);//new IIRFilter(a_h, b_h, null));
+                IFilter<double> fZ = new IIRFilter(a_l, b_l);//new IIRFilter(a_h, b_h, null));
 
                 test.FilterBeforeTransformation = false;
 
@@ -170,5 +169,7 @@ namespace TourHelper.TestApp.Position
 
             return p;
         }
+
+
     }
 }

@@ -8,6 +8,7 @@ using UnityEngine;
 
 namespace TourHelper.TestApp.Position
 {
+    
     public class PositionTest
     {
         public string DataFilePath { get; set; }

@@ -1,11 +1,9 @@
-﻿using System.Diagnostics;
-using TourHelper.Base.Manager.Calculators;
+﻿
 using TourHelper.Base.Model.Entity;
-using TourHelper.Manager.Calculators;
+using TourHelper.Logic;
+using TourHelper.Manager;
 using TourHelper.Repository;
 using TourHelper.TestApp.Position;
-using UnityEngine;
-
 
 namespace TourHelper.TestApp
 {
@@ -13,20 +11,13 @@ namespace TourHelper.TestApp
     {
         static void Main(string[] args)
         {
-            //TestSetup.FilterTest();
-            //TestSetup.IntegralTest();
-            //TestSetup.LocationTest();
-           
 
-            CoordinatesCalculatorTest t = new CoordinatesCalculatorTest();
+            /* var _test = new GameSceneTest();
+             _test.test();*/
 
-            t.test();
+            TestSetup.LocationTest();
+            TestSetup.FilterTest();
         }
-
-        
-
-
-
 
         public static void dbTest()
         {

@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atrybuty\PrefabAttribute.cs" />
     <Compile Include="Enum\ServiceStatus.cs" />
     <Compile Include="Exception\RepositoryException.cs" />
     <Compile Include="Logic\IDistanceCalculator.cs" />
@@ -72,8 +73,10 @@
     <Compile Include="Manager\Devices\IGpsManager.cs" />
     <Compile Include="Manager\Devices\ICompassManager.cs" />
     <Compile Include="Manager\Devices\IGyroManager.cs" />
+    <Compile Include="Manager\IPointInRange.cs" />
     <Compile Include="Model\Entity\BaseModel.cs" />
     <Compile Include="Model\Entity\Coordinates.cs" />
+    <Compile Include="Model\Entity\PrefabNode.cs" />
     <Compile Include="Model\Entity\UserProfile.cs" />
     <Compile Include="Model\Entity\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

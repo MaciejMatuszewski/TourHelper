@@ -74,7 +74,10 @@
     <Compile Include="Devices\Mock\MockCompassManager.cs" />
     <Compile Include="Devices\Mock\MockGpsManager.cs" />
     <Compile Include="Devices\Mock\MockGyroManager.cs" />
+    <Compile Include="ClassRetrieveManager.cs" />
+    <Compile Include="PrefabRetrieveManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomCoinsInRangeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TourHelper.Base\TourHelper.Base.csproj">

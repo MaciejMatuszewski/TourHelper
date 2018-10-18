@@ -6,7 +6,7 @@ namespace TourHelper.Base.Logic
 {
     public interface IPlayer
     {
-        void InitializePlayer(GameObject camera);
+        void InitializePlayer(Camera camera);
         void UpdatePlayer();
         void RebasePlayer(Coordinates _origin);
 

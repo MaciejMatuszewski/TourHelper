@@ -263,12 +263,10 @@
     <Compile Include="Assets\Scripts\ElementsManagement\CoinEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\ElementRotation.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\InfoEvents.cs" />
-    <Compile Include="Assets\Scripts\Integral.cs" />
     <Compile Include="Assets\Scripts\PhoneCamera.cs" />
-    <Compile Include="Assets\Scripts\Quaterions.cs" />
     <Compile Include="Assets\Scripts\TargetMark.cs" />
+    <Compile Include="Assets\Scripts\TEMP\Integral.cs" />
     <Compile Include="Assets\Scripts\TextUpdate.cs" />
-    <Compile Include="Assets\Scripts\TrackingTest.cs" />
     <Compile Include="Assets\Scripts\Workspace.cs" />
   </ItemGroup>
   <ItemGroup>

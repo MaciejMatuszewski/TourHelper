@@ -27,7 +27,7 @@ namespace TourHelper.Logic.PositionLogic
         public IFilter<double> AccelerationFilterZ { get; set; }
         public float StandingLimit {get;set;}
 
-        private Coordinates _lastGpsReading, _bufforedGpsReading;
+        private Coordinates _lastGpsReading;
 
         private Vector3 _lastAccReading;
         private Quaternion _lastOrientation;
@@ -78,17 +78,20 @@ namespace TourHelper.Logic.PositionLogic
             _lastGpsReading = _translator.Origin;//Gps.GetCoordinates();
             Origin = _translator.Origin;
             //_timeStamp = DateTime.Now;
-
+            //a{1,-0.85408069};b{0.07295966,0.07295966} n=1 f=0.05 low
+            /*
             double[] a_l = { 1.0, -2.05583537842, 1.5087573739, -0.382291854655 };
             double[] b_l = { 0.00882876760229, 0.0264863028069, 0.0264863028069, 0.00882876760229 };
-
+            */
+            double[] a_l = { 1, -0.85408069 };
+            double[] b_l = { 0.07295966, 0.07295966 };
             //_velocityX = new MeanFilter(15);
             //_velocityZ = new MeanFilter(15);
             AccelerationFilterX = new IIRFilter(a_l,b_l);
             AccelerationFilterY = new IIRFilter(a_l, b_l);
             AccelerationFilterZ = new IIRFilter(a_l, b_l);
 
-            StandingLimit = 0.01f;
+            StandingLimit = 0.05f;
         }
 
         public Vector3 GetPosition()
@@ -103,7 +106,10 @@ namespace TourHelper.Logic.PositionLogic
             /*
             _bufforedGpsPosition = Translator.GetCoordinates(_bufforedGpsReading);
             _gpsTimeDiff = _bufforedTimeStamp - _timeStamp;*/
-            Filter.GPSError = _bufforedGpsReading.VerticalAccuracy;
+
+
+            Filter.GPSError = _lastGpsReading.VerticalAccuracy;
+
             /*
             if (_gpsTimeDiff.Milliseconds > 0)
             {
@@ -171,7 +177,7 @@ namespace TourHelper.Logic.PositionLogic
 
 
                     s.Write(v.ToString() + "|");
-                    //s.Write(_gpsVelocity.x.ToString() + ';' + _gpsVelocity.y.ToString() + "\n");
+                    s.Write(0.ToString() + ';' + 0.ToString() + "\n");
 
                 }
             }
@@ -181,7 +187,7 @@ namespace TourHelper.Logic.PositionLogic
 
         public bool isStanding()
         {
-            
+            //double d = Math.Sqrt(_accZF * _accZF);
             double d = Math.Sqrt(_accXF * _accYF + _accYF * _accYF + _accZF * _accZF);
             if (d < StandingLimit)
             {

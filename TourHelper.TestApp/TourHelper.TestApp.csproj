@@ -45,10 +45,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Position\CoordinatesCalculatorTest.cs" />
-    <Compile Include="Position\DevicesFromFile.cs" />
     <Compile Include="Position\FilterTest.cs" />
+    <Compile Include="Position\GameSceneTest.cs" />
     <Compile Include="Position\LocationTest.cs" />
     <Compile Include="Position\PositionTest.cs" />
+    <Compile Include="Position\RandomCoinsTest.cs" />
     <Compile Include="Position\TestSetup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
