@@ -96,7 +96,7 @@ namespace TourHelper.Logic.PositionLogic
 
         public Vector3 GetPosition()
         {
-            Filter.DeltaTime = Time.deltaTime;
+            //Filter.DeltaTime = Time.deltaTime;
             _lastGpsReading = Gps.GetCoordinates();
             //_bufforedTimeStamp = DateTime.Now;
 
@@ -108,7 +108,7 @@ namespace TourHelper.Logic.PositionLogic
             _gpsTimeDiff = _bufforedTimeStamp - _timeStamp;*/
 
 
-            Filter.GPSError = _lastGpsReading.VerticalAccuracy;
+            Filter.GPSError = 10;//_lastGpsReading.VerticalAccuracy;
 
             /*
             if (_gpsTimeDiff.Milliseconds > 0)

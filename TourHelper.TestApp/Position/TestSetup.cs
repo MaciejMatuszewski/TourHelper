@@ -16,7 +16,7 @@ namespace TourHelper.TestApp.Position
     {
         public static void LocationTest()
         {
-            string[] inputList = {  "d" };//"a", "a1" , "b" , "b1" , "c", "d", "e"
+            string[] inputList = { "39_25" , "41_27" };//"a", "a1" , "b" , "b1" , "c", "d", "e"
             string script = "LocationExtractor.py";
 
             foreach (string input in inputList)
@@ -39,7 +39,7 @@ namespace TourHelper.TestApp.Position
                 test.Processor = new LocalPosition(null, null, filter, translator);
 
                 test.Processor.Filter.GPSError = 5;
-                test.Processor.Filter.AccelerationError = 0.1;
+                test.Processor.Filter.AccelerationError = 1;
 
 
                 test.Processor.StandingLimit = 0.1f;
