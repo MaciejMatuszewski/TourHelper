@@ -72,16 +72,16 @@ namespace TourHelper.Logic
             var newElement = new GameObject(nameOfPrefab + "_Container");
             newElement.transform.SetParent(MainPanel.transform);
             newNode.Container = newElement;
-            
+            newNode.Actions = new List<IPointInRange>();
             if (_actions)
             {
                 var listOfTypes = ActionsManager.GetTypesByName(nameOfPrefab);
 
-                newNode.Actions = new List<IPointInRange>();
+                
 
                 foreach (Type type in listOfTypes)
                 {
-                    Debug.Log(type.ToString());
+                   
                     newNode.Actions.Add((IPointInRange)Activator.CreateInstance(type));
                 }
             }
@@ -175,7 +175,7 @@ namespace TourHelper.Logic
         {
 
             var prefabType = Resources.Load(prefab);
-            Debug.Log(prefabType.ToString());
+            
             if (Prefabs.ContainsKey(prefab)&& prefabType!=null)
             {
                 
@@ -211,10 +211,12 @@ namespace TourHelper.Logic
             Origin = _gps.GetCoordinates();
             foreach (string key in Prefabs.Keys)
             {
+                Debug.Log(key);
                 ClearContainer(key);
+                
                 foreach (IPointInRange action in Prefabs[key].Actions)
                 {
-                    Debug.Log(key);
+                    
                     var list = action.GetPointsInRange(Origin, LatitudeRange, LongitudeRange);
                     
                     InstantiatePrefab(key , list);

@@ -16,7 +16,7 @@ namespace TourHelper.TestApp.Position
     {
         public static void LocationTest()
         {
-            string[] inputList = { "39_25" , "41_27" };//"a", "a1" , "b" , "b1" , "c", "d", "e"
+            string[] inputList = { "41_27" };//"a", "a1" , "b" , "b1" , "c", "d", "e""39_25_1" , "41_27"
             string script = "LocationExtractor.py";
 
             foreach (string input in inputList)
@@ -26,9 +26,6 @@ namespace TourHelper.TestApp.Position
                          $@"D:\Uczelnia\INŻYNIERKA\TESTY\Dane\Wyniki-location\{input}_output.txt");
 
                 KalmanFilter filter = new KalmanFilter();
-
-
-
 
                 Coordinates origin = new Coordinates();
                 origin.Latitude = 52.463794708252f;
@@ -61,7 +58,7 @@ namespace TourHelper.TestApp.Position
         }
         public static void FilterTest()
         {
-            string[] inputList = { "e" };
+            string[] inputList = { "39_25_1" };
             string script = "InputFilterExtractor.py";
             string script2 = "AccelerationFFT.py";
 

@@ -9,6 +9,7 @@ public class TextUpdate : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         text.text = "";
+        
         Debug.Log(Input.compass.enabled.ToString());
         Input.compass.enabled = true;
         Debug.Log(Input.compass.enabled.ToString());

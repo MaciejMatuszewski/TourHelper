@@ -64,7 +64,8 @@ namespace TourHelper.Manager.Devices
             status = ServiceStatus.Initializing;
             yield return new WaitForSeconds(1);
             timeOut--;
-            //Debug.Log(timeOut);
+            //
+           
             if (timeOut < 0)
             {
                 status = ServiceStatus.Failed;

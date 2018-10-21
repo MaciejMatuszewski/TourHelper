@@ -67,8 +67,8 @@ public class Workspace : MonoBehaviour
         _scene = new GameSpace(_gps, _assemblies);
         _scene.MainPanel = _mainPanel;
         _scene.AddPrefab("Coin",defaultActions:true);
+        _scene.AddPrefab("InfoPoint", new RandomCoinsInRangeManager(), defaultActions: false);
 
-        
         _scene.RebaseEvent += _player.RebasePlayer;
 
         _player.InitializePlayer(_camera);

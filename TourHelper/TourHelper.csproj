@@ -270,8 +270,6 @@
     <Compile Include="Assets\Scripts\Workspace.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\DLL\UnityEngine.AudioModule.xml" />
-    <None Include="Assets\DLL\UnityEngine.CoreModule.xml" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

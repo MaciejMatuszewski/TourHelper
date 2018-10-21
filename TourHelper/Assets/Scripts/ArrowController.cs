@@ -26,9 +26,9 @@ public class ArrowController : MonoBehaviour {
         gps = GpsManager.Instance;
         compass = CompassManager.Instance;
 
-        compass.Delay = 100;
-        compass.Precision = 2;
-        compass.MaxChange = 5d;
+        compass.Delay = 500;
+        compass.Precision = 1;
+        compass.MaxChange = 2d;
 
         target = new Coordinates();
         target.Latitude = 52.463661f; 
@@ -50,8 +50,8 @@ public class ArrowController : MonoBehaviour {
         Quaternion start = compassArrow.transform.localRotation;
         Quaternion end = Quaternion.AngleAxis(-(float)compass.GetAngleToNorth(), new Vector3(0, 1, 0));
 
-        // compassArrow.transform.localRotation =Quaternion.Slerp(start, end, Time.deltaTime * scale);
-        
-        compassArrow.transform.localRotation=Quaternion.AngleAxis(_gyro.GetRotation().eulerAngles.x,Vector3.up);
+        //compassArrow.transform.localRotation =Quaternion.Slerp(start, end, Time.deltaTime * scale);
+
+        compassArrow.transform.localRotation = Quaternion.Euler(0, -Quaternion.Inverse(_gyro.GetRotation()).eulerAngles.z, 0);//; 
     }
 }

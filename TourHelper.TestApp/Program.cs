@@ -16,7 +16,7 @@ namespace TourHelper.TestApp
              _test.test();*/
 
             TestSetup.LocationTest();
-            TestSetup.FilterTest();
+            //TestSetup.FilterTest();
         }
 
         public static void dbTest()
