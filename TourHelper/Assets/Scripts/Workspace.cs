@@ -17,6 +17,7 @@ public class Workspace : MonoBehaviour
 
     private IGpsManager _gps;
     private IGyroManager _gyro;
+    private ICompassManager _compass;
 
     //Game controllers
     private Player _player;
@@ -46,12 +47,14 @@ public class Workspace : MonoBehaviour
 
         //-----------REAL DEVICES-----------        
         _gyro = GyroManager.Instance;
-        StartCoroutine(_gyro.StartService(2));
+        StartCoroutine(_gyro.StartService(5));
 
         _gps = GpsManager.Instance;
-        StartCoroutine(_gps.StartService(2));
+        StartCoroutine(_gps.StartService(5));
 
-    #endif
+        _compass = CompassManager.Instance;
+        StartCoroutine(_compass.StartService(5));
+#endif
 
 
     }

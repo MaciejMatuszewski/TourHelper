@@ -73,9 +73,9 @@ namespace TourHelper.Logic.PositionLogic
             AccelerationFilterY = new IIRFilter(a_l, b_l);
             AccelerationFilterZ = new IIRFilter(a_l, b_l);
 
-            StandingLimit = 0.1f;
+            StandingLimit = 0.2f;
             StandingCycles = 5;
-            PredictionCycles = 10;
+            PredictionCycles = 4;
         }
 
         public Vector3 GetPosition()

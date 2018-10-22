@@ -8,12 +8,9 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Logic.p
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Base.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\UnityEngine.CoreModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Base.pdb
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\UnityEngine.CoreModule.xml
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.csprojResolveAssemblyReference.cache
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\UnityEngine.AudioModule.dll
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\UnityEngine.AudioModule.xml
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Manager.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Manager.pdb
 D:\Projekty\REBASE INŻ\TourHelper.Logic\bin\Debug\TourHelper.Logic.dll
@@ -28,3 +25,6 @@ D:\Projekty\REBASE INŻ\TourHelper.Logic\obj\Debug\TourHelper.Logic.csproj.CoreC
 D:\Projekty\REBASE INŻ\TourHelper.Logic\obj\Debug\TourHelper.Logic.csproj.CopyComplete
 D:\Projekty\REBASE INŻ\TourHelper.Logic\obj\Debug\TourHelper.Logic.dll
 D:\Projekty\REBASE INŻ\TourHelper.Logic\obj\Debug\TourHelper.Logic.pdb
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.csprojAssemblyReference.cache
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.csproj.CoreCompileInputs.cache
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.csproj.CopyComplete

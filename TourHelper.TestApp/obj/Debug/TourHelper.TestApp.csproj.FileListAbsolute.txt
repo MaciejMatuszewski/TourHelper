@@ -20,12 +20,9 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\TourHelper.Base.
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\TourHelper.Logic.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\TourHelper.Manager.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\TourHelper.Repository.pdb
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\UnityEngine.CoreModule.xml
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.csprojResolveAssemblyReference.cache
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.exe
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\UnityEngine.AudioModule.dll
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\bin\Debug\UnityEngine.AudioModule.xml
 D:\Projekty\REBASE INŻ\TourHelper.TestApp\bin\Debug\TourHelper.TestApp.exe
 D:\Projekty\REBASE INŻ\TourHelper.TestApp\bin\Debug\TourHelper.TestApp.pdb
 D:\Projekty\REBASE INŻ\TourHelper.TestApp\bin\Debug\TourHelper.Base.dll
@@ -42,3 +39,6 @@ D:\Projekty\REBASE INŻ\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.csproj.C
 D:\Projekty\REBASE INŻ\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.csproj.CopyComplete
 D:\Projekty\REBASE INŻ\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.exe
 D:\Projekty\REBASE INŻ\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.pdb
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.csprojAssemblyReference.cache
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.csproj.CoreCompileInputs.cache
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.TestApp\obj\Debug\TourHelper.TestApp.csproj.CopyComplete

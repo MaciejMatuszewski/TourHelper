@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ArrowController : MonoBehaviour {
 
-    public Transform container;
+    public Text container;
     public Transform targetArrow;
     public Transform compassArrow;
     public int scale=1;
@@ -26,7 +26,7 @@ public class ArrowController : MonoBehaviour {
         gps = GpsManager.Instance;
         compass = CompassManager.Instance;
 
-        compass.Delay = 500;
+        compass.Delay = 100;
         compass.Precision = 1;
         compass.MaxChange = 2d;
 
@@ -41,7 +41,7 @@ public class ArrowController : MonoBehaviour {
     void Update () {
 
         
-        rot.Transform(targetArrow, target);
+        //rot.Transform(targetArrow, target);
         NorthTransformation();
     }
 
@@ -49,9 +49,9 @@ public class ArrowController : MonoBehaviour {
     {
         Quaternion start = compassArrow.transform.localRotation;
         Quaternion end = Quaternion.AngleAxis(-(float)compass.GetAngleToNorth(), new Vector3(0, 1, 0));
-
-        //compassArrow.transform.localRotation =Quaternion.Slerp(start, end, Time.deltaTime * scale);
-
-        compassArrow.transform.localRotation = Quaternion.Euler(0, -Quaternion.Inverse(_gyro.GetRotation()).eulerAngles.z, 0);//; 
+        
+        compassArrow.transform.localRotation = Quaternion.Euler(0, -(float)compass.GetAngleToNorth(), 0);// Quaternion.Slerp(start, end, Time.deltaTime * scale);
+        container.text = compass.GetAngleToNorth().ToString();
+       // compassArrow.transform.localRotation = Quaternion.Euler(0, -Quaternion.Inverse(_gyro.GetRotation()).eulerAngles.z, 0);//; 
     }
 }

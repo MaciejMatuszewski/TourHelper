@@ -6,14 +6,14 @@ C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\De
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\TourHelper.Base.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\UnityEngine.CoreModule.dll
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\UnityEngine.CoreModule.xml
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\UnityEngine.AudioModule.dll
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\bin\Debug\UnityEngine.AudioModule.xml
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojResolveAssemblyReference.cache
 D:\Projekty\REBASE INŻ\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CoreCompileInputs.cache
 D:\Projekty\REBASE INŻ\TourHelper.Base\obj\Debug\TourHelper.Base.dll
 D:\Projekty\REBASE INŻ\TourHelper.Base\obj\Debug\TourHelper.Base.pdb
 D:\Projekty\REBASE INŻ\TourHelper.Base\bin\Debug\TourHelper.Base.dll
 D:\Projekty\REBASE INŻ\TourHelper.Base\bin\Debug\TourHelper.Base.pdb
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojAssemblyReference.cache
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CoreCompileInputs.cache
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CopyComplete

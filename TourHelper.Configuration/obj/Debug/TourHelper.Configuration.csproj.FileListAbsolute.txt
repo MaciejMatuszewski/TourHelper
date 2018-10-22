@@ -29,7 +29,6 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\bin\Debug\TourHelper
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\bin\Debug\TourHelper.Repository.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\bin\Debug\TourHelper.TestApp.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\bin\Debug\UnityEngine.CoreModule.xml
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csprojResolveAssemblyReference.cache
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\bin\Debug\UnityEngine.AudioModule.dll
@@ -43,3 +42,6 @@ D:\Projekty\REBASE INŻ\TourHelper.Configuration\obj\Debug\TourHelper.Configurat
 D:\Projekty\REBASE INŻ\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csproj.CopyComplete
 D:\Projekty\REBASE INŻ\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.dll
 D:\Projekty\REBASE INŻ\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.pdb
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csprojAssemblyReference.cache
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csproj.CoreCompileInputs.cache
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csproj.CopyComplete
