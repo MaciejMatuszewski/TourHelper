@@ -1,35 +1,91 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿#undef DEBUG
+
+using System.Reflection;
+using TourHelper.Base.Manager.Devices;
+using TourHelper.Logic;
+using TourHelper.Manager;
 using TourHelper.Manager.Devices;
+using TourHelper.Manager.Devices.Mock;
 using UnityEngine;
-using UnityEngine.UI;
-
-public class Workspace : MonoBehaviour {
 
 
-    private Quaternion rotation;
-    private GameObject cameraContainer;
-    private GyroManager gyroscope;
 
-	// Use this for initialization
-	void Start () {
-        gyroscope = GyroManager.Instance;
-        StartCoroutine(gyroscope.StartService(3));
+public class Workspace : MonoBehaviour
+{
 
-        cameraContainer = new GameObject("Camera Container");
-        cameraContainer.transform.position = transform.position;
-        transform.SetParent(cameraContainer.transform);
+    //Devices
 
-        cameraContainer.transform.rotation = Quaternion.Euler(90f, 0, 0);
-        rotation = new Quaternion(0, 0, 1, 0);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (gyroscope.IsReady())
-        {
-            transform.localRotation=gyroscope.GetRotation()*rotation;
-        }
-	}
+    private IGpsManager _gps;
+    private IGyroManager _gyro;
+
+    //Game controllers
+    private Player _player;
+    private GameSpace _scene;
+
+    //Game Objects
+    public Camera _camera;
+    public GameObject _mainPanel;
+
+    private void Awake()
+    {
+
+    #if (DEBUG)
+        //-----------MOCK DEVICES-----------
+        var _data = new DevicesFromFile();
+
+        _data.FilePath = "D:\\Uczelnia\\INŻYNIERKA\\TourHelper\\c.txt";
+
+        _data.ReadData();
+
+        _gyro = new MockGyroManager(_data.Rotation,_data.Accelerations);
+
+        _gps = new MockGpsManager(_data.Position);
+
+
+    #else
+
+        //-----------REAL DEVICES-----------        
+        _gyro = GyroManager.Instance;
+        StartCoroutine(_gyro.StartService(2));
+
+        _gps = GpsManager.Instance;
+        StartCoroutine(_gps.StartService(2));
+
+    #endif
+
+
+    }
+
+    void Start()
+    {
+        _player = new Player(_gps, _gyro);
+
+        var _assemblies = new Assembly[] {
+            typeof(RandomCoinsInRangeManager).Assembly
+        };
+
+        _scene = new GameSpace(_gps, _assemblies);
+        _scene.MainPanel = _mainPanel;
+        _scene.AddPrefab("Coin",defaultActions:true);
+        _scene.AddPrefab("InfoPoint", new RandomCoinsInRangeManager(), defaultActions: false);
+
+        _scene.RebaseEvent += _player.RebasePlayer;
+
+        _player.InitializePlayer(_camera);
+        _scene.Initialize();
+
+    }
+
+    void Update()
+    {
+        _scene.UpdateGameSpace();
+        _player.UpdatePlayer();
+
+    }
+
+
+
+
+
 
 }

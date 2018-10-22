@@ -37,27 +37,50 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\TourHelper\Library\UnityAssemblies\UnityEngine.AudioModule.dll</HintPath>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TourHelper.Base\bin\Debug\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\TourHelper.Base\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\Filters\CorrectionFilter.cs" />
+    <Compile Include="Calculators\Filters\CutOffFilter.cs" />
+    <Compile Include="Calculators\Filters\IIRFilter.cs" />
+    <Compile Include="Calculators\TTemp\IMUFilter.cs" />
+    <Compile Include="Calculators\Kalman\KalmanFilter.cs" />
+    <Compile Include="Calculators\Filters\LinearRegression.cs" />
+    <Compile Include="Calculators\MatrixTools\LUDecomposition.cs" />
+    <Compile Include="Calculators\MatrixTools\LUSolver.cs" />
+    <Compile Include="Calculators\MatrixTools\Matrix.cs" />
+    <Compile Include="Calculators\MatrixTools\MatrixMultiIKJ.cs" />
+    <Compile Include="Calculators\MatrixTools\MatrixNxN.cs" />
+    <Compile Include="Calculators\TTemp\SignalIntegral.cs" />
+    <Compile Include="Calculators\Geolocation\UTMLocalCoordinates.cs" />
     <Compile Include="Calculators\MathTools.cs" />
-    <Compile Include="Calculators\MeanFilter.cs" />
-    <Compile Include="Calculators\TMConverter.cs" />
-    <Compile Include="Calculators\UTMProjection.cs" />
-    <Compile Include="Calculators\WGS84Elipse.cs" />
+    <Compile Include="Calculators\Filters\MeanFilter.cs" />
+    <Compile Include="Calculators\Geolocation\TMConverter.cs" />
+    <Compile Include="Calculators\Geolocation\UTMProjection.cs" />
+    <Compile Include="Calculators\Geolocation\WGS84Elipse.cs" />
+    <Compile Include="Devices\AccelerationManager.cs" />
     <Compile Include="Devices\CameraManager.cs" />
     <Compile Include="Devices\CompassManager.cs" />
     <Compile Include="Devices\GpsManager.cs" />
     <Compile Include="Devices\BaseLocationManager.cs" />
     <Compile Include="Devices\GyroManager.cs" />
+    <Compile Include="Devices\Mock\DevicesFromFile.cs" />
+    <Compile Include="Devices\Mock\MockAccelerometrManager.cs" />
     <Compile Include="Devices\Mock\MockCompassManager.cs" />
     <Compile Include="Devices\Mock\MockGpsManager.cs" />
+    <Compile Include="Devices\Mock\MockGyroManager.cs" />
+    <Compile Include="ClassRetrieveManager.cs" />
+    <Compile Include="PrefabRetrieveManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomCoinsInRangeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TourHelper.Base\TourHelper.Base.csproj">

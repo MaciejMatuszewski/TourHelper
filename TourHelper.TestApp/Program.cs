@@ -1,6 +1,9 @@
-﻿using TourHelper.Base.Model.Entity;
-using TourHelper.Manager.Calculators;
+﻿
+using TourHelper.Base.Model.Entity;
+using TourHelper.Logic;
+using TourHelper.Manager;
 using TourHelper.Repository;
+using TourHelper.TestApp.Position;
 
 namespace TourHelper.TestApp
 {
@@ -8,20 +11,32 @@ namespace TourHelper.TestApp
     {
         static void Main(string[] args)
         {
-            var userRepository = new UserRepository();
-            var user = userRepository.GetByLogin("cycu");
 
-            int a = 1;
-            double[] output;
-            TMConverter conv = new TMConverter();
-            Coordinate c = new Coordinate();
-            c.Latitude = 52.657570f;
-            c.Longitude = 1.717922f;
+            /* var _test = new GameSceneTest();
+             _test.test();*/
 
-            output = conv.ConvertCoordinates(c);
+            TestSetup.LocationTest();
+            //TestSetup.FilterTest();
+        }
 
-            System.Console.WriteLine("X:" + output[0].ToString() + "\nY:" + output[1].ToString() + "\nZ:");
-            System.Console.ReadKey();
+        public static void dbTest()
+        {
+            var x = new UserRepository();
+            var y = new UserProfileRepository();
+            var z = y.Insert(new UserProfile
+            {
+                Age = 33,
+                Email = "kixar@wp.pl",
+                FirstName = "H",
+                LastName = "D"
+            });
+            x.Insert(new User
+            {
+                Login = "cycu",
+                Password = "123",
+                UserProfileId = z.Id
+            });
+            //var a = x.GetByLogin("cycu");
         }
     }
 }

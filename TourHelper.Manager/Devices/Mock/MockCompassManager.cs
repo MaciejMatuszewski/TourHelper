@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using TourHelper.Base.Enum;
-using TourHelper.Base.Manager;
+using TourHelper.Base.Manager.Devices;
 
 namespace TourHelper.Manager.Devices.Mock
 {

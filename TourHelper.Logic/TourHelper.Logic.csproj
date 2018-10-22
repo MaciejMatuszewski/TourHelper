@@ -39,14 +39,18 @@
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\TourHelper\Library\UnityAssemblies\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\TourHelper.Base\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameSpace.cs" />
     <Compile Include="Geolocation\BasicRotationCalculator.cs" />
     <Compile Include="Geolocation\GeolocationTool.cs" />
     <Compile Include="Geolocation\HaversineDistanceCalculator.cs" />
     <Compile Include="Geolocation\MeanEarthRadius.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="PositionLogic\LocalPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

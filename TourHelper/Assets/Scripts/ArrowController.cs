@@ -1,12 +1,13 @@
 ﻿using TourHelper.Base.Model.Entity;
 using TourHelper.Logic.Geolocation;
 using TourHelper.Manager;
+using TourHelper.Manager.Devices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ArrowController : MonoBehaviour {
 
-    public Text text;
+    public Transform container;
     public Transform targetArrow;
     public Transform compassArrow;
     public int scale=1;
@@ -16,42 +17,32 @@ public class ArrowController : MonoBehaviour {
     private CompassManager compass;
     private Coordinate target;
     private BasicRotationCalculator rot;
-
-    private HaversineDistanceCalculator distance;
+    private GyroManager _gyro;
+    private Vector3 angle;
 
     private void Start()
     {
-        
+        _gyro = GyroManager.Instance;
         gps = GpsManager.Instance;
-
         compass = CompassManager.Instance;
-        compass.Delay = 1000;
-        compass.Precision = 2;
-        compass.MaxChange = 5d;
 
+        compass.Delay = 500;
+        compass.Precision = 1;
+        compass.MaxChange = 2d;
 
-        StartCoroutine(gps.StartService(30));
         target = new Coordinate();
-        target.Latitude = 52.463645f; 
-        target.Longitude = 16.921922f;
+        target.Latitude = 52.463661f; 
+        target.Longitude = 16.921885f;
 
         rot = new BasicRotationCalculator(compass, gps);
         rot.Scale = scale;
 
-        distance = new HaversineDistanceCalculator(gps, new MeanEarthRadius());
     }
     void Update () {
+
         
         rot.Transform(targetArrow, target);
-
         NorthTransformation();
-
-        
-        text.text = compass.GetAngleToNorth().ToString()+ "\nBearing:"+ rot.Bearing(target).ToString()
-            + "\nDistance:" + distance.Distance(target).ToString()
-            + "\nRotation:"+ rot.RotationAngle(target).ToString() + "\nBase:"+ gps.GetCoordinates().Latitude.ToString()+","
-            +  gps.GetCoordinates().Longitude.ToString()+ "\ntarget:" +target.Latitude.ToString()+','+target.Longitude.ToString()+"\n---end---";
-            
     }
 
     private void NorthTransformation()
@@ -59,6 +50,8 @@ public class ArrowController : MonoBehaviour {
         Quaternion start = compassArrow.transform.localRotation;
         Quaternion end = Quaternion.AngleAxis(-(float)compass.GetAngleToNorth(), new Vector3(0, 1, 0));
 
-        compassArrow.transform.localRotation = Quaternion.Slerp(start, end, Time.deltaTime * scale);
+        //compassArrow.transform.localRotation =Quaternion.Slerp(start, end, Time.deltaTime * scale);
+
+        compassArrow.transform.localRotation = Quaternion.Euler(0, -Quaternion.Inverse(_gyro.GetRotation()).eulerAngles.z, 0);//; 
     }
 }

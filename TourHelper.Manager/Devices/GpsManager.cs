@@ -1,14 +1,14 @@
-﻿using TourHelper.Base.Manager;
+﻿using TourHelper.Base.Manager.Devices;
 using TourHelper.Base.Model.Entity;
 using UnityEngine;
 
-namespace TourHelper.Manager
+namespace TourHelper.Manager.Devices
 {
     public class GpsManager : BaseLocationManager,IGpsManager
     {
         private static GpsManager instance=null;
         private static readonly object key=new object();
-
+        
         public static GpsManager Instance {
             get
             {
@@ -19,6 +19,8 @@ namespace TourHelper.Manager
                         if (instance == null)
                         {
                             instance = new GpsManager();
+                            instance.DesiredAccuracy = 3;
+                            instance.DesiredChange = 3;
                         }
                     }
                 }
@@ -31,7 +33,7 @@ namespace TourHelper.Manager
         {
             //Gdzie obsluzyc blad jesli urzadzenie nie ready ?!
 
-            Coordinate output = new Coordinate();
+            var output = new Coordinate();
 
             output.Longitude = Input.location.lastData.longitude;
             output.Latitude = Input.location.lastData.latitude;

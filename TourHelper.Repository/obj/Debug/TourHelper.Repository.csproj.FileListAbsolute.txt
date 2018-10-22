@@ -1,3 +1,12 @@
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Repository.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Repository.pdb
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Base.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Base.pdb
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csprojAssemblyReference.cache
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CoreCompileInputs.cache
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CopyComplete
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Repository.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Repository.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Base.dll
@@ -9,14 +18,14 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Re
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.xml
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Repository.dll
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Repository.pdb
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Base.dll
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.dll
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.CoreModule.dll
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\TourHelper.Base.pdb
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csprojAssemblyReference.cache
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CoreCompileInputs.cache
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CopyComplete
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.dll
-C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.pdb
+D:\Projekty\REBASE INŻ\TourHelper.Repository\obj\Debug\TourHelper.Repository.csprojAssemblyReference.cache
+D:\Projekty\REBASE INŻ\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CoreCompileInputs.cache
+D:\Projekty\REBASE INŻ\TourHelper.Repository\obj\Debug\TourHelper.Repository.dll
+D:\Projekty\REBASE INŻ\TourHelper.Repository\obj\Debug\TourHelper.Repository.pdb
+D:\Projekty\REBASE INŻ\TourHelper.Repository\bin\Debug\TourHelper.Repository.dll
+D:\Projekty\REBASE INŻ\TourHelper.Repository\bin\Debug\TourHelper.Repository.pdb
+D:\Projekty\REBASE INŻ\TourHelper.Repository\bin\Debug\TourHelper.Base.dll
+D:\Projekty\REBASE INŻ\TourHelper.Repository\bin\Debug\UnityEngine.CoreModule.dll
+D:\Projekty\REBASE INŻ\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.dll
+D:\Projekty\REBASE INŻ\TourHelper.Repository\bin\Debug\TourHelper.Base.pdb
+D:\Projekty\REBASE INŻ\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CopyComplete

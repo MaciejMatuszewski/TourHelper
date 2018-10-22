@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using TourHelper.Base.Enum;
-using TourHelper.Base.Manager;
+using TourHelper.Base.Manager.Devices;
 using UnityEngine;
 
 
@@ -65,13 +65,13 @@ namespace TourHelper.Manager.Devices
 
             if (IsReady())
             {
-                Debug.Log(" Camera is ready ");
+                //Debug.Log(" Camera is ready ");
                 yield break;
             }
 
             while ((BackCam == null) && timeOut > 0 && WebCamTexture.devices.Length == 0)
             {
-                Debug.Log("Camera unavailable");
+                //Debug.Log("Camera unavailable");
                 CamAvailable = false;
                 yield return new WaitForSeconds(1);
                 timeOut--;
@@ -95,19 +95,19 @@ namespace TourHelper.Manager.Devices
             while ((BackCam == null) && timeOut > 0)
             {
                 
-                Debug.Log(timeOut.ToString());
+                //Debug.Log(timeOut.ToString());
                 yield return new WaitForSeconds(1);
                 timeOut--;
             }
             if (timeOut <= 0)
             {
-                Debug.Log("Back camera unavailable");
+                //Debug.Log("Back camera unavailable");
                 yield break;
             }
             
             instance.BackCam.Play();
             instance.CamAvailable = true;
-            Debug.Log(" Camera is ready to use ");
+            //Debug.Log(" Camera is ready to use ");
         }
 
         public WebCamTexture GetScreen()

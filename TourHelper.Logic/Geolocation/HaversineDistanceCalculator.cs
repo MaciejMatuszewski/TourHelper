@@ -1,7 +1,7 @@
 ﻿
 using System;
 using TourHelper.Base.Logic;
-using TourHelper.Base.Manager;
+using TourHelper.Base.Manager.Devices;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Manager.Calculators;
 
@@ -21,7 +21,7 @@ namespace TourHelper.Logic.Geolocation
         public double Distance(Coordinate coor)
         {
             double dLat,dLon,a,c;
-            Coordinate lastLocation = GpsManager.GetCoordinates();
+            var lastLocation = GpsManager.GetCoordinates();
 
             dLat = MathTools.rad(coor.Latitude - lastLocation.Latitude);
             dLon = MathTools.rad(coor.Longitude - lastLocation.Longitude);

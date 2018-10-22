@@ -39,37 +39,56 @@
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine.AudioModule">
       <HintPath>..\TourHelper\Library\UnityAssemblies\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\TourHelper\Library\UnityAssemblies\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Atrybuty\PrefabAttribute.cs" />
     <Compile Include="Enum\ServiceStatus.cs" />
     <Compile Include="Exception\RepositoryException.cs" />
     <Compile Include="Logic\IDistanceCalculator.cs" />
     <Compile Include="Logic\IEarthRadiusCalculator.cs" />
+    <Compile Include="Logic\IGameSpace.cs" />
+    <Compile Include="Logic\IPlayer.cs" />
     <Compile Include="Logic\IRotationCalculator.cs" />
+    <Compile Include="Logic\PositionLogic\IPositionUpdate.cs" />
     <Compile Include="Manager\Calculators\ICoordinatesConverter.cs" />
+    <Compile Include="Manager\Calculators\IDeviceReadingsFilter.cs" />
     <Compile Include="Manager\Calculators\IElipsoid.cs" />
+    <Compile Include="Manager\Calculators\IFilter.cs" />
+    <Compile Include="Manager\Calculators\IIntegralCalculator.cs" />
+    <Compile Include="Manager\Calculators\IPositionTranslation.cs" />
     <Compile Include="Manager\Calculators\IProjection.cs" />
-    <Compile Include="Manager\IBaseDeviceManager.cs" />
-    <Compile Include="Manager\ICameraManager.cs" />
-    <Compile Include="Manager\IGpsManager.cs" />
-    <Compile Include="Manager\ICompassManager.cs" />
-    <Compile Include="Manager\IGyroManager.cs" />
+    <Compile Include="Manager\Calculators\Kalman\IKalman.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IDecomposition.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IMatixMultiplication.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IMatrix.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IMatrixNxN.cs" />
+    <Compile Include="Manager\Calculators\MatrixTools\IMatrixSolver.cs" />
+    <Compile Include="Manager\Devices\IAccelerometerManager.cs" />
+    <Compile Include="Manager\Devices\IBaseDeviceManager.cs" />
+    <Compile Include="Manager\Devices\ICameraManager.cs" />
+    <Compile Include="Manager\Devices\IGpsManager.cs" />
+    <Compile Include="Manager\Devices\ICompassManager.cs" />
+    <Compile Include="Manager\Devices\IGyroManager.cs" />
+    <Compile Include="Manager\IPointInRange.cs" />
     <Compile Include="Model\Entity\BaseModel.cs" />
     <Compile Include="Model\Entity\Coordinate.cs" />
-    <Compile Include="Model\Entity\TourPoint.cs" />
+    <Compile Include="Model\Entity\PrefabNode.cs" />
     <Compile Include="Model\Entity\Tour.cs" />
-    <Compile Include="Model\Entity\UserProfile.cs" />
+    <Compile Include="Model\Entity\TourPoint.cs" />
     <Compile Include="Model\Entity\User.cs" />
+    <Compile Include="Model\Entity\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IBaseRepository.cs" />
     <Compile Include="Repository\ICoordinateRepository.cs" />
     <Compile Include="Repository\ITourPointRepository.cs" />
-    <Compile Include="Repository\IUserProfileRepository.cs" />
     <Compile Include="Repository\ITourRepository.cs" />
+    <Compile Include="Repository\IUserProfileRepository.cs" />
     <Compile Include="Repository\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup />

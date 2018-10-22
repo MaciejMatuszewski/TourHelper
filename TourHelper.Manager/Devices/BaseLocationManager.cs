@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using TourHelper.Base.Enum;
-using TourHelper.Base.Manager;
+using TourHelper.Base.Manager.Devices;
 using UnityEngine;
 
 namespace TourHelper.Manager
 {
     public abstract class BaseLocationManager : IBaseDeviceManager
     {
- 
+        public float DesiredAccuracy { get; set; }
+        public float DesiredChange { get; set; }
+
         virtual public bool IsEnabled()
         {
             return Input.location.isEnabledByUser;
@@ -27,11 +29,11 @@ namespace TourHelper.Manager
             //nalezy zastosowac corutine
             if (!IsEnabled())
             {
-                Debug.Log("Location disabled by user");
+                //Debug.Log("Location disabled by user");
                 yield break;
             }
             
-            Input.location.Start(1,1);
+            Input.location.Start(DesiredAccuracy, DesiredChange);
 
             while (Status() == ServiceStatus.Initializing && timeOut > 0)
             {
@@ -40,12 +42,12 @@ namespace TourHelper.Manager
             }
             if (timeOut <= 0)
             {
-                Debug.Log("Time out");
+                //Debug.Log("Time out");
                 yield break;
             }
             if (Status() == ServiceStatus.Failed)
             {
-                Debug.Log("Unable to get location");
+                //Debug.Log("Unable to get location");
                 yield break;
             }
         }
