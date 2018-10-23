@@ -45,3 +45,10 @@ D:\Projekty\REBASE INŻ\TourHelper.Configuration\obj\Debug\TourHelper.Configurat
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csprojAssemblyReference.cache
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csproj.CoreCompileInputs.cache
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csproj.CopyComplete
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper\Assets\DLL\TourHelper.Configuration.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper\Assets\DLL\TourHelper.Configuration.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csprojAssemblyReference.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.csproj.CopyComplete
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Configuration\obj\Debug\TourHelper.Configuration.pdb

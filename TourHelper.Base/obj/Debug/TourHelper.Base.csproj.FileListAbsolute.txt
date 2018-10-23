@@ -17,3 +17,9 @@ D:\Projekty\REBASE INŻ\TourHelper.Base\bin\Debug\TourHelper.Base.pdb
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojAssemblyReference.cache
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CoreCompileInputs.cache
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CopyComplete
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Base\bin\Debug\TourHelper.Base.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Base\bin\Debug\TourHelper.Base.pdb
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CopyComplete
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Base\obj\Debug\TourHelper.Base.dll
+C:\Users\Maciej\Documents\GitHub\Inzynierka6\TourHelper6\TourHelper.Base\obj\Debug\TourHelper.Base.pdb

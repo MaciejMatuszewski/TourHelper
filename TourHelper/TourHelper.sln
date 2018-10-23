@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{B6F22A70-D4A4-7367-F746-FC2BAD44970E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{9E07F357-7CD5-5F8D-6612-36FCC6216420}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper.Base", "..\TourHelper.Base\TourHelper.Base.csproj", "{5B05CDE0-650E-4453-983E-228C8B35EAA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TourHelper.Configuration", "..\TourHelper.Configuration\TourHelper.Configuration.csproj", "{8AC6C4B3-E885-443E-936E-1C40B56BCFD6}"
@@ -25,6 +27,10 @@ Global
 		{B6F22A70-D4A4-7367-F746-FC2BAD44970E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6F22A70-D4A4-7367-F746-FC2BAD44970E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6F22A70-D4A4-7367-F746-FC2BAD44970E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E07F357-7CD5-5F8D-6612-36FCC6216420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E07F357-7CD5-5F8D-6612-36FCC6216420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E07F357-7CD5-5F8D-6612-36FCC6216420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E07F357-7CD5-5F8D-6612-36FCC6216420}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B05CDE0-650E-4453-983E-228C8B35EAA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B05CDE0-650E-4453-983E-228C8B35EAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B05CDE0-650E-4453-983E-228C8B35EAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
