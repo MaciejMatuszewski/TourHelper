@@ -88,7 +88,8 @@ namespace TourHelper.Manager.Devices
             {
                 if (!devices[i].isFrontFacing)
                 {
-                    BackCam = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
+
+                    BackCam = new WebCamTexture(devices[i].name, Screen.height, Screen.width);
                 }
             }
             //Debug.Log(BackCam.ToString());
