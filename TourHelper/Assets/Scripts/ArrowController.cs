@@ -7,14 +7,13 @@ using UnityEngine.UI;
 
 public class ArrowController : MonoBehaviour {
 
-    public Text container;
+ 
     public Transform targetArrow;
     public Transform compassArrow;
     public int scale=1;
 
 
     private GpsManager gps;
-    private CompassManager compass;
     private Coordinate target;
     private BasicRotationCalculator rot;
     private GyroManager _gyro;
@@ -24,34 +23,29 @@ public class ArrowController : MonoBehaviour {
     {
         _gyro = GyroManager.Instance;
         gps = GpsManager.Instance;
-        compass = CompassManager.Instance;
-
-        compass.Delay = 100;
-        compass.Precision = 1;
-        compass.MaxChange = 2d;
 
         target = new Coordinate();
         target.Latitude = 52.463661f; 
         target.Longitude = 16.921885f;
 
-        rot = new BasicRotationCalculator(compass, gps);
-        rot.Scale = scale;
+        rot = new BasicRotationCalculator(_gyro, gps);
+        rot.Scale = 1;
 
     }
     void Update () {
 
         
-        //rot.Transform(targetArrow, target);
+        rot.Transform(targetArrow, target);
         NorthTransformation();
     }
 
     private void NorthTransformation()
     {
-        Quaternion start = compassArrow.transform.localRotation;
-        Quaternion end = Quaternion.AngleAxis(-(float)compass.GetAngleToNorth(), new Vector3(0, 1, 0));
-        
-        compassArrow.transform.localRotation = Quaternion.Euler(0, -(float)compass.GetAngleToNorth(), 0);// Quaternion.Slerp(start, end, Time.deltaTime * scale);
-        container.text = compass.GetAngleToNorth().ToString();
-       // compassArrow.transform.localRotation = Quaternion.Euler(0, -Quaternion.Inverse(_gyro.GetRotation()).eulerAngles.z, 0);//; 
+        compassArrow.transform.localRotation = Quaternion.Euler(0, -(float)Heading(), 0);// Quaternion.Slerp(start, end, Time.deltaTime * scale);
+    }
+
+    private double Heading()
+    {
+        return 360 - (_gyro.GetRotation()).eulerAngles.z;
     }
 }
