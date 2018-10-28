@@ -10,6 +10,7 @@
     using TourHelper.Base.Model.Entity;
     using System;
     using UnityEngine.UI;
+    using UnityEngine.SceneManagement;
 
     public class SpawnOnMap : MonoBehaviour
 	{
@@ -28,6 +29,7 @@
        // public void AddPoints(int tourID)
         private void Start()
         {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map"));
             int tourID = 1;
             var pointRepo = new TourPointRepository();
             List<TourPoint> points = pointRepo.GetByTourID(tourID);

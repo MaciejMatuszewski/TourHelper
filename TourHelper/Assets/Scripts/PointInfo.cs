@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using TourHelper.Base.Model.Entity;
+using UnityEngine.SceneManagement;
 
 
 public class PointInfo : MonoBehaviour {
@@ -19,6 +20,6 @@ public class PointInfo : MonoBehaviour {
 
     public void ShowInfo()
     {
-
+        Destroy(gameObject);
     }
 }
