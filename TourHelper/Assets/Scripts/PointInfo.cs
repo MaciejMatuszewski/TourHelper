@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using TourHelper.Base.Model.Entity;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class PointInfo : MonoBehaviour {
@@ -20,6 +21,7 @@ public class PointInfo : MonoBehaviour {
 
     public void ShowInfo()
     {
-        Destroy(gameObject);
+        MapEvent mapEvent = new MapEvent();
+        mapEvent.ShowPoint(point);
     }
 }

@@ -30,7 +30,7 @@
         private void Start()
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map"));
-            int tourID = 1;
+            int tourID = 1;//PlayerPrefs.GetInt("TourID");
             var pointRepo = new TourPointRepository();
             List<TourPoint> points = pointRepo.GetByTourID(tourID);
             _locations = new Vector2d[points.Count];
