@@ -68,19 +68,21 @@ public class MapEvent : MonoBehaviour {
 
     public void ShowPoint(TourPoint point)
     {
-        Text pointName = GameObject.Find("PointName").GetComponent<Text>();
-        pointName.enabled = true;
-        pointName.text = point.Name;
+        GameObject.Find("ActualPointName").GetComponent<Text>().text = point.Name;
 
         var panel = GameObject.Find("PointPanel").GetComponent<Canvas>();
         panel.enabled = true;
-        var pointDesc = panel.GetComponentInChildren<Text>();
-        pointDesc.text = point.Description;
+        panel.GetComponentInChildren<Text>().text = point.Description;
+
         GameObject.Find("ActualPoint").GetComponent<PointInfo>().point = point;
     }
 
     public void SetPoint()
     {
+        Text pointName = GameObject.Find("PointName").GetComponent<Text>();
+        pointName.enabled = true;
+        pointName.text = "Wybrany punkt: " + GameObject.Find("ActualPoint").GetComponent<PointInfo>().point.Name;
+
         var point = GameObject.Find("ActualPoint").GetComponent<PointInfo>().point;
         CoordinateRepository coordinateRepo = new CoordinateRepository();
         var pointCoordinate = coordinateRepo.Get(point.CoordinateId);
@@ -90,25 +92,20 @@ public class MapEvent : MonoBehaviour {
         PlayerPrefs.SetFloat("PointLat", (float)pointCoordinate.Latitude);
         PlayerPrefs.SetFloat("PointLon", (float)pointCoordinate.Longitude);
 
-        Text pointName = GameObject.Find("PointName").GetComponent<Text>();
-        pointName.enabled = true;
-        pointName.text = point.Name;
-
         var panel = GameObject.Find("PointPanel").GetComponent<Canvas>();
         panel.enabled = false;
     }
 
     public void HidePointPanel()
     {
-        if (GameObject.Find("ActualPoint").GetComponent<PointInfo>().point.Name != GameObject.Find("PointName").GetComponent<Text>().text)
-        {
-            Text pointName = GameObject.Find("PointName").GetComponent<Text>();
-            pointName.enabled = false;
-        }
         var panel = GameObject.Find("PointPanel").GetComponent<Canvas>();
         panel.enabled = false;
     }
 
+    public void ShowMyLocation()
+    {
+        GameObject.Find("Main Camera").GetComponent<CameraFollow>().GoToLocation();
+    }
 
     // Update is called once per frame
     void Update () {
