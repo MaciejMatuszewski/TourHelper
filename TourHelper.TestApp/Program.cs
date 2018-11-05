@@ -11,11 +11,11 @@ namespace TourHelper.TestApp
     {
         static void Main(string[] args)
         {
-
+            RepositoryTest.PerformTest();
             /* var _test = new GameSceneTest();
              _test.test();*/
 
-            TestSetup.LocationTest();
+            //TestSetup.LocationTest();
             //TestSetup.FilterTest();
         }
 

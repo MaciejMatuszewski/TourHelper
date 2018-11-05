@@ -2,9 +2,9 @@
 {
     public class TourPoint : BaseModel
     {
-        public int TourId { get; set; }
+        public int? TourId { get; set; }
 
-        public int CoordinateId { get; set; }
+        public int? CoordinateId { get; set; }
 
         public string Name { get; set; }
 

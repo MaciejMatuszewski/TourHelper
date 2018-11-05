@@ -14,12 +14,19 @@ namespace TourHelper.Repository
     public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
         where TEntity : BaseModel, new()
     {
+        //private string connectionString =
+        //        "Data Source=127.0.0.1;" +
+        //        //"Data Source=192.168.0.162;" +
+        //        "Initial Catalog=TourHelper;" +
+        //        "User id=sa;" +
+        //        "Password=!P@ssw0rd;";
+
         private string connectionString =
-                "Data Source=127.0.0.1;" +
+                "Data Source=tourhelper.database.windows.net,1433;" +
                 //"Data Source=192.168.0.162;" +
                 "Initial Catalog=TourHelper;" +
-                "User id=sa;" +
-                "Password=!P@ssw0rd;";
+                "User id=applogin;" +
+                "Password=abc123CBA;";
 
         public TEntity Get(int id)
         {

@@ -7,5 +7,7 @@
         public string Password { get; set; }
 
         public int UserProfileId { get; set; }
+
+        public int Permission { get; set; }
     }
 }

@@ -7,9 +7,14 @@ namespace TourHelper.Repository
 {
     public class TourPointRepository : BaseRepository<TourPoint>, ITourPointRepository
     {
-        public List<TourPoint> GetByTourID(int tourID)
+        public IEnumerable<TourPoint> GetByTourID(int tourID)
         {
-            return ExecuteSelectCommand($"SELECT * FROM [dbo].[{nameof(TourPoint)}] WHERE {nameof(TourPoint.TourId)} = '{tourID}'").ToList();
+            string statement =
+                $"SELECT * " +
+                $"FROM [dbo].[{nameof(TourPoint)}] " +
+                $"WHERE {nameof(TourPoint.TourId)} = '{tourID}'";
+
+            return ExecuteSelectCommand(statement);
         }
     }
 }

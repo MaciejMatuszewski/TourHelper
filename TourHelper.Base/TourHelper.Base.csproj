@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Atrybuty\PrefabAttribute.cs" />
     <Compile Include="Enum\ServiceStatus.cs" />
+    <Compile Include="Enum\UserPermitions.cs" />
     <Compile Include="Exception\RepositoryException.cs" />
     <Compile Include="Logic\IDistanceCalculator.cs" />
     <Compile Include="Logic\IEarthRadiusCalculator.cs" />
@@ -78,6 +79,9 @@
     <Compile Include="Model\Entity\Coordinate.cs" />
     <Compile Include="Model\Entity\PrefabNode.cs" />
     <Compile Include="Model\Entity\Tour.cs" />
+    <Compile Include="Model\Entity\UserTourPoint.cs" />
+    <Compile Include="Model\Entity\UserTour.cs" />
+    <Compile Include="Model\Entity\UserSession.cs" />
     <Compile Include="Model\Entity\TourPoint.cs" />
     <Compile Include="Model\Entity\User.cs" />
     <Compile Include="Model\Entity\UserProfile.cs" />
@@ -87,6 +91,9 @@
     <Compile Include="Repository\ITourPointRepository.cs" />
     <Compile Include="Repository\ITourRepository.cs" />
     <Compile Include="Repository\IUserProfileRepository.cs" />
+    <Compile Include="Repository\IUserTourPointRepository.cs" />
+    <Compile Include="Repository\IUserTourRepository.cs" />
+    <Compile Include="Repository\IUserSessionRepository.cs" />
     <Compile Include="Repository\IUserRepository.cs" />
   </ItemGroup>
   <ItemGroup />

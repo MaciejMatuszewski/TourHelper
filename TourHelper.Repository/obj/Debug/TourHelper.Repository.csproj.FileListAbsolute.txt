@@ -51,3 +51,5 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Repository\obj\Debug\To
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.csproj.CopyComplete
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.dll
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Repository\obj\Debug\TourHelper.Repository.pdb
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.CoreModule.dll
+C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Repository\bin\Debug\UnityEngine.AudioModule.dll

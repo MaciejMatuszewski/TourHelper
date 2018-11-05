@@ -44,6 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TourPointRepository.cs" />
     <Compile Include="TourRepository.cs" />
+    <Compile Include="UserTourPointRepository.cs" />
+    <Compile Include="UserTourRepository.cs" />
+    <Compile Include="UserSessionRepository.cs" />
     <Compile Include="UserProfileRepository.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>
