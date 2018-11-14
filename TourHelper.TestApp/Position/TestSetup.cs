@@ -37,9 +37,9 @@ namespace TourHelper.TestApp.Position
 
                 test.Processor.Filter.GPSError = 5;
                 test.Processor.Filter.AccelerationError = 1;
+                test.Processor.StandingCycles = 10;
 
-
-                test.Processor.StandingLimit = 0.1f;
+                test.Processor.StandingLimit = 0.5f;
 
 
                 double[] a_l = { 1, -0.85408069 };

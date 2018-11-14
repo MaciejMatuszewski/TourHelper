@@ -73,8 +73,8 @@ namespace TourHelper.Logic.PositionLogic
             AccelerationFilterY = new IIRFilter(a_l, b_l);
             AccelerationFilterZ = new IIRFilter(a_l, b_l);
 
-            StandingLimit = 0.5f;
-            StandingCycles = 5;
+            StandingLimit = 1.5f;
+            StandingCycles = 4;
             PredictionCycles = 2;
         }
 
@@ -96,10 +96,10 @@ namespace TourHelper.Logic.PositionLogic
             }
             else
             {
-                //-------------------Filter.DeltaTime = Time.deltaTime;
+                Filter.DeltaTime = Time.deltaTime;
                 _lastGpsReading = Gps.GetCoordinates();
 
-                Filter.GPSError = 5;//---------------------_lastGpsReading.VerticalAccuracy;
+                Filter.GPSError =  _lastGpsReading.VerticalAccuracy;
 
 
                 _gpsPosition = Translator.GetCoordinates(_lastGpsReading);//Pozycja x,y,z w ukladzie lokalnym; ruch odbywa się w plaszczyznie xz
@@ -160,13 +160,14 @@ namespace TourHelper.Logic.PositionLogic
             if (d < StandingLimit)
             {
                 _idleCounter++;
-                if (_idleCounter== StandingCycles)
+                if (_idleCounter>= StandingCycles)
                 {
+                    
                     return true;
                 }
-                
+                return false;
             }
-            _idleCounter =0;
+            _idleCounter = 0;
             return false;
         }
     }

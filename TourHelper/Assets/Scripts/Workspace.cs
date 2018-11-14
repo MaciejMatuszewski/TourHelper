@@ -32,7 +32,7 @@ public class Workspace : MonoBehaviour
     private void Awake()
     {
 
-    #if (DEBUG)
+#if (DEBUG)
         //-----------MOCK DEVICES-----------
         var _data = new DevicesFromFile();
 
@@ -45,17 +45,12 @@ public class Workspace : MonoBehaviour
         _gps = new MockGpsManager(_data.Position);
 
 
-    #else
+#else
 
         //-----------REAL DEVICES-----------        
-        _gyro = GyroManager.Instance;
-        StartCoroutine(_gyro.StartService(5));
 
         _gps = GpsManager.Instance;
         StartCoroutine(_gps.StartService(5));
-
-        _compass = CompassManager.Instance;
-        StartCoroutine(_compass.StartService(5));
 #endif
 
 
@@ -63,15 +58,27 @@ public class Workspace : MonoBehaviour
 
     void Start()
     {
-        _player = new Player(_gps, _gyro);
 
+#if (DEBUG)
+
+#else
+        //-----------REAL DEVICES----------- 
+        _gyro = GyroManager.Instance;
+        StartCoroutine(_gyro.StartService(1));
+
+        _compass = CompassManager.Instance;
+        StartCoroutine(_compass.StartService(1));
+#endif
+
+        _player = new Player(_gps, _gyro, 10, 5);
+        
         var _assemblies = new Assembly[] {
             typeof(RandomCoinsInRangeManager).Assembly
         };
 
         _scene = new GameSpace(_gps, _assemblies);
         _scene.MainPanel = _mainPanel;
-        _scene.AddPrefab("Coin",defaultActions:true);
+        _scene.AddPrefab("Coin", defaultActions: true);
         _scene.AddPrefab("InfoPoint", new RandomCoinsInRangeManager(), defaultActions: false);
 
         _scene.RebaseEvent += _player.RebasePlayer;
@@ -90,9 +97,9 @@ public class Workspace : MonoBehaviour
         _scene.UpdateGameSpace();
         _player.UpdatePlayer();
 
-        PlayerPrefs.SetFloat("Distance",(float)_player.AccumulatedDistance);
+        PlayerPrefs.SetFloat("Distance", (float)(_player.AccumulatedDistance / 1000));
 
-        _distanceText.text = PlayerPrefs.GetFloat("Distance").ToString() + " km";
+        _distanceText.text = string.Format("{0:f} km", PlayerPrefs.GetFloat("Distance"));
         _visitedText.text = PlayerPrefs.GetInt("Visited").ToString() + " pkt.";
         _scoreText.text = PlayerPrefs.GetInt("Score").ToString() + " pkt.";
 
