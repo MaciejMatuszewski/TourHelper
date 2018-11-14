@@ -7,8 +7,7 @@ using TourHelper.Manager;
 using TourHelper.Manager.Devices;
 using TourHelper.Manager.Devices.Mock;
 using UnityEngine;
-
-
+using UnityEngine.UI;
 
 public class Workspace : MonoBehaviour
 {
@@ -26,6 +25,9 @@ public class Workspace : MonoBehaviour
     //Game Objects
     public Camera _camera;
     public GameObject _mainPanel;
+    public Text _distanceText;
+    public Text _visitedText;
+    public Text _scoreText;
 
     private void Awake()
     {
@@ -77,6 +79,10 @@ public class Workspace : MonoBehaviour
         _player.InitializePlayer(_camera);
         _scene.Initialize();
 
+        PlayerPrefs.SetInt("Visited", 0);
+        PlayerPrefs.SetInt("Score", 0);
+        PlayerPrefs.SetFloat("Distance", 0f);
+
     }
 
     void Update()
@@ -84,11 +90,12 @@ public class Workspace : MonoBehaviour
         _scene.UpdateGameSpace();
         _player.UpdatePlayer();
 
+        PlayerPrefs.SetFloat("Distance",(float)_player.AccumulatedDistance);
+
+        _distanceText.text = PlayerPrefs.GetFloat("Distance").ToString() + " km";
+        _visitedText.text = PlayerPrefs.GetInt("Visited").ToString() + " pkt.";
+        _scoreText.text = PlayerPrefs.GetInt("Score").ToString() + " pkt.";
+
     }
-
-
-
-
-
 
 }

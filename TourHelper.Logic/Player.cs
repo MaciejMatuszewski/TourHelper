@@ -1,10 +1,11 @@
 ﻿using TourHelper.Base.Logic;
 using TourHelper.Base.Logic.PositionLogic;
-
+using TourHelper.Base.Manager.Calculators;
 using TourHelper.Base.Manager.Devices;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Logic.PositionLogic;
 using TourHelper.Manager.Calculators;
+using TourHelper.Manager.Calculators.Geolocation;
 using TourHelper.Manager.Calculators.Kalman;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ namespace TourHelper.Logic
         private Quaternion _rotation;
 
         public IPositionUpdate _positionCalculator;
+        public IDistanceManager _accumulatedDistance;
+        public double AccumulatedDistance { get; set; }
 
         private IGyroManager _gyro;
         private IGpsManager _gps;
@@ -40,7 +43,8 @@ namespace TourHelper.Logic
 
 
             _positionCalculator = new LocalPosition(_gps, _gyro, _filter, _translator);
-
+            _accumulatedDistance = new AccumulatedDistanceManager(
+                _translator.GetCoordinates(_gps.GetCoordinates()));
         }
 
         /// <summary>
@@ -82,8 +86,10 @@ namespace TourHelper.Logic
         {
             _camera.transform.localRotation = _gyro.GetRotation() * _rotation;
            // p.Filter.DeltaTime = Time.deltaTime;
-           
-            _cameraContainer.transform.position = _positionCalculator.GetPosition();
+           var position= _positionCalculator.GetPosition();
+            _cameraContainer.transform.position = position;
+
+            AccumulatedDistance=_accumulatedDistance.GetAccumulatedDistance(position);
         }
 
         /// <summary>

@@ -51,6 +51,7 @@
     <Compile Include="Calculators\Filters\CorrectionFilter.cs" />
     <Compile Include="Calculators\Filters\CutOffFilter.cs" />
     <Compile Include="Calculators\Filters\IIRFilter.cs" />
+    <Compile Include="Calculators\Geolocation\AccumulatedDistanceManager.cs" />
     <Compile Include="Calculators\TTemp\IMUFilter.cs" />
     <Compile Include="Calculators\Kalman\KalmanFilter.cs" />
     <Compile Include="Calculators\Filters\LinearRegression.cs" />

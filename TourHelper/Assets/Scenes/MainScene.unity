@@ -2620,6 +2620,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1816269428108816, guid: 3737efb93a538c74dac6541cf84cc104,
     type: 2}
   m_PrefabInternal: {fileID: 1158821155}
+--- !u!114 &843807873 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114704863246175678, guid: 3737efb93a538c74dac6541cf84cc104,
+    type: 2}
+  m_PrefabInternal: {fileID: 1158821155}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!132 &843807875
 GUIText:
   m_ObjectHideFlags: 0
@@ -2845,6 +2851,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 923979326}
   m_CullTransparentMesh: 0
+--- !u!114 &969519825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114704863246175678, guid: 3737efb93a538c74dac6541cf84cc104,
+    type: 2}
+  m_PrefabInternal: {fileID: 613106493}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1039834311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,6 +3134,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actualScene: MainScene
+--- !u!114 &1156437785 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114704863246175678, guid: 3737efb93a538c74dac6541cf84cc104,
+    type: 2}
+  m_PrefabInternal: {fileID: 1377864793}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1158821155
 Prefab:
   m_ObjectHideFlags: 0
@@ -4884,6 +4902,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 543915957}
   _mainPanel: {fileID: 1699613034}
+  _distanceText: {fileID: 969519825}
+  _visitedText: {fileID: 1156437785}
+  _scoreText: {fileID: 843807873}
 --- !u!1 &1708588667
 GameObject:
   m_ObjectHideFlags: 0

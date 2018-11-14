@@ -10,6 +10,8 @@ public class InfoPanelEvent : MonoBehaviour {
 
     public void SetPointInfo()
         {
+
+
             var title = PlayerPrefs.GetString("PointName", "");
 
             _titleText.text = title;

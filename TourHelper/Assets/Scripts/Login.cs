@@ -21,6 +21,8 @@ public class Login : MonoBehaviour
         if (user != null && PasswordInput.text == user.Password)
         {
             Debug.Log("INSIDE IF");
+
+            PlayerPrefs.SetInt("UserID", user.Id);
             SceneManager.LoadScene("MainScene");
         }
     }

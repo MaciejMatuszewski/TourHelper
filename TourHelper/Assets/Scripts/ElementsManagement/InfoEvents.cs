@@ -40,6 +40,10 @@ public class InfoEvents : MonoBehaviour
                 _informationText.text = point.Description;
                 PanelEvent script = (PanelEvent)_panelComponents.GetComponent("PanelEvent");
                 script.MovePanel();
+
+                int visited=PlayerPrefs.GetInt("Visited");
+
+                PlayerPrefs.SetInt("Visited", ++visited);
             }
             else
             {
@@ -53,6 +57,8 @@ public class InfoEvents : MonoBehaviour
             _title.text = "";
             _informationText.text = "";
         }
+
+
 
     }
 
