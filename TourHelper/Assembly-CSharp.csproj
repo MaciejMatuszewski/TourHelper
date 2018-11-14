@@ -353,6 +353,7 @@
     <Compile Include="Assets\Scripts\ElementsManagement\CoinEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\ElementRotation.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\InfoEvents.cs" />
+    <Compile Include="Assets\Scripts\ElementsManagement\InfoPanelEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\MapEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\PanelEvent.cs" />
     <Compile Include="Assets\Scripts\GUIManager.cs" />
@@ -376,16 +377,16 @@
     <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderAndroidNative-2.txt" />
     <None Include="Assets\Resources\Mapbox\MapboxConfiguration.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -573,6 +574,9 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="Vuforia.UnityExtensions">
+      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.GoogleAudioSpatializer">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
     </Reference>
@@ -583,49 +587,49 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Base">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/TourHelper.Base.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/TourHelper.Base.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Configuration">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/TourHelper.Configuration.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/TourHelper.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Logic">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/TourHelper.Logic.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/TourHelper.Logic.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Manager">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/TourHelper.Manager.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/TourHelper.Manager.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Repository">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/TourHelper.Repository.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/TourHelper.Repository.dll</HintPath>
     </Reference>
     <Reference Include="I18N.CJK">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/External/I18N.CJK.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/External/I18N.CJK.dll</HintPath>
     </Reference>
     <Reference Include="I18N">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/External/I18N.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/External/I18N.dll</HintPath>
     </Reference>
     <Reference Include="I18N.MidEast">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/External/I18N.MidEast.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/External/I18N.MidEast.dll</HintPath>
     </Reference>
     <Reference Include="I18N.Other">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/External/I18N.Other.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/External/I18N.Other.dll</HintPath>
     </Reference>
     <Reference Include="I18N.Rare">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/External/I18N.Rare.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/External/I18N.Rare.dll</HintPath>
     </Reference>
     <Reference Include="I18N.West">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/DLL/External/I18N.West.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/DLL/External/I18N.West.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.IO.Compression">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.Json">
-      <HintPath>C:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelper/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+      <HintPath>D:/Uczelnia/INŻYNIERKA/TourHelper/TourHelper/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/750_001357/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/Michał/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/750_001357/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Michał/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

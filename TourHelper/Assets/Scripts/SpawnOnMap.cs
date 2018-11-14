@@ -11,6 +11,7 @@
     using System;
     using UnityEngine.UI;
     using UnityEngine.SceneManagement;
+    using System.Linq;
 
     public class SpawnOnMap : MonoBehaviour
 	{
@@ -32,14 +33,14 @@
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map"));
             int tourID = 1;//PlayerPrefs.GetInt("TourID");
             var pointRepo = new TourPointRepository();
-            List<TourPoint> points = pointRepo.GetByTourID(tourID);
+            List<TourPoint> points = pointRepo.GetByTourID(tourID).ToList();
             _locations = new Vector2d[points.Count];
             _spawnedObjects = new List<GameObject>();
             CoordinateRepository coordinateRepo = new CoordinateRepository();
             for (int i = 0; i < points.Count; i++)
             {
                 var point = points[i];
-                int coordinateId = point.CoordinateId;
+                int coordinateId = (int)point.CoordinateId;
                 var pointCoordinate = coordinateRepo.Get(coordinateId);
                 var locationString = pointCoordinate.Latitude.ToString("00.0000000") + "," + pointCoordinate.Longitude.ToString("00.0000000");
                 _locations[i] = Conversions.StringToLatLon(locationString);

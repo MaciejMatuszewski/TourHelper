@@ -85,7 +85,7 @@ public class MapEvent : MonoBehaviour {
 
         var point = GameObject.Find("ActualPoint").GetComponent<PointInfo>().point;
         CoordinateRepository coordinateRepo = new CoordinateRepository();
-        var pointCoordinate = coordinateRepo.Get(point.CoordinateId);
+        var pointCoordinate = coordinateRepo.Get((int)point.CoordinateId);
 
         PlayerPrefs.SetString("PointName", point.Name);
         PlayerPrefs.SetInt("PointId", point.Id);
