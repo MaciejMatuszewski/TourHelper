@@ -43,3 +43,5 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Manager\obj\Debug\TourH
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Base.dll
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Base.pdb
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Manager\obj\Debug\TourHelper.Manager.csproj.CopyComplete
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Repository.dll
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Manager\bin\Debug\TourHelper.Repository.pdb
