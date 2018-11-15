@@ -7,8 +7,7 @@ using TourHelper.Base.Model.Entity;
 using TourHelper.Repository;
 
 public class MapEvent : MonoBehaviour {
-    public string actualScene;
-
+    public string actualScene; 
     IEnumerator LoadYourAsyncScene()
     {
 
@@ -30,15 +29,7 @@ public class MapEvent : MonoBehaviour {
         for (int i = 0; i < rootObjects.Count; ++i)
         {
             GameObject gameObject = rootObjects[i];
-            foreach (Camera j in gameObject.GetComponentsInChildren<Camera>())
-            {
-                j.enabled = false;
-            }
-
-            foreach (Canvas k in gameObject.GetComponentsInChildren<Canvas>())
-            {
-                k.enabled = false;
-            }
+            gameObject.SetActive(false);
         }
     }
 
@@ -51,18 +42,9 @@ public class MapEvent : MonoBehaviour {
         for (int i = 0; i < rootObjects.Count; ++i)
         {
             GameObject gameObject = rootObjects[i];
-            foreach (Camera j in gameObject.GetComponentsInChildren<Camera>())
-            {
-                j.enabled = true;
-            }
-
-            foreach (Canvas k in gameObject.GetComponentsInChildren<Canvas>())
-            {
-                k.enabled = true;
-            }
-
-
+            gameObject.SetActive(true);
         }
+        
         SceneManager.UnloadScene(SceneManager.GetSceneByName("Map"));
     }
 
