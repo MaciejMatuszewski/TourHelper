@@ -32,7 +32,7 @@ public class InfoEvents : MonoBehaviour
         if (pointId != 0)
         {
             var repo = new TourPointRepository();
-            var point = repo.GetByTourID(pointId).SingleOrDefault();
+            var point = repo.GetByCoordinateID(pointId).SingleOrDefault();
 
             if (point!=null)
             {

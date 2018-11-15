@@ -1,4 +1,4 @@
-﻿#undef DEBUG
+﻿#define DEBUG
 
 using System.Reflection;
 using TourHelper.Base.Manager.Devices;
@@ -71,7 +71,7 @@ public class Workspace : MonoBehaviour
         _scene = new GameSpace(_gps, _assemblies);
         _scene.MainPanel = _mainPanel;
         _scene.AddPrefab("Coin", defaultActions: true);
-        _scene.AddPrefab("InfoPoint", new RandomCoinsInRangeManager(), defaultActions: false);
+        _scene.AddPrefab("InfoPoint", defaultActions: true);
 
         _scene.RebaseEvent += _player.RebasePlayer;
 
