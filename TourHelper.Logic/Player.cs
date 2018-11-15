@@ -1,10 +1,12 @@
-﻿using TourHelper.Base.Logic;
+﻿using System;
+using TourHelper.Base.Logic;
 using TourHelper.Base.Logic.PositionLogic;
-
+using TourHelper.Base.Manager.Calculators;
 using TourHelper.Base.Manager.Devices;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Logic.PositionLogic;
 using TourHelper.Manager.Calculators;
+using TourHelper.Manager.Calculators.Geolocation;
 using TourHelper.Manager.Calculators.Kalman;
 using UnityEngine;
 
@@ -17,9 +19,15 @@ namespace TourHelper.Logic
         private Quaternion _rotation;
 
         public IPositionUpdate _positionCalculator;
+        public IDistanceManager _accumulatedDistance;
+        public double AccumulatedDistance { get; set; }
+        public int StartDelay { get; set; }
+        public int DistanceInterval { get; set; }
 
         private IGyroManager _gyro;
         private IGpsManager _gps;
+        private DateTime _timeStamp;
+        private DateTime _startTimeStamp;
 
         /// <summary>
         /// Kostruktor obiektu do zarzadzania graczem. Posiada predefiniowany moduł obliczania lolalizacji w układzi
@@ -27,20 +35,29 @@ namespace TourHelper.Logic
         /// </summary>
         /// <param name="_gps">Instancja obiektu zarządzajacego odczytami GPS</param>
         /// <param name="_gyro">Instancja obiektu zarządzajacego odczytami Żyroskopem</param>
-        public Player(IGpsManager _gps, IGyroManager _gyro)
+        public Player(IGpsManager _gps, IGyroManager _gyro,int _startDelay,int _distanceInterval)
         {
+
+            StartDelay = _startDelay;
+            DistanceInterval = _distanceInterval;
+
+            _timeStamp = DateTime.Now;
+            _startTimeStamp = DateTime.Now;
+
             this._gyro = _gyro;
             this._gps = _gps;
 
             KalmanFilter _filter = new KalmanFilter();
 
             _filter.AccelerationError = 1;
-
+          
             UTMLocalCoordinates _translator = new UTMLocalCoordinates(_gps.GetCoordinates());
 
 
             _positionCalculator = new LocalPosition(_gps, _gyro, _filter, _translator);
-
+            _accumulatedDistance = new AccumulatedDistanceManager(
+                _translator.GetCoordinates(_gps.GetCoordinates()));
+            
         }
 
         /// <summary>
@@ -50,7 +67,7 @@ namespace TourHelper.Logic
         /// <param name="_gps">Instancja obiektu zarządzajacego odczytami GPS</param>
         /// <param name="_gyro">Instancja obiektu zarządzajacego odczytami Żyroskopem</param>
         /// <param name="_positionCalculator">Instancja obiektu zarządzajacego obliczeniami położenia</param>
-        public Player(IGpsManager _gps, IGyroManager _gyro, IPositionUpdate _positionCalculator):this(_gps,_gyro)
+        public Player(IGpsManager _gps, IGyroManager _gyro, int _startDelay, int _distanceInterval, IPositionUpdate _positionCalculator):this(_gps,_gyro, _startDelay, _distanceInterval)
         {
             this._positionCalculator = _positionCalculator;
         }
@@ -82,8 +99,15 @@ namespace TourHelper.Logic
         {
             _camera.transform.localRotation = _gyro.GetRotation() * _rotation;
            // p.Filter.DeltaTime = Time.deltaTime;
-           
-            _cameraContainer.transform.position = _positionCalculator.GetPosition();
+           var position= _positionCalculator.GetPosition();
+            _cameraContainer.transform.position = position;
+
+            if (DateTime.Now.Subtract(_timeStamp).TotalSeconds>=DistanceInterval&& DateTime.Now.Subtract(_startTimeStamp).TotalSeconds >= StartDelay)
+            {
+                AccumulatedDistance = _accumulatedDistance.GetAccumulatedDistance(position);
+                _timeStamp = DateTime.Now;
+            }
+            
         }
 
         /// <summary>

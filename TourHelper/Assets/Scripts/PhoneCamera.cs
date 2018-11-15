@@ -12,15 +12,15 @@ public class PhoneCamera : MonoBehaviour
     private float scaleY, scaler;
     private int orient;
     // Use this for initialization
-    private void Awake()
+    private void Start()
     {
         Camera = CameraManager.Instance;
-        StartCoroutine(Camera.StartService(10));
+        StartCoroutine(Camera.StartService(1));
 
     }
 
     // Update is called once per frame
-    private void Update()
+    private void LateUpdate()
     {
         if (!Camera.IsReady())
         {

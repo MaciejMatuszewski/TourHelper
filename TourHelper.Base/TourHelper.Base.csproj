@@ -57,6 +57,7 @@
     <Compile Include="Logic\PositionLogic\IPositionUpdate.cs" />
     <Compile Include="Manager\Calculators\ICoordinatesConverter.cs" />
     <Compile Include="Manager\Calculators\IDeviceReadingsFilter.cs" />
+    <Compile Include="Manager\Calculators\IDistanceManager.cs" />
     <Compile Include="Manager\Calculators\IElipsoid.cs" />
     <Compile Include="Manager\Calculators\IFilter.cs" />
     <Compile Include="Manager\Calculators\IIntegralCalculator.cs" />

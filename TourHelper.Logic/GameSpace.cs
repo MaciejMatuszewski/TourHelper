@@ -15,6 +15,8 @@ namespace TourHelper.Logic
     {
         public delegate void RebaseListener(Coordinate c);
 
+
+        public bool EnforceRebuild { get; set; }
         public RebaseListener RebaseEvent;
         public IEnumerable<Assembly> Assemblies { get; private set; }
         public GameObject MainPanel { get; set; }
@@ -200,9 +202,10 @@ namespace TourHelper.Logic
         /// </summary>
         public void UpdateGameSpace()
         {
-            if (NeedRebuild())
+            if (NeedRebuild()|| EnforceRebuild)
             {
                 Initialize();
+                EnforceRebuild = false;
             }
         }
 

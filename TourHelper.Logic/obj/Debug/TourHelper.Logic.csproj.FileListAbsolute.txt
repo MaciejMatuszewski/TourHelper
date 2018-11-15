@@ -59,3 +59,5 @@ C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Logic\bin\D
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Manager.pdb
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.csprojAssemblyReference.cache
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Logic\obj\Debug\TourHelper.Logic.csproj.CopyComplete
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Repository.dll
+D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Logic\bin\Debug\TourHelper.Repository.pdb

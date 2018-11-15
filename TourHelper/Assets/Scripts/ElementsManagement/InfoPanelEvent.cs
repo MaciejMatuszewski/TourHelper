@@ -10,6 +10,8 @@ public class InfoPanelEvent : MonoBehaviour {
 
     public void SetPointInfo()
         {
+
+
             var title = PlayerPrefs.GetString("PointName", "");
 
             _titleText.text = title;
@@ -18,7 +20,7 @@ public class InfoPanelEvent : MonoBehaviour {
             if (pointId != 0)
             {
                 var repo = new TourPointRepository();
-                var point = repo.GetByTourID(pointId).SingleOrDefault();
+                var point = repo.Get(pointId);
 
                 _informationText.text = point.Description;
             }

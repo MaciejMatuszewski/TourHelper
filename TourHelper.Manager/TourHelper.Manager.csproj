@@ -51,6 +51,7 @@
     <Compile Include="Calculators\Filters\CorrectionFilter.cs" />
     <Compile Include="Calculators\Filters\CutOffFilter.cs" />
     <Compile Include="Calculators\Filters\IIRFilter.cs" />
+    <Compile Include="Calculators\Geolocation\AccumulatedDistanceManager.cs" />
     <Compile Include="Calculators\TTemp\IMUFilter.cs" />
     <Compile Include="Calculators\Kalman\KalmanFilter.cs" />
     <Compile Include="Calculators\Filters\LinearRegression.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Devices\Mock\MockGpsManager.cs" />
     <Compile Include="Devices\Mock\MockGyroManager.cs" />
     <Compile Include="ClassRetrieveManager.cs" />
+    <Compile Include="InfoPointsInRangeManager.cs" />
     <Compile Include="PrefabRetrieveManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomCoinsInRangeManager.cs" />
@@ -86,6 +88,10 @@
     <ProjectReference Include="..\TourHelper.Base\TourHelper.Base.csproj">
       <Project>{5b05cde0-650e-4453-983e-228c8b35eaa3}</Project>
       <Name>TourHelper.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Repository\TourHelper.Repository.csproj">
+      <Project>{AD547FB4-88CA-4698-B0F6-0F385F797526}</Project>
+      <Name>TourHelper.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

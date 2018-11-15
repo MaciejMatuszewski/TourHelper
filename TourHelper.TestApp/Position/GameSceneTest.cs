@@ -22,7 +22,7 @@ namespace TourHelper.TestApp.Position
 
 
             //-----------------------------------------------------------------------
-            var _player = new Player(_gps, _gyro);
+            var _player = new Player(_gps, _gyro,10,5);
 
             var _assemblies = new Assembly[] { typeof(RandomCoinsInRangeManager).Assembly };
 

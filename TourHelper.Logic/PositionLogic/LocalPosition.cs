@@ -73,9 +73,9 @@ namespace TourHelper.Logic.PositionLogic
             AccelerationFilterY = new IIRFilter(a_l, b_l);
             AccelerationFilterZ = new IIRFilter(a_l, b_l);
 
-            StandingLimit = 0.2f;
-            StandingCycles = 5;
-            PredictionCycles = 4;
+            StandingLimit = 1.5f;
+            StandingCycles = 4;
+            PredictionCycles = 2;
         }
 
         public Vector3 GetPosition()
@@ -96,10 +96,10 @@ namespace TourHelper.Logic.PositionLogic
             }
             else
             {
-                //-------------------Filter.DeltaTime = Time.deltaTime;
+                Filter.DeltaTime = Time.deltaTime;
                 _lastGpsReading = Gps.GetCoordinates();
 
-                Filter.GPSError = 5;//---------------------_lastGpsReading.VerticalAccuracy;
+                Filter.GPSError =  _lastGpsReading.VerticalAccuracy;
 
 
                 _gpsPosition = Translator.GetCoordinates(_lastGpsReading);//Pozycja x,y,z w ukladzie lokalnym; ruch odbywa się w plaszczyznie xz
@@ -126,7 +126,7 @@ namespace TourHelper.Logic.PositionLogic
                     _predictionCounter = 0;
                 }
 
-
+                
             }
             if (LogMode)
             {
@@ -149,7 +149,8 @@ namespace TourHelper.Logic.PositionLogic
 
                 }
             }
-
+           // Debug.Log(string.Format("velocity:{0:f6};{1:f6}", Filter.Prediction.GetByIndex(2, 0), Filter.Prediction.GetByIndex(3, 0)));
+          //  Debug.Log(string.Format("position:{0:f6};{1:f6}", Filter.Prediction.GetByIndex(0, 0), Filter.Prediction.GetByIndex(1, 0)));
             return new Vector3((float)Filter.Prediction.GetByIndex(0, 0), 0, (float)Filter.Prediction.GetByIndex(1, 0));
         }
         
@@ -160,13 +161,14 @@ namespace TourHelper.Logic.PositionLogic
             if (d < StandingLimit)
             {
                 _idleCounter++;
-                if (_idleCounter== StandingCycles)
+                if (_idleCounter>= StandingCycles)
                 {
+                    
                     return true;
                 }
-                
+                return false;
             }
-            _idleCounter =0;
+            _idleCounter = 0;
             return false;
         }
     }

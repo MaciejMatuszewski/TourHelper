@@ -11,9 +11,33 @@ namespace TourHelper.TestApp
     {
         static void Main(string[] args)
         {
-            RepositoryTest.PerformTest();
-            /* var _test = new GameSceneTest();
-             _test.test();*/
+            //---------------------------------------------
+            //var p = new InfoPointsInRangeManager();
+            //var origin = new Coordinate() { Latitude=52.463749,Longitude= 16.921098 };
+
+            // var pp=p.GetPointsInRange(origin, 0.2, 0.2);
+            //---------------------------------------------
+            /*
+            var repo = new TourPointRepository();
+            var p = repo.GetByCoordinateID(3);
+            */
+
+            //-----------------------------------------------
+            
+
+            var repo = new CoordinateRepository();
+            var p = repo.GetByTourPointID(2);
+
+
+            //-----------------------------------------------
+            //var correpo = new CoordinateRepository();
+
+            //var points = correpo.GetByTourID(3);
+            //-----------------------------------------------
+
+            //RepositoryTest.PerformTest();
+            // var _test = new GameSceneTest();
+            //_test.test();
 
             //TestSetup.LocationTest();
             //TestSetup.FilterTest();

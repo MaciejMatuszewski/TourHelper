@@ -367,6 +367,7 @@
     <Compile Include="Assets\Scripts\RotateWithLocationProvider.cs" />
     <Compile Include="Assets\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\SpawnOnMap.cs" />
+    <Compile Include="Assets\Scripts\StartDevices.cs" />
     <Compile Include="Assets\Scripts\tex.cs" />
     <Compile Include="Assets\Scripts\Workspace.cs" />
     <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderAndroidNative.txt" />
