@@ -7,5 +7,6 @@ namespace TourHelper.Base.Repository
     public interface ICoordinateRepository:IBaseRepository<Coordinate>
     {
         IEnumerable<Coordinate> GetByTourID(int id);
+        Coordinate GetByTourPointID(int id);
     }
 }

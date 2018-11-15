@@ -20,7 +20,7 @@ public class InfoPanelEvent : MonoBehaviour {
             if (pointId != 0)
             {
                 var repo = new TourPointRepository();
-                var point = repo.GetByCoordinateID(pointId).SingleOrDefault();
+                var point = repo.Get(pointId);
 
                 _informationText.text = point.Description;
             }

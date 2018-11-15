@@ -48,9 +48,12 @@ public class Workspace : MonoBehaviour
 #else
 
         //-----------REAL DEVICES-----------        
-
         _gps = GpsManager.Instance;
-        StartCoroutine(_gps.StartService(5));
+
+        _gyro = GyroManager.Instance;
+
+        _compass = CompassManager.Instance;
+
 #endif
 
 
@@ -58,17 +61,6 @@ public class Workspace : MonoBehaviour
 
     void Start()
     {
-
-#if (DEBUG)
-
-#else
-        //-----------REAL DEVICES----------- 
-        _gyro = GyroManager.Instance;
-        StartCoroutine(_gyro.StartService(1));
-
-        _compass = CompassManager.Instance;
-        StartCoroutine(_compass.StartService(1));
-#endif
 
         _player = new Player(_gps, _gyro, 10, 5);
         
@@ -91,11 +83,15 @@ public class Workspace : MonoBehaviour
         PlayerPrefs.SetFloat("Distance", 0f);
 
     }
+    private void FixedUpdate()
+    {
+        _player.UpdatePlayer();
+    }
 
     void Update()
     {
         _scene.UpdateGameSpace();
-        _player.UpdatePlayer();
+        
 
         PlayerPrefs.SetFloat("Distance", (float)(_player.AccumulatedDistance / 1000));
 

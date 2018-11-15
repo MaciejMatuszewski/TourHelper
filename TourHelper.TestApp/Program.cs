@@ -17,9 +17,16 @@ namespace TourHelper.TestApp
 
             // var pp=p.GetPointsInRange(origin, 0.2, 0.2);
             //---------------------------------------------
-
+            /*
             var repo = new TourPointRepository();
             var p = repo.GetByCoordinateID(3);
+            */
+
+            //-----------------------------------------------
+            
+
+            var repo = new CoordinateRepository();
+            var p = repo.GetByTourPointID(2);
 
 
             //-----------------------------------------------

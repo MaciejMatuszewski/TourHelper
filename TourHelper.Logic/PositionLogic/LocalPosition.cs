@@ -126,7 +126,7 @@ namespace TourHelper.Logic.PositionLogic
                     _predictionCounter = 0;
                 }
 
-
+                
             }
             if (LogMode)
             {
@@ -149,7 +149,8 @@ namespace TourHelper.Logic.PositionLogic
 
                 }
             }
-
+           // Debug.Log(string.Format("velocity:{0:f6};{1:f6}", Filter.Prediction.GetByIndex(2, 0), Filter.Prediction.GetByIndex(3, 0)));
+          //  Debug.Log(string.Format("position:{0:f6};{1:f6}", Filter.Prediction.GetByIndex(0, 0), Filter.Prediction.GetByIndex(1, 0)));
             return new Vector3((float)Filter.Prediction.GetByIndex(0, 0), 0, (float)Filter.Prediction.GetByIndex(1, 0));
         }
         
