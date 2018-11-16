@@ -349,6 +349,7 @@
     <Compile Include="Assets\Scripts\ArrowController.cs" />
     <Compile Include="Assets\Scripts\CameraBillboard.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\ElementsManagement\BottomPanelEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\CoinEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\ElementRotation.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\InfoEvents.cs" />
