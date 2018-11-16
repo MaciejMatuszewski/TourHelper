@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Base.Repository;
@@ -24,6 +25,20 @@ namespace TourHelper.Repository
             $"WHERE [dbo].[{nameof(TourPoint)}].[{nameof(TourPoint.TourId)}]={id}";
 
             return ExecuteSelectCommand(statement);
+        }
+
+        public IEnumerable<Coordinate> GetUnvisited(int userTourId)
+        {
+            //string statement =
+            //$" SELECT C.* " +
+            //$"FROM [dbo].[{nameof(Coordinate)}] C" +
+            //$"JOIN [dbo].[{nameof(Coordinate)}] on [dbo].[{nameof(TourPoint)}]" +
+            //$".[{nameof(TourPoint.CoordinateId)}]=[dbo].[{nameof(Coordinate)}]" +
+            //$".[{nameof(Coordinate.Id)}]" +
+            //$"WHERE [dbo].[{nameof(TourPoint)}].[{nameof(TourPoint.TourId)}]={id}";
+
+            //return ExecuteSelectCommand(statement);
+            throw new NotImplementedException();
         }
 
         public Coordinate GetByTourPointID(int id)

@@ -1,4 +1,4 @@
-﻿#define DEBUG
+﻿#undef DEBUG
 
 using System.Reflection;
 using TourHelper.Base.Manager.Devices;
