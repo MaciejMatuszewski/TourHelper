@@ -4,6 +4,7 @@ using System.Reflection;
 using TourHelper.Base.Manager.Devices;
 using TourHelper.Logic;
 using TourHelper.Manager;
+using TourHelper.Manager.Calculators.Geolocation;
 using TourHelper.Manager.Devices;
 using TourHelper.Manager.Devices.Mock;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class Workspace : MonoBehaviour
     //Game controllers
     private Player _player;
     private GameSpace _scene;
+    private int _lastTour;
+
 
     //Game Objects
     public Camera _camera;
@@ -63,7 +66,9 @@ public class Workspace : MonoBehaviour
     {
 
         _player = new Player(_gps, _gyro, 10, 5);
-        
+
+        _lastTour= PlayerPrefs.GetInt("TourID");
+
         var _assemblies = new Assembly[] {
             typeof(RandomCoinsInRangeManager).Assembly
         };
@@ -90,6 +95,14 @@ public class Workspace : MonoBehaviour
 
     void Update()
     {
+        if (_lastTour!= PlayerPrefs.GetInt("TourID"))
+        {
+            _scene.EnforceRebuild = true;
+            _player.ResetDistanceAccumulator();
+
+
+
+        }
         _scene.UpdateGameSpace();
         
 

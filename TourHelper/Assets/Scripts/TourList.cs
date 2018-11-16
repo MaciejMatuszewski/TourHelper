@@ -104,5 +104,7 @@ public class TourList : MonoBehaviour
 
             PlayerPrefs.SetInt("UserTourID", userTour.Id);
         }
+        PanelEvent script = (PanelEvent)GetComponent("PanelEvent");//UKRYWANIE PANELU PO WYBORZE WYCIECZKI !!!!
+        script.MovePanel();
     }
 }

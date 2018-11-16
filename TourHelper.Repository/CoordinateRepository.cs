@@ -29,6 +29,12 @@ namespace TourHelper.Repository
 
         public IEnumerable<Coordinate> GetUnvisited(int userTourId)
         {
+            string statement = 
+                $"SELECT C.* " +
+                $"FROM [dbo].[{nameof(UserTour)}] UT JOIN [dbo].[{nameof(TourPoint)}] TP ON TP.[{nameof(TourPoint.TourId)}] = UT.[{nameof(UserTour.TourId)}] " +
+                $"JOIN [dbo].[{nameof(Coordinate)}] C ON C.[{nameof(Coordinate.Id)}] = TP.[{nameof(TourPoint.CoordinateId)}] " +
+                $"WHERE UT.[{nameof(UserTour.Id)}] = {userTourId} AND NOT EXISTS(SELECT * FROM [dbo].[{nameof(UserTourPoint)}]  UTP " +
+                $"WHERE UTP.[{nameof(UserTourPoint.TourPointId)}]= TP.[{nameof(TourPoint.Id)}] AND UTP.[{nameof(UserTourPoint.UserTourId)}] = UT.[{nameof(UserTour.Id)}])";
             //string statement =
             //$" SELECT C.* " +
             //$"FROM [dbo].[{nameof(Coordinate)}] C" +
@@ -37,8 +43,8 @@ namespace TourHelper.Repository
             //$".[{nameof(Coordinate.Id)}]" +
             //$"WHERE [dbo].[{nameof(TourPoint)}].[{nameof(TourPoint.TourId)}]={id}";
 
-            //return ExecuteSelectCommand(statement);
-            throw new NotImplementedException();
+            return ExecuteSelectCommand(statement);
+           // throw new NotImplementedException();
         }
 
         public Coordinate GetByTourPointID(int id)

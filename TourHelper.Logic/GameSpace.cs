@@ -17,6 +17,7 @@ namespace TourHelper.Logic
 
 
         public bool EnforceRebuild { get; set; }
+
         public RebaseListener RebaseEvent;
         public IEnumerable<Assembly> Assemblies { get; private set; }
         public GameObject MainPanel { get; set; }

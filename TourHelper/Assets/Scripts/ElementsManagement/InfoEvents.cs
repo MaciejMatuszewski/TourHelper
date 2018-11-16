@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using TourHelper.Base.Model.Entity;
 using TourHelper.Repository;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,6 +41,12 @@ public class InfoEvents : MonoBehaviour
                 _informationText.text = point.Description;
                 PanelEvent script = (PanelEvent)_panelComponents.GetComponent("PanelEvent");
                 script.MovePanel();
+
+                var userPoint = new UserTourPoint() {TourPointId= point.Id, UserTourId=PlayerPrefs.GetInt("UserTourID") };
+
+                var userTourRepo = new UserTourPointRepository();
+
+                userTourRepo.Insert(userPoint);
 
                 int visited=PlayerPrefs.GetInt("Visited");
 

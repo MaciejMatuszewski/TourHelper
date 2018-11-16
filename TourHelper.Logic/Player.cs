@@ -120,5 +120,10 @@ namespace TourHelper.Logic
         {
             _positionCalculator.Origin = _origin;
         }
+
+        public void ResetDistanceAccumulator()
+        {
+            _accumulatedDistance = new AccumulatedDistanceManager(_positionCalculator.GetPosition());
+        }
     }
 }
