@@ -8,5 +8,7 @@ namespace TourHelper.Base.Repository
     {
         IEnumerable<Coordinate> GetByTourID(int id);
         Coordinate GetByTourPointID(int id);
+
+        IEnumerable<Coordinate> GetUnvisited(int userTourId);
     }
 }

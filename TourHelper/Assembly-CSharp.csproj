@@ -371,6 +371,7 @@
     <Compile Include="Assets\Scripts\SpawnOnMap.cs" />
     <Compile Include="Assets\Scripts\StartDevices.cs" />
     <Compile Include="Assets\Scripts\tex.cs" />
+    <Compile Include="Assets\Scripts\TourList.cs" />
     <Compile Include="Assets\Scripts\Workspace.cs" />
     <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderAndroidNative.txt" />
     <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\Helsinki.txt" />
@@ -380,16 +381,16 @@
     <None Include="Assets\Mapbox\Unity\Location\ExampleGpsTraces\LocationProviderAndroidNative-2.txt" />
     <None Include="Assets\Resources\Mapbox\MapboxConfiguration.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -587,49 +588,49 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Base">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/TourHelper.Base.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/TourHelper.Base.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Configuration">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/TourHelper.Configuration.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/TourHelper.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Logic">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/TourHelper.Logic.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/TourHelper.Logic.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Manager">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/TourHelper.Manager.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/TourHelper.Manager.dll</HintPath>
     </Reference>
     <Reference Include="TourHelper.Repository">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/TourHelper.Repository.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/TourHelper.Repository.dll</HintPath>
     </Reference>
     <Reference Include="I18N.CJK">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/External/I18N.CJK.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.CJK.dll</HintPath>
     </Reference>
     <Reference Include="I18N">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/External/I18N.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.dll</HintPath>
     </Reference>
     <Reference Include="I18N.MidEast">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/External/I18N.MidEast.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.MidEast.dll</HintPath>
     </Reference>
     <Reference Include="I18N.Other">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/External/I18N.Other.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.Other.dll</HintPath>
     </Reference>
     <Reference Include="I18N.Rare">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/External/I18N.Rare.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.Rare.dll</HintPath>
     </Reference>
     <Reference Include="I18N.West">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/DLL/External/I18N.West.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.West.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.IO.Compression">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.Json">
-      <HintPath>C:/Users/Maciej/Documents/GitHub/Inzynierka6/TourHelper6/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/Maciej/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/hubert.daczkus/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/Maciej/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/hubert.daczkus/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
