@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1D331DF-8E91-4AA5-A902-7A6F54951893}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TourHelper.Manager</RootNamespace>
+    <AssemblyName>TourHelper.Manager</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TourHelper.Base\bin\Debug\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\TourHelper.Base\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculators\Filters\CorrectionFilter.cs" />
+    <Compile Include="Calculators\Filters\CutOffFilter.cs" />
+    <Compile Include="Calculators\Filters\IIRFilter.cs" />
+    <Compile Include="Calculators\Geolocation\AccumulatedDistanceManager.cs" />
+    <Compile Include="Calculators\TTemp\IMUFilter.cs" />
+    <Compile Include="Calculators\Kalman\KalmanFilter.cs" />
+    <Compile Include="Calculators\Filters\LinearRegression.cs" />
+    <Compile Include="Calculators\MatrixTools\LUDecomposition.cs" />
+    <Compile Include="Calculators\MatrixTools\LUSolver.cs" />
+    <Compile Include="Calculators\MatrixTools\Matrix.cs" />
+    <Compile Include="Calculators\MatrixTools\MatrixMultiIKJ.cs" />
+    <Compile Include="Calculators\MatrixTools\MatrixNxN.cs" />
+    <Compile Include="Calculators\TTemp\SignalIntegral.cs" />
+    <Compile Include="Calculators\Geolocation\UTMLocalCoordinates.cs" />
+    <Compile Include="Calculators\MathTools.cs" />
+    <Compile Include="Calculators\Filters\MeanFilter.cs" />
+    <Compile Include="Calculators\Geolocation\TMConverter.cs" />
+    <Compile Include="Calculators\Geolocation\UTMProjection.cs" />
+    <Compile Include="Calculators\Geolocation\WGS84Elipse.cs" />
+    <Compile Include="Devices\AccelerationManager.cs" />
+    <Compile Include="Devices\CameraManager.cs" />
+    <Compile Include="Devices\CompassManager.cs" />
+    <Compile Include="Devices\GpsManager.cs" />
+    <Compile Include="Devices\BaseLocationManager.cs" />
+    <Compile Include="Devices\GyroManager.cs" />
+    <Compile Include="Devices\Mock\DevicesFromFile.cs" />
+    <Compile Include="Devices\Mock\MockAccelerometrManager.cs" />
+    <Compile Include="Devices\Mock\MockCompassManager.cs" />
+    <Compile Include="Devices\Mock\MockGpsManager.cs" />
+    <Compile Include="Devices\Mock\MockGyroManager.cs" />
+    <Compile Include="ClassRetrieveManager.cs" />
+    <Compile Include="InfoPointsInRangeManager.cs" />
+    <Compile Include="PrefabRetrieveManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomCoinsInRangeManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TourHelper.Base\TourHelper.Base.csproj">
+      <Project>{5b05cde0-650e-4453-983e-228c8b35eaa3}</Project>
+      <Name>TourHelper.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Repository\TourHelper.Repository.csproj">
+      <Project>{AD547FB4-88CA-4698-B0F6-0F385F797526}</Project>
+      <Name>TourHelper.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

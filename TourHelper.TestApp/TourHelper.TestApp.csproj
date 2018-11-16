@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EFF19A3B-E81F-4D65-B589-5F8A9FF6CF63}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TourHelper.TestApp</RootNamespace>
+    <AssemblyName>TourHelper.TestApp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\Projekty\REBASE INŻ\TourHelper.Base\bin\Debug\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Position\CoordinatesCalculatorTest.cs" />
+    <Compile Include="Position\FilterTest.cs" />
+    <Compile Include="Position\GameSceneTest.cs" />
+    <Compile Include="Position\LocationTest.cs" />
+    <Compile Include="Position\PositionTest.cs" />
+    <Compile Include="Position\RandomCoinsTest.cs" />
+    <Compile Include="Position\TestSetup.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TourHelper.Base\TourHelper.Base.csproj">
+      <Project>{5B05CDE0-650E-4453-983E-228C8B35EAA3}</Project>
+      <Name>TourHelper.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Logic\TourHelper.Logic.csproj">
+      <Project>{396939f8-cb68-43f0-bf8f-28b88c4dbd40}</Project>
+      <Name>TourHelper.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Manager\TourHelper.Manager.csproj">
+      <Project>{f1d331df-8e91-4aa5-a902-7a6f54951893}</Project>
+      <Name>TourHelper.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TourHelper.Repository\TourHelper.Repository.csproj">
+      <Project>{AD547FB4-88CA-4698-B0F6-0F385F797526}</Project>
+      <Name>TourHelper.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
