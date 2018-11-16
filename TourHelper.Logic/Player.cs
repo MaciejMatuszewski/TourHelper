@@ -118,12 +118,17 @@ namespace TourHelper.Logic
 
         public void RebasePlayer(Coordinate _origin)
         {
+            var lastDist = _accumulatedDistance.GetAccumulatedDistance(_positionCalculator.GetPosition());
+            
             _positionCalculator.Origin = _origin;
+
+            ResetDistanceAccumulator(lastDist) ;
         }
 
-        public void ResetDistanceAccumulator()
+        public void ResetDistanceAccumulator(double startDist)
         {
-            _accumulatedDistance = new AccumulatedDistanceManager(_positionCalculator.GetPosition());
+            _accumulatedDistance = new AccumulatedDistanceManager(_positionCalculator.GetPosition(), startDist);
         }
+
     }
 }

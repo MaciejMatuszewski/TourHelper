@@ -9,11 +9,12 @@ namespace TourHelper.Manager.Calculators.Geolocation
         private double _accumulatedDistance;
         private Vector3 _lastPoint;
 
-        public AccumulatedDistanceManager(Vector3 startPoint)
+        public AccumulatedDistanceManager(Vector3 startPoint,double startDist=0)
         {
-            _accumulatedDistance = 0;
+            _accumulatedDistance = startDist;
             _lastPoint = startPoint;
         }
+
 
         public double GetAccumulatedDistance(Vector3 point)
         {

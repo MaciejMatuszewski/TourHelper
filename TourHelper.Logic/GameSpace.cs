@@ -215,7 +215,7 @@ namespace TourHelper.Logic
             Origin = _gps.GetCoordinates();
             foreach (string key in Prefabs.Keys)
             {
-                Debug.Log(key);
+                //Debug.Log(key);
                 ClearContainer(key);
                 
                 foreach (IPointInRange action in Prefabs[key].Actions)

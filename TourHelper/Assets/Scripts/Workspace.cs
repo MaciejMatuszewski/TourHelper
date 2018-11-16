@@ -28,9 +28,7 @@ public class Workspace : MonoBehaviour
     //Game Objects
     public Camera _camera;
     public GameObject _mainPanel;
-    public Text _distanceText;
-    public Text _visitedText;
-    public Text _scoreText;
+
 
     private void Awake()
     {
@@ -80,12 +78,8 @@ public class Workspace : MonoBehaviour
 
         _scene.RebaseEvent += _player.RebasePlayer;
 
-        _player.InitializePlayer(_camera);
         _scene.Initialize();
-
-        PlayerPrefs.SetInt("Visited", 0);
-        PlayerPrefs.SetInt("Score", 0);
-        PlayerPrefs.SetFloat("Distance", 0f);
+        _player.InitializePlayer(_camera);
 
     }
     private void FixedUpdate()
@@ -98,9 +92,7 @@ public class Workspace : MonoBehaviour
         if (_lastTour!= PlayerPrefs.GetInt("TourID"))
         {
             _scene.EnforceRebuild = true;
-            _player.ResetDistanceAccumulator();
-
-
+            _player.ResetDistanceAccumulator(PlayerPrefs.GetFloat("Distance"));
 
         }
         _scene.UpdateGameSpace();
@@ -108,9 +100,9 @@ public class Workspace : MonoBehaviour
 
         PlayerPrefs.SetFloat("Distance", (float)(_player.AccumulatedDistance / 1000));
 
-        _distanceText.text = string.Format("{0:f} km", PlayerPrefs.GetFloat("Distance"));
-        _visitedText.text = PlayerPrefs.GetInt("Visited").ToString() + " pkt.";
-        _scoreText.text = PlayerPrefs.GetInt("Score").ToString() + " pkt.";
+
+
+
 
     }
 

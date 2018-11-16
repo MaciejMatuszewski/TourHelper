@@ -87,7 +87,12 @@ public class TourList : MonoBehaviour
 
         if (userTours.Any())
         {
-            PlayerPrefs.SetInt("TourID", userTours.OrderByDescending(ut => ut.CreatedOn).First().Id);
+            var userTour = userTours.OrderByDescending(ut => ut.CreatedOn).First();
+            PlayerPrefs.SetInt("TourID", userTour.Id);
+
+            PlayerPrefs.SetFloat("Distance", (float)userTour.DistanceTraveled);
+            PlayerPrefs.SetInt("Visited", (int)userTour.TourPointsReached);
+            PlayerPrefs.SetInt("Score", (int)userTour.CoinsCollected);
         }
         else
         {
@@ -103,7 +108,17 @@ public class TourList : MonoBehaviour
             });
 
             PlayerPrefs.SetInt("UserTourID", userTour.Id);
+
+            PlayerPrefs.SetFloat("Distance",0f);
+            PlayerPrefs.SetInt("Visited",0);
+            PlayerPrefs.SetInt("Score",0);
         }
+
+ 
+
+
+
+
         PanelEvent script = (PanelEvent)GetComponent("PanelEvent");//UKRYWANIE PANELU PO WYBORZE WYCIECZKI !!!!
         script.MovePanel();
     }
