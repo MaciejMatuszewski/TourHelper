@@ -21,7 +21,8 @@ namespace TourHelper.Manager
             int tourId = 1;//PlayerPrefs.GetInt["TourID"];
             int userTourId = 10;//PlayerPrefs.GetInt["UserTourID"];
             var coordinateRepository = new CoordinateRepository();
-            IEnumerable<Coordinate> tourPoints = coordinateRepository.GetUnvisited(userTourId);
+            //IEnumerable<Coordinate> tourPoints = coordinateRepository.GetUnvisited(userTourId);
+            IEnumerable<Coordinate> tourPoints = coordinateRepository.GetByTourID(tourId);
 
             var tourPointsFiltered = tourPoints
                  .Where(n => (Math.Abs(n.Latitude - origin.Latitude) < latRange)
