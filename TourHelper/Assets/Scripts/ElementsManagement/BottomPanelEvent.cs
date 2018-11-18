@@ -4,18 +4,22 @@ using TourHelper.Repository;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BottomPanelEvent : MonoBehaviour {
+public class BottomPanelEvent : MonoBehaviour
+{
 
     public Text tour;
     public Text point;
     private int lastTourID;
 
-	void Update () {
+    void Update()
+    {
 
-        if (lastTourID!= PlayerPrefs.GetInt("TourID"))
+        var tourId = PlayerPrefs.GetInt("TourID");
+
+        if (lastTourID != tourId)
         {
             var tourRepo = new TourRepository();
-            var tourEnt = tourRepo.Get(PlayerPrefs.GetInt("TourID"));
+            var tourEnt = tourRepo.Get(tourId);
 
             if (tour != null)
             {
@@ -25,10 +29,9 @@ public class BottomPanelEvent : MonoBehaviour {
             {
                 tour.text = "";
             }
-            lastTourID = PlayerPrefs.GetInt("TourID");
+            lastTourID = tourId;
         }
 
         point.text = PlayerPrefs.GetString("PointName");
-
     }
 }

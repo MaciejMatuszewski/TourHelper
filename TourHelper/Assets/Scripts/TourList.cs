@@ -85,39 +85,35 @@ public class TourList : MonoBehaviour
         var userTourRepository = new UserTourRepository();
         var userTours = userTourRepository.GetByUserIdAndTourId(userId, tourId);
 
+        UserTour userTour;
+
         if (userTours.Any())
         {
-            var userTour = userTours.OrderByDescending(ut => ut.CreatedOn).First();
-            PlayerPrefs.SetInt("TourID", userTour.Id);
-
-            PlayerPrefs.SetFloat("Distance", (float)userTour.DistanceTraveled);
-            PlayerPrefs.SetInt("Visited", (int)userTour.TourPointsReached);
-            PlayerPrefs.SetInt("Score", (int)userTour.CoinsCollected);
+            userTour = userTours.OrderByDescending(ut => ut.CreatedOn).First();
         }
         else
         {
             var tourPointRepository = new TourPointRepository();
             var tourpoints = tourPointRepository.GetByTourID(tourId);
 
-            var userTour = userTourRepository.Insert(new UserTour
+            userTour = userTourRepository.Insert(new UserTour
             {
                 TourPointsCount = tourpoints.Count(),
+                TourPointsReached = 0,
                 TourId = tourId,
                 UserId = userId,
+                CoinsCollected = 0,
+                DistanceTraveled = 0f,
+                Score = 0,
                 TourStarted = DateTime.Now
             });
-
-            PlayerPrefs.SetInt("UserTourID", userTour.Id);
-
-            PlayerPrefs.SetFloat("Distance",0f);
-            PlayerPrefs.SetInt("Visited",0);
-            PlayerPrefs.SetInt("Score",0);
         }
 
- 
-
-
-
+        PlayerPrefs.SetInt("UserTourID", userTour.Id);
+        PlayerPrefs.SetInt("TourID", tourId);
+        PlayerPrefs.SetFloat("Distance", (float)userTour.DistanceTraveled);
+        PlayerPrefs.SetInt("Visited", (int)userTour.TourPointsReached);
+        PlayerPrefs.SetInt("Score", (int)userTour.CoinsCollected);
 
         PanelEvent script = (PanelEvent)GetComponent("PanelEvent");//UKRYWANIE PANELU PO WYBORZE WYCIECZKI !!!!
         script.MovePanel();

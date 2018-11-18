@@ -43,6 +43,8 @@
     <Compile Include="CoordinateRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TourPointRepository.cs" />
+    <Compile Include="UserTourQuestionRepository.cs" />
+    <Compile Include="TourQuestionRepository.cs" />
     <Compile Include="TourRepository.cs" />
     <Compile Include="UserTourPointRepository.cs" />
     <Compile Include="UserTourRepository.cs" />

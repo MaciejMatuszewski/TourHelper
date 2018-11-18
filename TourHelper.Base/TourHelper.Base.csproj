@@ -77,6 +77,8 @@
     <Compile Include="Manager\Devices\IGyroManager.cs" />
     <Compile Include="Manager\IPointInRange.cs" />
     <Compile Include="Model\Entity\BaseModel.cs" />
+    <Compile Include="Model\Entity\UserTourQuestion.cs" />
+    <Compile Include="Model\Entity\TourQuestion.cs" />
     <Compile Include="Model\Entity\Coordinate.cs" />
     <Compile Include="Model\Entity\PrefabNode.cs" />
     <Compile Include="Model\Entity\Tour.cs" />
@@ -90,7 +92,9 @@
     <Compile Include="Repository\IBaseRepository.cs" />
     <Compile Include="Repository\ICoordinateRepository.cs" />
     <Compile Include="Repository\ITourPointRepository.cs" />
+    <Compile Include="Repository\IUserTourQuestion.cs" />
     <Compile Include="Repository\ITourRepository.cs" />
+    <Compile Include="Repository\ITourQuestionRepository.cs" />
     <Compile Include="Repository\IUserProfileRepository.cs" />
     <Compile Include="Repository\IUserTourPointRepository.cs" />
     <Compile Include="Repository\IUserTourRepository.cs" />
