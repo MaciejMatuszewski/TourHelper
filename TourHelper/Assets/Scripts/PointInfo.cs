@@ -21,7 +21,7 @@ public class PointInfo : MonoBehaviour {
 
     public void ShowInfo()
     {
-        MapEvent mapEvent = new MapEvent();
-        mapEvent.ShowPoint(point);
+        MapActions mapActions = GameObject.Find("Map").GetComponent<MapActions>();
+        mapActions.ShowPoint(point);
     }
 }
