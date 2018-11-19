@@ -3,13 +3,10 @@
 	using UnityEngine;
 	using Mapbox.Utils;
 	using Mapbox.Unity.Map;
-	using Mapbox.Unity.MeshGeneration.Factories;
 	using Mapbox.Unity.Utilities;
 	using System.Collections.Generic;
     using TourHelper.Repository;
     using TourHelper.Base.Model.Entity;
-    using System;
-    using UnityEngine.UI;
     using UnityEngine.SceneManagement;
     using System.Linq;
 
@@ -27,11 +24,11 @@
 		GameObject _markerPrefab;
 
 		List<GameObject> _spawnedObjects;
-       // public void AddPoints(int tourID)
+
         private void Start()
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map"));
-            int tourID = 1;//PlayerPrefs.GetInt("TourID");
+            int tourID = PlayerPrefs.GetInt("TourID");
             var pointRepo = new TourPointRepository();
             List<TourPoint> points = pointRepo.GetByTourID(tourID).ToList();
             _locations = new Vector2d[points.Count];
