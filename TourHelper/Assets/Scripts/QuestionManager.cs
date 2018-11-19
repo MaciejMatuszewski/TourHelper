@@ -156,8 +156,7 @@ public class QuestionManager : MonoBehaviour
 
         MarkQuestion();
         SetQuestionCounter();
-    }
-
+    }   
     private void LoadQuestion()
     {
         var tourQuestionRepository = new TourQuestionRepository();
