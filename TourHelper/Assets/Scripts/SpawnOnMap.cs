@@ -9,6 +9,7 @@
     using TourHelper.Base.Model.Entity;
     using UnityEngine.SceneManagement;
     using System.Linq;
+    using UnityEngine.UI;
 
     public class SpawnOnMap : MonoBehaviour
 	{
@@ -25,12 +26,17 @@
 
 		List<GameObject> _spawnedObjects;
 
+        public Sprite visitedPointImg;
+        public Sprite unvisitedPointImg;
+
         private void Start()
         {
             SceneManager.SetActiveScene(SceneManager.GetSceneByName("Map"));
             int tourID = PlayerPrefs.GetInt("TourID");
             var pointRepo = new TourPointRepository();
+            var userPointRepo = new UserTourPointRepository();
             List<TourPoint> points = pointRepo.GetByTourID(tourID).ToList();
+            List<UserTourPoint> visitedUserPoints = userPointRepo.GetByUserTourID(PlayerPrefs.GetInt("UserTourID")).ToList();
             _locations = new Vector2d[points.Count];
             _spawnedObjects = new List<GameObject>();
             CoordinateRepository coordinateRepo = new CoordinateRepository();
@@ -42,6 +48,12 @@
                 var locationString = pointCoordinate.Latitude.ToString("00.0000000") + "," + pointCoordinate.Longitude.ToString("00.0000000");
                 _locations[i] = Conversions.StringToLatLon(locationString);
                 var instance = Instantiate(_markerPrefab);
+
+                if (visitedUserPoints.Where(x => x.TourPointId == point.Id).Count() > 0)
+                    instance.GetComponentInChildren<Image>().sprite = visitedPointImg;
+                else
+                    instance.GetComponentInChildren<Image>().sprite = unvisitedPointImg;
+
                 Vector3 position = _map.GeoToWorldPosition(_locations[i], true);
                 position[1] = position[1] + 4;
                 position[2] = position[2] + 7;

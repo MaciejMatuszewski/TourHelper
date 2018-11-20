@@ -1858,6 +1858,8 @@ MonoBehaviour:
   _spawnScale: 0.5
   _markerPrefab: {fileID: 1006547318176566, guid: f05e8a572566b8849a25bc536ef0d1ac,
     type: 2}
+  visitedPointImg: {fileID: 21300000, guid: cb5bbb9ebe62d73468d55cc8dc2d2d0e, type: 3}
+  unvisitedPointImg: {fileID: 21300000, guid: f94f1514fc9347947ad9deb79d523371, type: 3}
 --- !u!114 &1164773007
 MonoBehaviour:
   m_ObjectHideFlags: 0
