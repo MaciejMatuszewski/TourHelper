@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/FirstScreenScene.unity
     guid: 83070321b010aec43ad03dfb35ae7bdb
   - enabled: 1
-    path: Assets/Scenes/LoginScene.unity
+    path: Assets/Scenes/RegistrationScene.unity
     guid: 7861dc6a199d4aa4ebf636f153d5d7f0
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 9c53af2a94fa4924b806dde64b77392f
+  - enabled: 1
+    path: Assets/Scenes/LoginScene.unity
+    guid: 13bcbf2f8b433054a9bfcb27ac29151a
   m_configObjects: {}

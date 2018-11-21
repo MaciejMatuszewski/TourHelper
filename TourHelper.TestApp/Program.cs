@@ -49,7 +49,6 @@ namespace TourHelper.TestApp
             var y = new UserProfileRepository();
             var z = y.Insert(new UserProfile
             {
-                Age = 33,
                 Email = "kixar@wp.pl",
                 FirstName = "H",
                 LastName = "D"

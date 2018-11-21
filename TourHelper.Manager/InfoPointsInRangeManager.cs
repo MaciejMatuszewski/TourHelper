@@ -15,11 +15,8 @@ namespace TourHelper.Manager
     {
         public IEnumerable<Coordinate> GetPointsInRange(Coordinate origin, double latRange, double lonRange)
         {
-            //PlayerPrefs.SetInt("TourID", 1);
-            //PlayerPrefs.SetInt("UserTourID", 10);
-
-            int tourId = 1;//PlayerPrefs.GetInt["TourID"];
-            int userTourId = 10;//PlayerPrefs.GetInt["UserTourID"];
+            int tourId = PlayerPrefs.GetInt("TourID");
+            int userTourId = PlayerPrefs.GetInt("UserTourID");
             var coordinateRepository = new CoordinateRepository();
             IEnumerable<Coordinate> tourPoints = coordinateRepository.GetUnvisited(userTourId);
             //IEnumerable<Coordinate> tourPoints = coordinateRepository.GetByTourID(tourId);

@@ -5,7 +5,7 @@ namespace TourHelper.Base.Repository
 {
     public interface IUserTourPointRepository : IBaseRepository<UserTourPoint>
     {
-        IEnumerable<UserTourPoint> GetByUserTourID(int userTourID);
+        IEnumerable<UserTourPoint> GetByUserTourId(int userTourId);
     }
 
 }

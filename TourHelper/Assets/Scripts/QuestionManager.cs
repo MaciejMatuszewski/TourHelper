@@ -15,6 +15,10 @@ public class QuestionManager : MonoBehaviour
     private const string Answer3Prefix = "ODPOWIEDŹ C:\n";
     private const string Answer4Prefix = "ODPOWIEDŹ D:\n";
 
+    private const string NoTourSelected = "Aby quiz był dostępny\n wybierz najpierw wycieczkę";
+    private const string NoQuestions = "Brak quizu\n dla wybranej wycieczki";
+    private const string TourMustBeFinished = "Quiz jest dostępny\npo odwiedzeniu wszystkich\npunktów wycieczki";
+
     private int _userId;
     private int _tourId;
     private int _userTourId;
@@ -24,21 +28,29 @@ public class QuestionManager : MonoBehaviour
     private UserTourQuestion _currentQuestionAnswer;
     private int _currentQuestionLocalIndex;
 
-    public Button Question;
+    public GameObject Question;
     public Button Answer1;
     public Button Answer2;
     public Button Answer3;
     public Button Answer4;
     public Text QuestionCount;
+    public GameObject QuizPanel;
+    public GameObject BlockQuizPanel;
 
     private void Start()
     {
         _userId = PlayerPrefs.GetInt("UserID");
-        LoadQuiz();
+
+
         Answer1.onClick.AddListener(() => SelectAnswer(Answer1.name));
         Answer2.onClick.AddListener(() => SelectAnswer(Answer2.name));
         Answer3.onClick.AddListener(() => SelectAnswer(Answer3.name));
         Answer4.onClick.AddListener(() => SelectAnswer(Answer4.name));
+    }
+
+    private void Update()
+    {
+        LoadQuiz();
     }
 
     private void SelectAnswer(string question)
@@ -58,7 +70,7 @@ public class QuestionManager : MonoBehaviour
                 UserTourId = _userTourId
             });
         }
-        DisplayQuestion();
+        RefreshQuestionPanel();
     }
 
     private void MarkQuestion()
@@ -67,7 +79,7 @@ public class QuestionManager : MonoBehaviour
         _currentQuestionAnswer = userTourQuestionRepository.GetByUserTourIdAndTourQuestionId(_userTourId, _currentQuestion.Id);
         if (_currentQuestionAnswer != null)
         {
-            Button button = GameObject.Find("QID_" + _currentQuestion.Id + "_" + _currentQuestionAnswer.Answer).GetComponent<Button>();
+            Button button = QuizPanel.GetComponentsInChildren<Button>(true).FirstOrDefault(t => t.name == "QID_" + _currentQuestion.Id + "_" + _currentQuestionAnswer.Answer);
 
             if (_currentQuestionAnswer.Answer == _currentQuestion.CorrectAnswer)
             {
@@ -88,13 +100,6 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
-    public void LoadQuiz()
-    {
-        _tourId = PlayerPrefs.GetInt("TourID");
-        _userTourId = PlayerPrefs.GetInt("UserTourID");
-        LoadQuestion();
-    }
-
     public void NextQuestion()
     {
         if (_questions.Any())
@@ -105,7 +110,7 @@ public class QuestionManager : MonoBehaviour
                 _currentQuestionLocalIndex++;
 
             _currentQuestion = _questions[_currentQuestionLocalIndex];
-            DisplayQuestion();
+            RefreshQuestionPanel();
         }
     }
 
@@ -119,53 +124,88 @@ public class QuestionManager : MonoBehaviour
                 _currentQuestionLocalIndex--;
 
             _currentQuestion = _questions[_currentQuestionLocalIndex];
-            DisplayQuestion();
+            RefreshQuestionPanel();
         }
     }
 
-    private void DisplayQuestion()
+    private void RefreshQuestionPanel()
     {
-        var questionButtonText = Question.GetComponentInChildren<Text>();
-        questionButtonText.text = QuestionPrefix + _currentQuestion.Question;
-        Question.name = "QID_" + _currentQuestion.Id;
+        var userTourPointRepository = new UserTourPointRepository();
+        var userTourPoins = userTourPointRepository.GetByUserTourId(_userTourId);
+        var tourPointRepository = new TourPointRepository();
+        var tourPoints = tourPointRepository.GetByTourID(_tourId);
 
-        var answerButton1Text = Answer1.GetComponentInChildren<Text>();
-        answerButton1Text.text = Answer1Prefix + _currentQuestion.Answer1;
-        Answer1.name = "QID_" + _currentQuestion.Id + "_1";
-
-        var answerButton2Text = Answer2.GetComponentInChildren<Text>();
-        answerButton2Text.text = Answer2Prefix + _currentQuestion.Answer2;
-        Answer2.name = "QID_" + _currentQuestion.Id + "_2";
-
-        var answerButton3Text = Answer3.GetComponentInChildren<Text>();
-        answerButton3Text.text = Answer3Prefix + _currentQuestion.Answer3;
-        Answer3.name = "QID_" + _currentQuestion.Id + "_3";
-
-        var answerButton4Text = Answer4.GetComponentInChildren<Text>();
-        answerButton4Text.text = Answer4Prefix + _currentQuestion.Answer4;
-        Answer4.name = "QID_" + _currentQuestion.Id + "_4";
-
-        var color = Question.colors;
-        color.highlightedColor = color.normalColor;
-        color.pressedColor = color.normalColor;
-        Question.colors = color;
-        Answer1.colors = color;
-        Answer2.colors = color;
-        Answer3.colors = color;
-        Answer4.colors = color;
-
-        MarkQuestion();
-        SetQuestionCounter();
-    }   
-    private void LoadQuestion()
-    {
-        var tourQuestionRepository = new TourQuestionRepository();
-        _questions = tourQuestionRepository.GetByTourId(_tourId).ToList();
-        if (_questions.Any())
+        if (_userTourId == 0)
         {
-            _currentQuestionLocalIndex = 0;
-            _currentQuestion = _questions[_currentQuestionLocalIndex];
-            DisplayQuestion();
+            QuizPanel.SetActive(false);
+            BlockQuizPanel.SetActive(true);
+            BlockQuizPanel.GetComponentInChildren<Text>().text = NoTourSelected;
+        }
+        else if (!_questions.Any())
+        {
+            QuizPanel.SetActive(false);
+            BlockQuizPanel.SetActive(true);
+            BlockQuizPanel.GetComponentInChildren<Text>().text = NoQuestions;
+        }
+        else if (userTourPoins.Count() != tourPoints.Count())
+        {
+            QuizPanel.SetActive(false);
+            BlockQuizPanel.SetActive(true);
+            BlockQuizPanel.GetComponentInChildren<Text>().text = TourMustBeFinished;
+        }
+        else
+        {
+            QuizPanel.SetActive(true);
+            BlockQuizPanel.SetActive(false);
+
+            var questionButtonText = Question.GetComponentInChildren<Text>();
+            questionButtonText.text = QuestionPrefix + _currentQuestion.Question;
+            Question.name = "QID_" + _currentQuestion.Id;
+
+            var answerButton1Text = Answer1.GetComponentInChildren<Text>();
+            answerButton1Text.text = Answer1Prefix + _currentQuestion.Answer1;
+            Answer1.name = "QID_" + _currentQuestion.Id + "_1";
+
+            var answerButton2Text = Answer2.GetComponentInChildren<Text>();
+            answerButton2Text.text = Answer2Prefix + _currentQuestion.Answer2;
+            Answer2.name = "QID_" + _currentQuestion.Id + "_2";
+
+            var answerButton3Text = Answer3.GetComponentInChildren<Text>();
+            answerButton3Text.text = Answer3Prefix + _currentQuestion.Answer3;
+            Answer3.name = "QID_" + _currentQuestion.Id + "_3";
+
+            var answerButton4Text = Answer4.GetComponentInChildren<Text>();
+            answerButton4Text.text = Answer4Prefix + _currentQuestion.Answer4;
+            Answer4.name = "QID_" + _currentQuestion.Id + "_4";
+
+            var color = Answer1.colors;
+            color.highlightedColor = new Color(1, 1, 1, 1);
+            color.pressedColor = new Color(1, 1, 1, 1);
+            color.normalColor = new Color(1, 1, 1, 1);
+            Answer1.colors = color;
+            Answer2.colors = color;
+            Answer3.colors = color;
+            Answer4.colors = color;
+
+            MarkQuestion();
+            SetQuestionCounter();
+        }
+    }
+    private void LoadQuiz()
+    {
+        if (_userTourId != PlayerPrefs.GetInt("UserTourID"))
+        {
+            _userTourId = PlayerPrefs.GetInt("UserTourID");
+            _tourId = PlayerPrefs.GetInt("TourID");
+
+            var tourQuestionRepository = new TourQuestionRepository();
+            _questions = tourQuestionRepository.GetByTourId(_tourId).ToList();
+            if (_questions.Any())
+            {
+                _currentQuestionLocalIndex = 0;
+                _currentQuestion = _questions[_currentQuestionLocalIndex];
+            }
+            RefreshQuestionPanel();
         }
     }
 

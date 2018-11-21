@@ -1,9 +1,10 @@
-﻿using TourHelper.Base.Model.Entity;
+﻿using System.Collections.Generic;
+using TourHelper.Base.Model.Entity;
 
 namespace TourHelper.Base.Repository
 {
     public interface IUserRepository : IBaseRepository<User>
     {
-        User GetByLogin(string login);
+        IEnumerable<User> GetByLogin(string login);
     }
 }

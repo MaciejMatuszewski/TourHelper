@@ -91,9 +91,9 @@ public class Workspace : MonoBehaviour
     {
         if (_lastTour!= PlayerPrefs.GetInt("TourID"))
         {
+            _lastTour = PlayerPrefs.GetInt("TourID");
             _scene.EnforceRebuild = true;
             _player.ResetDistanceAccumulator(PlayerPrefs.GetFloat("Distance"));
-
         }
         _scene.UpdateGameSpace();
         

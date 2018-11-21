@@ -369,6 +369,7 @@
     <Compile Include="Assets\Scripts\PointPanel.cs" />
     <Compile Include="Assets\Scripts\QuadTreeCameraMovement.cs" />
     <Compile Include="Assets\Scripts\QuestionManager.cs" />
+    <Compile Include="Assets\Scripts\Registration.cs" />
     <Compile Include="Assets\Scripts\RotateWithLocationProvider.cs" />
     <Compile Include="Assets\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\SpawnOnMap.cs" />

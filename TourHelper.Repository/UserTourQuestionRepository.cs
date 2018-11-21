@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TourHelper.Base.Model.Entity;
 using TourHelper.Base.Repository;
 
@@ -15,6 +16,16 @@ namespace TourHelper.Repository
                         $"AND {nameof(UserTourQuestion.TourQuestionId)} = {tourQuestionId}";
 
             return ExecuteSelectCommand(statement).SingleOrDefault();
+        }
+
+        public IEnumerable<UserTourQuestion> GetByUserTourId(int userTourId)
+        {
+            string statement =
+                $"SELECT * " +
+                    $"FROM [dbo].[{nameof(UserTourQuestion)}] " +
+                    $"WHERE {nameof(UserTourQuestion.UserTourId)} = {userTourId} ";
+
+            return ExecuteSelectCommand(statement);
         }
     }
 }

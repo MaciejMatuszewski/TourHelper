@@ -79,7 +79,7 @@ public class TourList : MonoBehaviour
 
     private void StartTour(int tourId)
     {
-        PlayerPrefs.SetInt("UserId", 1);
+        //PlayerPrefs.SetInt("UserId", 1);
         var userId = PlayerPrefs.GetInt("UserId");
 
         var userTourRepository = new UserTourRepository();

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TourHelper.Base.Enum
 {
-    public enum UserPermitions
+    public enum UserPermissions
     {
         User = 0,
         Admin = 1,
