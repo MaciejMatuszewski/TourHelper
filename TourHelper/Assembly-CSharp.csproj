@@ -607,6 +607,24 @@
     <Reference Include="TourHelper.Repository">
       <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/TourHelper.Repository.dll</HintPath>
     </Reference>
+    <Reference Include="I18N.CJK">
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.CJK.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N">
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.MidEast">
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.MidEast.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.Other">
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.Other.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.Rare">
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.Rare.dll</HintPath>
+    </Reference>
+    <Reference Include="I18N.West">
+      <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/DLL/External/I18N.West.dll</HintPath>
+    </Reference>
     <Reference Include="Mapbox.IO.Compression">
       <HintPath>D:/!!!DATA!!!/!!!PRYWATA!!!/!!!UCZELNIA!!!/GIT/TourHelperNew/TourHelper/Assets/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
     </Reference>

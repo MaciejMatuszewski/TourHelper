@@ -36,7 +36,7 @@
             var pointRepo = new TourPointRepository();
             var userPointRepo = new UserTourPointRepository();
             List<TourPoint> points = pointRepo.GetByTourID(tourID).ToList();
-            List<UserTourPoint> visitedUserPoints = userPointRepo.GetByUserTourID(PlayerPrefs.GetInt("UserTourID")).ToList();
+            List<UserTourPoint> visitedUserPoints = userPointRepo.GetByUserTourId(PlayerPrefs.GetInt("UserTourID")).ToList();
             _locations = new Vector2d[points.Count];
             _spawnedObjects = new List<GameObject>();
             CoordinateRepository coordinateRepo = new CoordinateRepository();
