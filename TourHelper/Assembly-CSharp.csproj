@@ -356,6 +356,7 @@
     <Compile Include="Assets\Scripts\ElementsManagement\InfoPanelEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\MapEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\PanelEvent.cs" />
+    <Compile Include="Assets\Scripts\ElementsManagement\ProfilePanelEvent.cs" />
     <Compile Include="Assets\Scripts\ElementsManagement\StatsEvent.cs" />
     <Compile Include="Assets\Scripts\GUIManager.cs" />
     <Compile Include="Assets\Scripts\Helpers\Acceleration.cs" />

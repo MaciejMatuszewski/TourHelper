@@ -31,6 +31,10 @@ public class Login : MonoBehaviour
 
         if (user.Any() && PasswordInput.text == user.Single().Password)
         {
+            if (user.Single().Id != PlayerPrefs.GetInt("UserID"))
+            {
+                PlayerPrefs.SetInt("UserTourID", 0);
+            }
             PlayerPrefs.SetInt("UserID", user.Single().Id);
             SceneManager.LoadScene("MainScene");
         }

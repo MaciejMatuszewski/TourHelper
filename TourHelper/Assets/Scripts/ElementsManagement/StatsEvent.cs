@@ -34,7 +34,7 @@ public class StatsEvent : MonoBehaviour {
         if (DateTime.Now.Subtract(lastPushToDB).TotalSeconds>= PushInterval)
         {
             
-            var userId = PlayerPrefs.GetInt("UserId");
+            var userId = PlayerPrefs.GetInt("UserID");
             var tourId = PlayerPrefs.GetInt("TourID");
             
             var userTourRepo = new UserTourRepository();
