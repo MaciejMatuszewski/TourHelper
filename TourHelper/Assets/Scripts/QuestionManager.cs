@@ -56,6 +56,7 @@ public class QuestionManager : MonoBehaviour
     private void SelectAnswer(string question)
     {
         var userTourQuestionRepository = new UserTourQuestionRepository();
+        var tourQuestionRepository = new TourQuestionRepository();
         _currentQuestionAnswer = userTourQuestionRepository.GetByUserTourIdAndTourQuestionId(_userTourId, _currentQuestion.Id);
 
         if (_currentQuestionAnswer == null)
@@ -69,6 +70,14 @@ public class QuestionManager : MonoBehaviour
                 TourQuestionId = _currentQuestion.Id,
                 UserTourId = _userTourId
             });
+
+            var tourQuestion = tourQuestionRepository.Get(_currentQuestionAnswer.TourQuestionId.Value);
+            if (answer == tourQuestion.CorrectAnswer)
+            {
+                var tempScore = PlayerPrefs.GetInt("Score");
+                tempScore += 3;
+                PlayerPrefs.SetInt("Score", tempScore);
+            }
         }
         RefreshQuestionPanel();
     }
