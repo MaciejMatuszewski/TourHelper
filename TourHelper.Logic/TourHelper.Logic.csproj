@@ -43,10 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameSpace.cs" />
-    <Compile Include="Geolocation\BasicRotationCalculator.cs" />
-    <Compile Include="Geolocation\GeolocationTool.cs" />
-    <Compile Include="Geolocation\HaversineDistanceCalculator.cs" />
-    <Compile Include="Geolocation\MeanEarthRadius.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PositionLogic\LocalPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +59,9 @@
       <Project>{f1d331df-8e91-4aa5-a902-7a6f54951893}</Project>
       <Name>TourHelper.Manager</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Geolocation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -48,19 +48,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculators\Filters\CorrectionFilter.cs" />
-    <Compile Include="Calculators\Filters\CutOffFilter.cs" />
     <Compile Include="Calculators\Filters\IIRFilter.cs" />
     <Compile Include="Calculators\Geolocation\AccumulatedDistanceManager.cs" />
-    <Compile Include="Calculators\TTemp\IMUFilter.cs" />
     <Compile Include="Calculators\Kalman\KalmanFilter.cs" />
-    <Compile Include="Calculators\Filters\LinearRegression.cs" />
     <Compile Include="Calculators\MatrixTools\LUDecomposition.cs" />
     <Compile Include="Calculators\MatrixTools\LUSolver.cs" />
     <Compile Include="Calculators\MatrixTools\Matrix.cs" />
     <Compile Include="Calculators\MatrixTools\MatrixMultiIKJ.cs" />
     <Compile Include="Calculators\MatrixTools\MatrixNxN.cs" />
-    <Compile Include="Calculators\TTemp\SignalIntegral.cs" />
     <Compile Include="Calculators\Geolocation\UTMLocalCoordinates.cs" />
     <Compile Include="Calculators\MathTools.cs" />
     <Compile Include="Calculators\Filters\MeanFilter.cs" />

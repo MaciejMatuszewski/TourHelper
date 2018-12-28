@@ -107,46 +107,7 @@ namespace TourHelper.TestApp.Position
             }
         }
 
-        public static void IntegralTest()
-        {
-            string[] inputList = { "x" };//"2m-1" , "2m-2", "2m-3", "2m-4" };
-            string script = "IntegralExtractor.py";
-
-
-            foreach (string input in inputList)
-            {
-                PositionTest test = new PositionTest(
-                         $@"D:\Uczelnia\INŻYNIERKA\TESTY\Dane\{input}.txt",
-                         $@"D:\Uczelnia\INŻYNIERKA\TESTY\Dane\Wyniki\{input}_output.txt");
-
-
-                test.Processor.AccelerationIncluded = false;
-                test.Processor.DriftReduction = false;
-                test.Processor.Eps = 0.01f;
-
-                double[] a_l = { 1.0, -5.27228221828, 11.6214883223, -13.7053868251, 9.11839568032, -3.24443185302, 0.482248506594 };
-                double[] b_l = { 4.93950362255e-07, 2.96370217353e-06, 7.40925543383e-06, 9.8790072451e-06, 7.40925543383e-06, 2.96370217353e-06, 4.93950362255e-07 };
-
-                double[] a_h = { 1.0, -2.99981159864, 2.99962321503, -0.999811616388 };
-                double[] b_h = { 0.999905803757, -2.99971741127, 2.99971741127, -0.999905803757 };
-
-
-                test.Processor.FilterX = new IIRFilter(a_l, b_l);
-                test.Processor.FilterY = new IIRFilter(a_l, b_l);
-                test.Processor.FilterZ = new IIRFilter(a_l, b_l);
-
-
-
-
-                test.Processor.RegressionX = new LinearRegression(30);
-                test.Processor.RegressionY = new LinearRegression(30);
-                test.Processor.RegressionZ = new LinearRegression(30);
-
-                test.Test();
-
-                cmd($@"python D:\Uczelnia\INŻYNIERKA\TESTY\{script} D:\Uczelnia\INŻYNIERKA\TESTY\Dane\Wyniki\{input}_output.txt");
-            }
-        }
+        
 
         static Process cmd(string command)
         {
