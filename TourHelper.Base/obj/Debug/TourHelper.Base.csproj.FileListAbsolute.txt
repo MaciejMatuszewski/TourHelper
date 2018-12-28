@@ -31,4 +31,3 @@ D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Base\obj\Debug\TourHelp
 D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.pdb
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojAssemblyReference.cache
 C:\!!!DATA!!!\!!!PRYWATA!!!\!!!UCZELNIA!!!\GIT\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csproj.CopyComplete
-D:\Uczelnia\INŻYNIERKA\TourHelper\TourHelper\TourHelper.Base\obj\Debug\TourHelper.Base.csprojAssemblyReference.cache

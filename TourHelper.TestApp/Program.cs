@@ -25,8 +25,8 @@ namespace TourHelper.TestApp
             //-----------------------------------------------
             
 
-            var repo = new CoordinateRepository();
-            var p = repo.GetByTourPointID(2);
+            //var repo = new CoordinateRepository();
+           // var p = repo.GetByTourPointID(2);
 
 
             //-----------------------------------------------
@@ -39,7 +39,7 @@ namespace TourHelper.TestApp
             // var _test = new GameSceneTest();
             //_test.test();
 
-            //TestSetup.LocationTest();
+            TestSetup.LocationTest();
             //TestSetup.FilterTest();
         }
 

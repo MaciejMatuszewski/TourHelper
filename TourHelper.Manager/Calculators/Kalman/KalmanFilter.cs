@@ -46,7 +46,7 @@ namespace TourHelper.Manager.Calculators.Kalman
             }
         }
 
-        public double Counter { get; private set; }
+        //public double Counter { get; private set; }
 
         public IMatrix KalmanGain { get; private set; }
         public IMatrix InitialPosition { get => _origin; set => ResetPosition(value); }

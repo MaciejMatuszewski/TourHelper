@@ -54,7 +54,7 @@ namespace TourHelper.Manager.Calculators
                 enY.MoveNext();
 
                 double diffX = enX.Current-_meanX;
-                double diffY = enX.Current-_meanY;
+                double diffY = enY.Current-_meanY;
 
                 _bottom += diffX * diffX;
                 _top += diffY * diffX;
@@ -62,7 +62,7 @@ namespace TourHelper.Manager.Calculators
 
 
             _a = _top / _bottom;
-            _b = _meanY - _a;
+            _b = _meanY - _a* _meanX;
         }
 
         public double GetValue(double x)

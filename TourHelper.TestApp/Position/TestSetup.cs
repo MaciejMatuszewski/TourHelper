@@ -16,7 +16,7 @@ namespace TourHelper.TestApp.Position
     {
         public static void LocationTest()
         {
-            string[] inputList = { "41_27" };//"a", "a1" , "b" , "b1" , "c", "d", "e""39_25_1" , "41_27"
+            string[] inputList = {   "c","41_27" };//"a", "a1" , "b" , "b1" , "c", "d", "e""39_25_1" , "41_27"
             string script = "LocationExtractor.py";
 
             foreach (string input in inputList)
@@ -39,7 +39,7 @@ namespace TourHelper.TestApp.Position
                 test.Processor.Filter.AccelerationError = 1;
                 test.Processor.StandingCycles = 10;
 
-                test.Processor.StandingLimit = 0.5f;
+                test.Processor.StandingLimit = 0.3f;
 
 
                 double[] a_l = { 1, -0.85408069 };
@@ -58,7 +58,7 @@ namespace TourHelper.TestApp.Position
         }
         public static void FilterTest()
         {
-            string[] inputList = { "39_25_1" };
+            string[] inputList = { "41_27" };
             string script = "InputFilterExtractor.py";
             string script2 = "AccelerationFFT.py";
 
@@ -87,8 +87,8 @@ namespace TourHelper.TestApp.Position
                 double[] a_l = { 1, -0.85408069 };
                 double[] b_l = { 0.07295966, 0.07295966 };*/
 
-                double[] a_l = { 1, -0.85408069 };
-                double[] b_l = { 0.07295966, 0.07295966 };
+                double[] a_l = { 1, -0.72654253 };
+                double[] b_l = { 0.13672874, 0.13672874 };
 
                 IFilter<double> fX = new IIRFilter(a_l, b_l); //new IIRFilter(a_h, b_h, null));
                 IFilter<double> fY = new IIRFilter(a_l, b_l);//new IIRFilter(a_h, b_h, null));

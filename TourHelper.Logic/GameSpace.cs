@@ -126,7 +126,7 @@ namespace TourHelper.Logic
             Prefabs[nameOfPrefab].Actions.Add(action);
         }
 
-        public void ClearContainer(string key)
+        private void ClearContainer(string key)
         {
             if (Prefabs.ContainsKey(key))
             {
@@ -140,7 +140,7 @@ namespace TourHelper.Logic
             }
         }
 
-        public void DestroyScheme()
+        private void DestroyScheme()
         {
 
             foreach (string k in Prefabs.Keys)
@@ -150,7 +150,7 @@ namespace TourHelper.Logic
             Prefabs.Clear();
         }
 
-        public void ClearScheme()
+        private void ClearScheme()
         {
             foreach (string k in Prefabs.Keys)
             {

@@ -73,8 +73,8 @@ namespace TourHelper.Logic.PositionLogic
             AccelerationFilterY = new IIRFilter(a_l, b_l);
             AccelerationFilterZ = new IIRFilter(a_l, b_l);
 
-            StandingLimit = 1.5f;
-            StandingCycles = 4;
+            StandingLimit = 0.3f;
+            StandingCycles = 5;
             PredictionCycles = 2;
         }
 
@@ -99,7 +99,7 @@ namespace TourHelper.Logic.PositionLogic
                 Filter.DeltaTime = Time.deltaTime;
                 _lastGpsReading = Gps.GetCoordinates();
 
-                Filter.GPSError =  _lastGpsReading.VerticalAccuracy;
+                Filter.GPSError = _lastGpsReading.VerticalAccuracy;
 
 
                 _gpsPosition = Translator.GetCoordinates(_lastGpsReading);//Pozycja x,y,z w ukladzie lokalnym; ruch odbywa się w plaszczyznie xz
@@ -156,8 +156,7 @@ namespace TourHelper.Logic.PositionLogic
         
         public bool isStanding()
         {
-            double d = Math.Sqrt(_accZF * _accZF);
-            //double d = Math.Sqrt(_accXF * _accYF + _accYF * _accYF + _accZF * _accZF);
+            double d = Math.Sqrt(_accZF * _accZF);         
             if (d < StandingLimit)
             {
                 _idleCounter++;
